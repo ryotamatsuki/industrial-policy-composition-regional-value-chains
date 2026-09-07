@@ -9,7 +9,8 @@ It does not claim an arbitrary-production-function theorem.
 The `RestrictedCRSAtUnit` structure records the actual function, its Frechet derivative
 at the unit match, concavity on the nonnegative orthant, degree-one homogeneity on that
 orthant, and positive marginal products. Euler's identity at the unit match is then
-machine-derived from homogeneity and differentiability using mathlib's local Euler theorem.
+machine-derived from homogeneity and differentiability using only primitives available
+in the repository's pinned mathlib revision.
 
 For CES, the paper uses the unit-incidence identities on the admissible concavity-compatible
 parameter domain. The threshold consequence is certified below.
@@ -20,6 +21,7 @@ namespace IPCRVC
 noncomputable section
 
 open Set Filter
+open scoped Topology
 
 /-- Nonnegative two-input production domain. -/
 def nonnegativeInputs : Set (ℝ × ℝ) := Set.Ici 0 ×ˢ Set.Ici 0
@@ -41,8 +43,9 @@ theorem crsUnit_mem_nonnegative : crsUnit ∈ nonnegativeInputs := by
 /--
 Restricted concave CRS technology at the unit complementary match.
 
-Homogeneity is imposed on the economically relevant nonnegative cone. Since a neighborhood
-of scalar `1` is eventually positive, this is enough for mathlib's local Euler theorem.
+Homogeneity is imposed on the economically relevant nonnegative cone. A neighborhood
+of the radial perturbation `s = 0` keeps the scale factor `1+s` positive, which is enough
+to recover Euler's identity from the Frechet derivative.
 -/
 structure RestrictedCRSAtUnit where
   F : (ℝ × ℝ) → ℝ
@@ -71,21 +74,30 @@ def crsPlannerThreshold (delta : ℝ) (p : RestrictedCRSAtUnit) : ℝ :=
 def crsLocalThreshold (delta : ℝ) (p : RestrictedCRSAtUnit) : ℝ :=
   delta / crsDownstreamMPAtUnit p
 
-/-- Nonnegative-cone degree-one homogeneity holds locally around scalar one. -/
-theorem crs_homogeneous_eventually_one (p : RestrictedCRSAtUnit) :
-    (fun t : ℝ => p.F (t • crsUnit)) =ᶠ[𝓝 1]
-      (fun t : ℝ => t • p.F crsUnit) := by
-  filter_upwards [eventually_gt_nhds (show (0 : ℝ) < 1 by norm_num)] with t ht
-  have h := p.homogeneous_one t (le_of_lt ht) crsUnit crsUnit_mem_nonnegative
-  simpa [smul_eq_mul] using h
+/-- Radial perturbations around the unit input are locally governed by degree-one homogeneity. -/
+theorem crs_radial_homogeneous_eventually (p : RestrictedCRSAtUnit) :
+    (fun s : ℝ => p.F (crsUnit + s • crsUnit)) =ᶠ[𝓝 0]
+      (fun s : ℝ => (1 + s) * p.F crsUnit) := by
+  filter_upwards [eventually_gt_nhds (show (-1 : ℝ) < 0 by norm_num)] with s hs
+  have hnonneg : 0 ≤ 1 + s := by linarith
+  have hhom := p.homogeneous_one (1 + s) hnonneg crsUnit crsUnit_mem_nonnegative
+  have hvec : crsUnit + s • crsUnit = (1 + s) • crsUnit := by
+    ext <;> norm_num [crsUnit] <;> ring
+  rw [hvec]
+  simpa [smul_eq_mul] using hhom
 
-/-- Euler's theorem at the unit input, derived inside Lean from homogeneity and differentiability. -/
+/-- Euler's radial identity at the unit input, derived from homogeneity and differentiability. -/
 theorem crs_derivative_apply_unit (p : RestrictedCRSAtUnit) :
     p.L crsUnit = p.F crsUnit := by
-  have hid : HasDerivAt (fun t : ℝ => t) 1 1 := hasDerivAt_id (1 : ℝ)
-  have h := p.differentiable_unit.apply_self_eq_smul_of_eventuallyEq
-    hid (crs_homogeneous_eventually_one p)
-  simpa using h
+  have hline := p.differentiable_unit.hasLineDerivAt crsUnit
+  change HasDerivAt (fun s : ℝ => p.F (crsUnit + s • crsUnit)) (p.L crsUnit) 0 at hline
+  have hlinear : HasDerivAt (fun s : ℝ => (1 + s) * p.F crsUnit) (p.F crsUnit) 0 := by
+    have hadd : HasDerivAt (fun s : ℝ => 1 + s) 1 0 :=
+      (hasDerivAt_id (0 : ℝ)).const_add 1
+    simpa using hadd.mul_const (p.F crsUnit)
+  have hsame : HasDerivAt (fun s : ℝ => p.F (crsUnit + s • crsUnit)) (p.F crsUnit) 0 :=
+    hlinear.congr_of_eventuallyEq (crs_radial_homogeneous_eventually p)
+  exact hline.unique hsame
 
 /-- The derivative at the unit vector decomposes into the two coordinate marginal products. -/
 theorem crs_derivative_unit_decomposition (p : RestrictedCRSAtUnit) :
