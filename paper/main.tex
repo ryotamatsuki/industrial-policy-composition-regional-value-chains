@@ -1,8 +1,16 @@
 \documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
+\usepackage{natbib}
 \usepackage{hyperref}
+\usepackage{microtype}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
 
 \title{Industrial Policy Composition and Regional Value Chains}
 \author{}
@@ -12,10 +20,17 @@
 \maketitle
 \input{sections/abstract}
 \input{sections/introduction}
+\input{sections/related_literature}
 \input{sections/model}
 \input{sections/equilibrium}
 \input{sections/welfare}
 \input{sections/robustness}
+\input{sections/institutional_bridge}
 \input{sections/conclusion}
-\input{../tables/thresholds}
+
+\appendix
+\input{sections/appendix}
+
+\bibliographystyle{apalike}
+\bibliography{../references/references}
 \end{document}
