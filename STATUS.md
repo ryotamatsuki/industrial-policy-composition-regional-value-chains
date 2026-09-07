@@ -11,7 +11,10 @@
 - Stage 9: `REPRODUCIBILITY BASELINE READY`
 - Stage 10: `FULL DRAFT READY FOR REFEREE GATE`
 - Stage 11: `GO TO JOURNAL POSITIONING`
-- Next canonical stage: **Stage 12 — Journal Positioning**
+- Stage 12: `PRIMARY JOURNAL SELECTED — GO TO INTEGRATION`
+- Primary journal: **Journal of Regional Science**
+- Default fallback: **Regional Science and Urban Economics**
+- Next canonical stage: **Stage 13 — Full Paper Integration**
 
 ## Canonical theory artifact
 
@@ -27,24 +30,24 @@ Stage 10 full draft was integrated at:
 
 `a911a83f6c900876552657f1e7dd5b32edaa801b`
 
-Stage 11 began from that SHA on `stage11-referee-gate`.
+Stage 11 hostile-referee revisions were integrated at:
 
-## Stage 11 hostile referee gate
+`72e0ae5946aaabe99160c09bfb98126b648d1590`
 
-The full audit is recorded in `docs/STAGE11_REPORT.md`.
+## Stage 12 journal positioning
 
-Key conclusions:
+The full positioning record is `docs/STAGE12_JOURNAL_POSITIONING.md`.
 
-- no fatal mathematical/global-equilibrium attack;
-- no Stage-4A or Stage-7.5A certification regression;
-- no benchmark-definition failure;
-- no unresolved solver or continuation failure;
-- restricted CRS and alternative-matching scope survives independent attack;
-- classic fiscal-federalism/local-public-good spillover prior art materially narrows the novelty claim;
-- public-expenditure-composition prior art is now explicitly distinguished;
-- fixed policy capacity is retained as an essential maintained environment rather than presented as an innocuous normalization;
-- jurisdictional incidence/ownership assumptions and welfare-accounting scope are now explicit;
-- the remaining major uncertainty is journal ceiling, which is assigned to Stage 12 rather than addressed by prestige-driven theory expansion.
+Canonical submission ladder:
+
+1. **Journal of Regional Science** — primary target.
+2. **Regional Science and Urban Economics** — first automatic fallback when rejection concerns contribution magnitude/fit rather than correctness.
+3. **Journal of Economic Geography, Economics section** — alternative interdisciplinary route after presentation-only economic-geography integration.
+4. **The Annals of Regional Science** — safety net.
+
+`Journal of Urban Economics` is retained only as a stretch benchmark, not as the default first submission. `Journal of Public Economics` is excluded from the current ladder because Stage 11's surviving contribution is too close to classic public-economics spillover/composition mechanisms for the likely contribution threshold.
+
+The selection of JRS follows the certified paper rather than journal prestige. Stage 13 may change presentation, journal-specific metadata, file structure, disclosure statements, and exposition emphasis, but may not add a mechanism or enlarge theorem scope.
 
 ## Reproducibility gate
 
@@ -55,8 +58,8 @@ python -m pip install -r requirements.txt
 make all
 ```
 
-The Stage 11 manuscript remains subject to the same symbolic verification, permanent regression tests, deterministic output generation, bibliography-aware LaTeX build, and unresolved-citation/reference guard.
+The manuscript remains subject to exact symbolic verification, permanent regression/counterexample tests, deterministic output generation, bibliography-aware LaTeX build, and unresolved-citation/reference guard.
 
 ## Change control
 
-Stage 11 made literature and exposition repairs only. `THEORY_FREEZE.md` is unchanged. Any future substantive change to players, timing, strategies, payoffs, benchmark, matching, production, theorem scope, or policy-budget endogeneity requires formal theory-change control and reopening of the affected earlier stages.
+`IPCRVC-THEORY-FREEZE-2026-09-07-v1` remains authoritative. Any future substantive change to players, timing, strategies, payoffs, benchmark, matching, production, theorem scope, policy-budget endogeneity, or the certified novelty object requires formal theory-change control and reopening of the affected earlier stages.
