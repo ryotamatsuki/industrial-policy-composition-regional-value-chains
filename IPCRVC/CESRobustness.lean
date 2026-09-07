@@ -88,7 +88,7 @@ theorem ces_formula_threshold_ordering {delta omega rho : ℝ}
   rw [(ces_downstream_hasDerivAt_unit hces.2.2.2).deriv]
   have hdown : 0 < 1 - omega := sub_pos.mpr hces.2.1
   have hdown1 : 1 - omega < 1 := by linarith [hces.1]
-  exact switching_threshold_ordering hdelta hdown hdown1
+  simpa using switching_threshold_ordering hdelta hdown hdown1
 
 end
 
