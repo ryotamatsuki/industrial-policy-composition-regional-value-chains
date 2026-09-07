@@ -18,6 +18,8 @@ incidence and threshold consequence, not a global re-proof of CES concavity.
 
 namespace IPCRVC
 
+noncomputable section
+
 open Set
 
 /-- Nonnegative two-input production domain. -/
