@@ -1,6 +1,6 @@
 # Anonymous reproducibility supplement
 
-This supporting-information package reproduces the analytical identities and regression/counterexample checks used in the manuscript **Industrial Policy Composition and Regional Value Chains**. It contains no author names, affiliations, repository URLs, or other intentionally identifying metadata.
+This supporting-information package reproduces the analytical identities, regression/counterexample checks, and deterministic figure/table source files used in the manuscript **Industrial Policy Composition and Regional Value Chains**. It contains no author names, affiliations, repository URLs, or other intentionally identifying metadata.
 
 ## Environment
 
@@ -30,12 +30,21 @@ python -m pytest -q
 
 Expected result: six tests pass. Four preserve headline and boundary cases of the baseline model. Two preserve negative scope results: endogenous capture does not by itself guarantee a finite local switching threshold, and alternative capacity matching prevents a general claim of complete coordinated specialization.
 
+## Deterministic exposition outputs
+
+```bash
+python generate_outputs.py
+```
+
+This recreates the source files for the manuscript's regime figure and exact threshold/scope table under local `figures/`, `tables/`, and `results/` directories.
+
 ## Files
 
 - `model/baseline.py` — baseline payoffs, thresholds, best responses, Nash check, and planner corner comparison.
 - `verify_symbolic.py` — exact SymPy identities.
 - `tests/test_regressions.py` — headline/boundary regression tests.
 - `tests/test_claim_scope_counterexamples.py` — permanent counterexamples limiting claim scope.
+- `generate_outputs.py` — deterministic figure/table source generator.
 - `requirements.txt` — pinned Python dependencies.
 
 The code is a reproducibility aid. The proofs in the manuscript remain the authority for the analytical results.
