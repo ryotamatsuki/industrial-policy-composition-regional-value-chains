@@ -8,55 +8,60 @@ It does not claim an arbitrary-production-function theorem.
 
 The `RestrictedCRSAtUnit` structure records the actual function, its Frechet derivative
 at the unit match, concavity on the nonnegative orthant, degree-one homogeneity on that
-orthant, positive marginal products, and the Euler identity at the unit match.  The
-threshold theorem is then derived from these certified ingredients.
+orthant, and positive marginal products. Euler's identity at the unit match is then
+machine-derived from homogeneity and differentiability using mathlib's local Euler theorem.
 
-For CES, the paper only uses the unit-incidence identities.  The admissible parameter
-predicate retains the concavity-compatible scope; the Lean theorem certifies the unit
-incidence and threshold consequence, not a global re-proof of CES concavity.
+For CES, the paper uses the unit-incidence identities on the admissible concavity-compatible
+parameter domain. The threshold consequence is certified below.
 -/
 
 namespace IPCRVC
 
 noncomputable section
 
-open Set
+open Set Filter
 
 /-- Nonnegative two-input production domain. -/
 def nonnegativeInputs : Set (ℝ × ℝ) := Set.Ici 0 ×ˢ Set.Ici 0
 
-/--
-Restricted CRS technology certificate at the unit complementary match.
+/-- The unit complementary input vector. -/
+def crsUnit : ℝ × ℝ := ((1 : ℝ), (1 : ℝ))
 
-`euler_unit` is the explicit machine-checkable Euler certificate used by the paper.
-The pinned mathlib version does not supply the general homogeneous-function Euler theorem
-in the form needed here, so the theorem below begins from this certified identity rather
-than silently claiming Lean has re-derived Euler from the other fields.
+/-- Upstream coordinate vector. -/
+def crsUpstreamUnit : ℝ × ℝ := ((1 : ℝ), (0 : ℝ))
+
+/-- Downstream coordinate vector. -/
+def crsDownstreamUnit : ℝ × ℝ := ((0 : ℝ), (1 : ℝ))
+
+/-- The unit complementary input lies in the nonnegative domain. -/
+theorem crsUnit_mem_nonnegative : crsUnit ∈ nonnegativeInputs := by
+  change (0 : ℝ) ≤ 1 ∧ (0 : ℝ) ≤ 1
+  norm_num
+
+/--
+Restricted concave CRS technology at the unit complementary match.
+
+Homogeneity is imposed on the economically relevant nonnegative cone. Since a neighborhood
+of scalar `1` is eventually positive, this is enough for mathlib's local Euler theorem.
 -/
 structure RestrictedCRSAtUnit where
   F : (ℝ × ℝ) → ℝ
   L : (ℝ × ℝ) →L[ℝ] ℝ
-  differentiable_unit : HasFDerivAt F L ((1 : ℝ), (1 : ℝ))
+  differentiable_unit : HasFDerivAt F L crsUnit
   concave_nonnegative : ConcaveOn ℝ nonnegativeInputs F
   homogeneous_one :
     ∀ (t : ℝ), 0 ≤ t → ∀ x ∈ nonnegativeInputs, F (t • x) = t * F x
-  upstream_pos : 0 < L ((1 : ℝ), (0 : ℝ))
-  downstream_pos : 0 < L ((0 : ℝ), (1 : ℝ))
-  euler_unit :
-    F ((1 : ℝ), (1 : ℝ)) =
-      L ((1 : ℝ), (0 : ℝ)) + L ((0 : ℝ), (1 : ℝ))
+  upstream_pos : 0 < L crsUpstreamUnit
+  downstream_pos : 0 < L crsDownstreamUnit
 
 /-- Output at the unit complementary match. -/
-def crsOutputAtUnit (p : RestrictedCRSAtUnit) : ℝ :=
-  p.F ((1 : ℝ), (1 : ℝ))
+def crsOutputAtUnit (p : RestrictedCRSAtUnit) : ℝ := p.F crsUnit
 
 /-- Upstream marginal product at the unit match. -/
-def crsUpstreamMPAtUnit (p : RestrictedCRSAtUnit) : ℝ :=
-  p.L ((1 : ℝ), (0 : ℝ))
+def crsUpstreamMPAtUnit (p : RestrictedCRSAtUnit) : ℝ := p.L crsUpstreamUnit
 
 /-- Downstream marginal product at the unit match. -/
-def crsDownstreamMPAtUnit (p : RestrictedCRSAtUnit) : ℝ :=
-  p.L ((0 : ℝ), (1 : ℝ))
+def crsDownstreamMPAtUnit (p : RestrictedCRSAtUnit) : ℝ := p.L crsDownstreamUnit
 
 /-- Coordinated fixed-capacity threshold under a restricted CRS technology. -/
 def crsPlannerThreshold (delta : ℝ) (p : RestrictedCRSAtUnit) : ℝ :=
@@ -66,18 +71,47 @@ def crsPlannerThreshold (delta : ℝ) (p : RestrictedCRSAtUnit) : ℝ :=
 def crsLocalThreshold (delta : ℝ) (p : RestrictedCRSAtUnit) : ℝ :=
   delta / crsDownstreamMPAtUnit p
 
+/-- Nonnegative-cone degree-one homogeneity holds locally around scalar one. -/
+theorem crs_homogeneous_eventually_one (p : RestrictedCRSAtUnit) :
+    (fun t : ℝ => p.F (t • crsUnit)) =ᶠ[𝓝 1]
+      (fun t : ℝ => t • p.F crsUnit) := by
+  filter_upwards [eventually_gt_nhds (show (0 : ℝ) < 1 by norm_num)] with t ht
+  have h := p.homogeneous_one t (le_of_lt ht) crsUnit crsUnit_mem_nonnegative
+  simpa [smul_eq_mul] using h
+
+/-- Euler's theorem at the unit input, derived inside Lean from homogeneity and differentiability. -/
+theorem crs_derivative_apply_unit (p : RestrictedCRSAtUnit) :
+    p.L crsUnit = p.F crsUnit := by
+  have hid : HasDerivAt (fun t : ℝ => t) 1 1 := hasDerivAt_id (1 : ℝ)
+  have h := p.differentiable_unit.apply_self_eq_smul_of_eventuallyEq
+    hid (crs_homogeneous_eventually_one p)
+  simpa using h
+
+/-- The derivative at the unit vector decomposes into the two coordinate marginal products. -/
+theorem crs_derivative_unit_decomposition (p : RestrictedCRSAtUnit) :
+    p.L crsUnit = p.L crsUpstreamUnit + p.L crsDownstreamUnit := by
+  have hpair : crsUnit = crsUpstreamUnit + crsDownstreamUnit := by
+    ext <;> norm_num [crsUnit, crsUpstreamUnit, crsDownstreamUnit]
+  rw [hpair, map_add]
+
+/-- Euler identity `F(1,1)=F_u(1,1)+F_d(1,1)` derived from the CRS certificate. -/
+theorem crs_euler_unit (p : RestrictedCRSAtUnit) :
+    p.F crsUnit = p.L crsUpstreamUnit + p.L crsDownstreamUnit := by
+  rw [← crs_derivative_unit_decomposition p]
+  exact (crs_derivative_apply_unit p).symm
+
 /-- Euler plus positive marginal products implies positive unit output. -/
 theorem crs_output_pos (p : RestrictedCRSAtUnit) :
     0 < crsOutputAtUnit p := by
   unfold crsOutputAtUnit
-  rw [p.euler_unit]
+  rw [crs_euler_unit p]
   exact add_pos p.upstream_pos p.downstream_pos
 
 /-- Positive upstream marginal product makes downstream incidence strictly smaller than total output. -/
 theorem crs_downstream_lt_output (p : RestrictedCRSAtUnit) :
     crsDownstreamMPAtUnit p < crsOutputAtUnit p := by
   unfold crsDownstreamMPAtUnit crsOutputAtUnit
-  rw [p.euler_unit]
+  rw [crs_euler_unit p]
   linarith [p.upstream_pos]
 
 /-- The restricted concave-CRS incidence result: coordinated adjustment occurs at a lower threshold. -/
