@@ -1,7 +1,14 @@
 \section{Decentralized Equilibrium}
 \label{sec:equilibrium}
 
-Because \eqref{eq:local-payoff} is affine in $x_i$, the global comparison between $x_i=1$ and $x_i=0$ determines the entire best-response correspondence. The payoff difference is
+Because \eqref{eq:local-payoff} is affine in $x_i$, it can be written as
+\begin{equation}
+W_i(x_i,x_j)
+=W_i(0,x_j)
++x_i\left[\Delta+\alpha A-Ax_j\right].
+\label{eq:payoff-affine}
+\end{equation}
+Hence the sign of the coefficient on $x_i$ determines the \emph{global} best response on the full feasible interval $x_i\in[0,1]$; no local first-order-condition argument is needed. In particular,
 \begin{equation}
 W_i(1,x_j)-W_i(0,x_j)
 =\Delta+\alpha A-Ax_j.
@@ -17,7 +24,7 @@ and the decentralized threshold
 A^N\equiv \frac{\Delta}{1-\alpha}.
 \label{eq:AN}
 \end{equation}
-The global best-response correspondence is
+The global best-response correspondence is therefore
 \begin{equation}
 BR_i(x_j)=
 \begin{cases}
@@ -27,10 +34,10 @@ BR_i(x_j)=
 \end{cases}
 \label{eq:best-response}
 \end{equation}
-The marginal attractiveness of $U$ falls one-for-one with the rival's allocation to $U$:
+The coefficient in \eqref{eq:payoff-affine} falls one-for-one with the rival's allocation to $U$:
 \begin{equation}
 \frac{\partial}{\partial x_j}
-\left[W_i(1,x_j)-W_i(0,x_j)\right]=-A<0.
+\left[\Delta+\alpha A-Ax_j\right]=-A<0.
 \label{eq:strategic-substitutes}
 \end{equation}
 Thus policy portfolios are strategic substitutes in the baseline game. Cross-regional complementarity creates an incentive to move toward $D$ when the other region concentrates on $U$, but this force must overcome the direct local premium $\Delta$.
