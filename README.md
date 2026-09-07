@@ -27,10 +27,22 @@ Useful targets:
 make verify   # exact SymPy identities
 make test     # permanent regression/counterexample suite
 make outputs  # deterministic tables/figure scaffold
-make paper    # two-pass pdflatex manuscript scaffold build
+make paper    # bibliography-aware LaTeX build
 ```
 
-Stage-9 local validation passes symbolic verification, all regression tests, deterministic output generation, and the LaTeX scaffold build. See [`docs/STAGE9_REPORT.md`](docs/STAGE9_REPORT.md).
+The repository also contains an independent Lean formalization layer. Lean `v4.33.1` and mathlib `v4.33.1` are pinned by `lean-toolchain`, `lakefile.toml`, and `lake-manifest.json`.
+
+```bash
+lake build --wfail
+```
+
+`IPCRVC/Baseline.lean` currently machine-checks the frozen payoff representation, low-regime global Nash logic, aggregate welfare, coordinated global optimality in the headline region, threshold ordering, and the continuous-strategy **Priority Duplication Wedge**:
+
+```text
+Delta < A < Delta/(1-alpha)
+```
+
+implies unique decentralized duplication `(1,1)`, coordinated fixed-capacity optima `(1,0)` and `(0,1)`, and a strict welfare improvement from reallocation. See [`docs/LEAN_FORMALIZATION.md`](docs/LEAN_FORMALIZATION.md) for the exact certified scope and the results not yet formalized in Lean.
 
 ## Canonical baseline
 
@@ -55,6 +67,12 @@ The decentralized threshold is `A^N = Delta/(1-alpha)` and the coordinated fixed
 ├── STATUS.md
 ├── Makefile
 ├── requirements.txt
+├── lean-toolchain
+├── lakefile.toml
+├── lake-manifest.json
+├── IPCRVC.lean
+├── IPCRVC/
+│   └── Baseline.lean
 ├── model/
 ├── scripts/
 ├── tests/
@@ -77,5 +95,7 @@ The decentralized threshold is `A^N = Delta/(1-alpha)` and the coordinated fixed
 - Stage 7.5A: `GO — GENERALITY / QUANTIFIER CERTIFICATION PASS`
 - Stage 8: `THEORY FROZEN`
 - Stage 9: `REPRODUCIBILITY BASELINE READY`
+- Stage 13: `INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA`
+- Lean headline-theorem layer: kernel build PASS on the frozen baseline
 
 No silent theory drift is permitted. The complete allowed/prohibited claim scope is in [`docs/CLAIM_SCOPE_LEDGER.md`](docs/CLAIM_SCOPE_LEDGER.md), and the exact welfare benchmark is in [`docs/BENCHMARK_REGISTER.md`](docs/BENCHMARK_REGISTER.md).
