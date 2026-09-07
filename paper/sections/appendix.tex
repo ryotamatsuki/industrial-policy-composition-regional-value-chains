@@ -3,53 +3,58 @@
 
 \subsection{Proof of Proposition \ref{prop:nash-set}}
 
-From \eqref{eq:local-payoff}, for any $x_j\in[0,1]$,
+Equation \eqref{eq:payoff-affine} writes the payoff as
 \[
 W_i(x_i,x_j)
-=W_i(0,x_j)
-+x_i\left(\Delta+\alpha A-Ax_j\right).
+=W_i(0,x_j)+x_i\left(\Delta+\alpha A-Ax_j\right).
 \]
-Thus $W_i$ is affine in $x_i$ and the coefficient on $x_i$ determines the global best response. Setting that coefficient equal to zero gives $x_j=q=\alpha+\Delta/A$, which yields \eqref{eq:best-response}.
+Thus the coefficient on $x_i$ determines the global best response on $[0,1]$. It is positive, zero, or negative according as $x_j<q$, $x_j=q$, or $x_j>q$, which gives \eqref{eq:best-response}.
 
-If $A<A^N=\Delta/(1-\alpha)$, then $q>1$. Hence $x_j<q$ for every feasible $x_j$, so each player's unique best response is $1$ and $(1,1)$ is the unique Nash equilibrium.
+If $A<A^N$, then $q>1$, so every feasible rival action lies below $q$ and each player's unique best response is $1$. Hence $(1,1)$ is the unique equilibrium. If $A=A^N$, then $q=1$. A player strictly prefers $1$ against any rival action below $1$ and is indifferent over $[0,1]$ against a rival action equal to $1$. Hence a profile is an equilibrium if and only if $x_1=1$ or $x_2=1$.
 
-If $A=A^N$, then $q=1$. A player strictly prefers $1$ whenever the rival chooses less than $1$ and is indifferent over all $x_i\in[0,1]$ when the rival chooses $1$. Therefore a profile is a Nash equilibrium if and only if at least one component equals $1$.
-
-If $A>A^N$, then $q\in(0,1)$. Suppose first that $x_2<q$. Then player 1's unique best response is $x_1=1$. Since $1>q$, player 2's unique best response to $x_1=1$ is $x_2=0$, giving $(1,0)$. The symmetric argument gives $(0,1)$ when $x_2>q$. Finally, if one player chooses exactly $q$, the other may choose any action, but the first player can itself be willing to choose $q$ only if the other also chooses $q$. Hence $(q,q)$ is the only remaining equilibrium. This proves the exact set.
+Now let $A>A^N$, so $q\in(0,1)$, and consider any equilibrium. If $x_2<q$, then $x_1=1$; because $1>q$, player 2 must then choose $x_2=0$, giving $(1,0)$. If $x_2>q$, then $x_1=0$; because $0<q$, player 2 must choose $x_2=1$, giving $(0,1)$. Finally, if $x_2=q$, then $x_1<q$ would require $x_2=1$ and $x_1>q$ would require $x_2=0$, both contradictions. Thus $x_1=q$. The three profiles $(1,0)$, $(0,1)$, and $(q,q)$ all satisfy the best-response correspondence, so they are exactly the equilibria.
 
 \subsection{Proof of Proposition \ref{prop:planner}}
 
-Ignoring the constant $2b_D$, aggregate welfare is
+Ignoring the constant $2b_D$, write
 \[
 \widetilde W(x_1,x_2)
 =(\Delta+A)(x_1+x_2)-2Ax_1x_2.
 \]
-This objective is bilinear, so a global maximum on the compact rectangle $[0,1]^2$ is attained at a corner unless the objective is flat along an edge. The corner values, net of $2b_D$, are
+For $A<\Delta$,
 \[
-\widetilde W(0,0)=0,\qquad
-\widetilde W(1,0)=\widetilde W(0,1)=\Delta+A,
-\qquad
-\widetilde W(1,1)=2\Delta.
+\widetilde W(1,1)-\widetilde W(x_1,x_2)
+=(\Delta-A)(2-x_1-x_2)
++2A(1-x_1)(1-x_2)\geq0.
 \]
-If $A<\Delta$, then $2\Delta>\Delta+A>0$, so $(1,1)$ is the unique optimum. If $A>\Delta$, then $\Delta+A>2\Delta$, so $(1,0)$ and $(0,1)$ are the exact optima. At $A=\Delta$,
+Both terms are nonnegative on $[0,1]^2$. Equality in the first term requires $x_1+x_2=2$, which under feasibility implies $(x_1,x_2)=(1,1)$. Hence $(1,1)$ is the unique optimum.
+
+At $A=\Delta$,
 \[
-\widetilde W(x_1,x_2)
-=2A\left[x_1+x_2-x_1x_2\right]
-=2A\left[1-(1-x_1)(1-x_2)\right],
+\widetilde W(1,0)-\widetilde W(x_1,x_2)
+=2A(1-x_1)(1-x_2)\geq0.
 \]
-which reaches its maximum if and only if $x_1=1$ or $x_2=1$.
+Equality holds if and only if $x_1=1$ or $x_2=1$, giving the stated boundary optimum set.
+
+Finally suppose $A>\Delta$ and let $s=x_1+x_2$. If $s\leq1$,
+\[
+\widetilde W(1,0)-\widetilde W(x_1,x_2)
+=(\Delta+A)(1-s)+2Ax_1x_2\geq0.
+\]
+If $s\geq1$,
+\[
+\widetilde W(1,0)-\widetilde W(x_1,x_2)
+=(A-\Delta)(s-1)+2A(1-x_1)(1-x_2)\geq0.
+\]
+In either branch equality requires $s=1$ and the relevant product to be zero, which yields only $(1,0)$ and $(0,1)$. These two profiles have the same welfare by symmetry, so they are the exact optima.
 
 \subsection{Proof of Proposition \ref{prop:threshold-ordering}}
 
-Since $0<\alpha<1$,
+Because $0<\alpha<1$, we have $0<1-\alpha<1$. With $\Delta>0$,
 \[
-\frac{1}{1-\alpha}>1.
+A^P=\Delta<\frac{\Delta}{1-\alpha}=A^N.
 \]
-Multiplying by $\Delta>0$ gives
-\[
-A^N=\frac{\Delta}{1-\alpha}>\Delta=A^P.
-\]
-Subtracting $A^P$ yields
+Separately,
 \[
 A^N-A^P
 =\frac{\Delta}{1-\alpha}-\Delta
@@ -58,61 +63,121 @@ A^N-A^P
 
 \subsection{Proof of Proposition \ref{prop:duplication-wedge}}
 
-If $\Delta<A<\Delta/(1-\alpha)$, then $A>A^P$ and $A<A^N$. Proposition \ref{prop:planner} therefore implies that the coordinated optima are $(1,0)$ and $(0,1)$, while Proposition \ref{prop:nash-set} implies that $(1,1)$ is the unique Nash equilibrium. The welfare difference is
+If $\Delta<A<\Delta/(1-\alpha)$, then $A>A^P$ and $A<A^N$. Proposition \ref{prop:nash-set} therefore gives the unique Nash equilibrium $(1,1)$, while Proposition \ref{prop:planner} gives the coordinated optima $(1,0)$ and $(0,1)$. Moreover,
 \[
-W(1,0)-W(1,1)
-=(2b_D+\Delta+A)-(2b_D+2\Delta)
-=A-\Delta>0.
+W(1,0)-W(1,1)=A-\Delta>0,
 \]
+so coordinated reallocation is strictly welfare improving.
 
 \subsection{The symmetric high-$A$ equilibrium}
 
-For $A>A^N$, $q=\alpha+\Delta/A\in(0,1)$. Direct substitution into \eqref{eq:aggregate-welfare} and simplification using $\Delta=A(q-\alpha)$ gives
+For $A>A^N$, $q\in(0,1)$. Substituting $\Delta=A(q-\alpha)$ into \eqref{eq:aggregate-welfare} gives
 \[
 W(1,0)-W(q,q)
 =A\left[(1-\alpha)(1-q)+\alpha q\right].
 \]
-Every factor inside the brackets is positive for $0<\alpha,q<1$, proving \eqref{eq:highA-gap}.
+Here $1-\alpha>0$, $1-q>0$, $\alpha>0$, and $q>0$, so both terms inside the brackets are strictly positive. This proves \eqref{eq:highA-gap}.
 
 \subsection{Proof of Proposition \ref{prop:switching-lemma}}
 
-Relative to duplication, coordinated reallocation sacrifices direct surplus $\Delta$ and creates total complementary surplus $G$. Its net gain is $G-\Delta$, giving condition \eqref{eq:planner-G}. The reallocating jurisdiction captures only $\lambda G$, so its private net gain is $\lambda G-\Delta$, giving \eqref{eq:local-G}. The two thresholds in \eqref{eq:G-thresholds} follow immediately. Because $0<\lambda<1$, $\Delta/\lambda>\Delta$.
+Relative to duplication, the coordinated net gain from reallocation is
+\[
+G-\Delta,
+\]
+whereas the reallocating jurisdiction's net gain is
+\[
+\lambda G-\Delta.
+\]
+The planner therefore switches exactly when $G>\Delta$, while the local government switches exactly when $G>\Delta/\lambda$. Thus
+\[
+G^P=\Delta,
+\qquad
+G^N=\frac{\Delta}{\lambda}.
+\]
+Since $0<\lambda<1$ and $\Delta>0$, $G^P<G^N$.
+
+\subsection{Integration thresholds and endogenous capture}
+
+Suppose $G$ is strictly increasing and both crossings exist:
+\[
+G(\tau^P)=\Delta,
+\qquad
+G(\tau^N)=\frac{\Delta}{\lambda}.
+\]
+Because $\Delta<\Delta/\lambda$, strict monotonicity implies $\tau^P<\tau^N$ and makes each crossing unique. Continuity with suitable range conditions is sufficient for crossing existence, but is not needed for the ordering once the crossings are given.
+
+For the endogenous-capture example, let $G(\tau)=1+\tau$, $\lambda(\tau)=(1+\tau)^{-2}$, and $\Delta=1$. Then
+\[
+\lambda(\tau)G(\tau)=\frac{1}{1+\tau}.
+\]
+Thus $G(\tau)>1$ for every $\tau>0$, while $\lambda(\tau)G(\tau)\leq1$ for every $\tau\geq0$. The planner therefore switches for positive $\tau$, but the local government never has a strict switching incentive. Incomplete capture alone does not guarantee a finite decentralized switching threshold.
 
 \subsection{Restricted constant-returns production result}
 
-Let $F$ satisfy the conditions in Section \ref{sec:robustness}. Homogeneity of degree one and differentiability imply Euler's identity
+Let $F$ satisfy the conditions in Section \ref{sec:robustness}. Degree-one homogeneity and differentiability imply Euler's identity
 \[
 F(1,1)=F_u(1,1)+F_d(1,1).
 \]
-The coordinated gain from creating a unit complementary match is $AF(1,1)$, while the $D$ jurisdiction's competitive factor income is $AF_d(1,1)$. Hence its local switching threshold is $\Delta/F_d(1,1)$ and the coordinated threshold is $\Delta/F(1,1)$. Since $F_u(1,1)>0$, $F(1,1)>F_d(1,1)$, which implies $A_F^P<A_F^N$.
+Since $F_u(1,1)>0$ and $F_d(1,1)>0$,
+\[
+F(1,1)>F_d(1,1)>0.
+\]
+The coordinated and local thresholds are respectively
+\[
+A_F^P=\frac{\Delta}{F(1,1)},
+\qquad
+A_F^N=\frac{\Delta}{F_d(1,1)},
+\]
+so $A_F^P<A_F^N$.
+
+\subsection{CES specialization}
+
+For
+\[
+F(u,d)=\left[\omega u^\rho+(1-\omega)d^\rho\right]^{1/\rho},
+\]
+the downstream marginal product is
+\[
+F_d(u,d)
+=(1-\omega)d^{\rho-1}
+\left[\omega u^\rho+(1-\omega)d^\rho\right]^{1/\rho-1}.
+\]
+At the unit match,
+\[
+F(1,1)=1,
+\qquad
+F_d(1,1)=1-\omega.
+\]
+Hence $A_F^P=\Delta$ and $A_F^N=\Delta/(1-\omega)$ on the admissible concave CES parameter domain.
 
 \subsection{Alternative matching identity and local best response}
 
-Let $s=x_1+x_2$. If $s\leq1$, then $x_1\leq1-x_2$ and $x_2\leq1-x_1$, so
+Let $s=x_1+x_2$. From the two minimum terms in \eqref{eq:capacity-matching},
 \[
-M(x_1,x_2)=x_1+x_2=s.
+M(x_1,x_2)
+=\begin{cases}
+s, & s\leq1,\\
+2-s, & s\geq1,
+\end{cases}
+=1-|s-1|.
 \]
-If $s\geq1$, then $1-x_2\leq x_1$ and $1-x_1\leq x_2$, so
+Fix rival allocation $x_j=y$. Region $i$'s nonconstant payoff is
 \[
-M(x_1,x_2)=2-s.
+\Delta x_i+(1-\lambda)A\min\{x_i,1-y\}
++\lambda A\min\{1-x_i,y\}.
 \]
-Therefore
-\[
-M(x_1,x_2)=1-|s-1|=1-|x_1+x_2-1|.
-\]
+Its slope is $\Delta+(1-\lambda)A>0$ for $x_i\leq1-y$ and $\Delta-\lambda A$ for $x_i\geq1-y$. Therefore, if $A<\Delta/\lambda$, the payoff is strictly increasing over $[0,1]$, so $x_i=1$ is the unique best response to every $y$. Hence $(1,1)$ is the unique decentralized equilibrium.
 
-Fix rival allocation $x_j=y$. Region $i$'s nonconstant payoff under the incidence rule in \eqref{eq:capacity-local-income} is
+For the planner,
 \[
-\Delta x_i+(1-\lambda)A\min\{x_i,1-y\}+\lambda A\min\{1-x_i,y\}.
+\Delta s+A M
+=\begin{cases}
+(\Delta+A)s, & s\leq1,\\
+2A+(\Delta-A)s, & s\geq1.
+\end{cases}
 \]
-For $x_i\leq1-y$, its slope is
+When $A>\Delta$, the first branch is strictly increasing and the second strictly decreasing, so the exact coordinated optimum set is $s=1$. Combining the two conditions gives the robustness wedge
 \[
-\Delta+(1-\lambda)A>0.
+\Delta<A<\frac{\Delta}{\lambda}.
 \]
-For $x_i\geq1-y$, its slope is
-\[
-\Delta-\lambda A.
-\]
-Hence if $A<\Delta/\lambda$, the payoff is strictly increasing over the full feasible interval and $x_i=1$ is the unique best response to every $y$. Thus $(1,1)$ is the unique decentralized equilibrium in that region.
-
-For a planner objective proportional to $\Delta s+A M$, the objective is increasing in $s$ on $s\leq1$ and has slope $\Delta-A$ on $s\geq1$. Thus, when $A>\Delta$, the coordinated optimum set is $s=1$. Combining the two conditions yields the robustness wedge $\Delta<A<\Delta/\lambda$ used in Section \ref{sec:robustness}.
+This establishes reallocation away from duplication under the stated alternative matching rule, without implying complete regional specialization.
