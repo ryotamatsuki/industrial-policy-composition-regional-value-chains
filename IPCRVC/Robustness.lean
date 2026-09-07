@@ -20,14 +20,23 @@ def localSwitchGain (delta G lambda : ℝ) : ℝ := lambda * G - delta
 theorem planner_switch_iff {delta G : ℝ} :
     0 < plannerSwitchGain delta G ↔ delta < G := by
   unfold plannerSwitchGain
-  linarith
+  constructor
+  · exact sub_pos.mp
+  · exact sub_pos.mpr
 
 /-- With a positive capture share, the local switch condition has threshold `delta/lambda`. -/
 theorem local_switch_iff {delta G lambda : ℝ} (hlambda : 0 < lambda) :
     0 < localSwitchGain delta G lambda ↔ delta / lambda < G := by
   unfold localSwitchGain
-  rw [div_lt_iff₀ hlambda]
-  ring_nf
+  constructor
+  · intro h
+    have hmul : delta < lambda * G := sub_pos.mp h
+    apply (div_lt_iff₀ hlambda).2
+    simpa [mul_comm] using hmul
+  · intro h
+    have hmul : delta < G * lambda := (div_lt_iff₀ hlambda).1 h
+    apply sub_pos.mpr
+    simpa [mul_comm] using hmul
 
 /-- Incomplete capture places the decentralized binary switching threshold strictly above the coordinated one. -/
 theorem switching_threshold_ordering {delta lambda : ℝ}
@@ -40,15 +49,15 @@ theorem switching_threshold_ordering {delta lambda : ℝ}
 
 /-- The binary incomplete-capture wedge: coordination switches while the local jurisdiction does not. -/
 theorem binary_switching_wedge {delta G lambda : ℝ}
-    (hdelta : 0 < delta) (hlambda : 0 < lambda) (hlambda1 : lambda < 1)
+    (_hdelta : 0 < delta) (hlambda : 0 < lambda) (_hlambda1 : lambda < 1)
     (hP : delta < G) (hN : G < delta / lambda) :
     0 < plannerSwitchGain delta G ∧ localSwitchGain delta G lambda < 0 := by
   constructor
   · exact (planner_switch_iff).2 hP
   · unfold localSwitchGain
-    have hmul : lambda * G < delta :=
-      (lt_div_iff₀ hlambda).1 hN
-    linarith
+    have hmul0 : G * lambda < delta := (lt_div_iff₀ hlambda).1 hN
+    have hmul : lambda * G < delta := by simpa [mul_comm] using hmul0
+    exact sub_neg.mpr hmul
 
 /-- Capacity matching from the paper's second matching technology. -/
 def capacityMatch (x1 x2 : ℝ) : ℝ :=
@@ -91,10 +100,9 @@ theorem capacityWelfare_high {delta A x1 x2 : ℝ} (hs : 1 ≤ x1 + x2) :
   rw [abs_of_nonneg (by linarith)]
   ring
 
-/-- Under `A>delta>0`, every feasible capacity-matching allocation is bounded by the value at total share one. -/
+/-- Under `A>delta>0`, every capacity-matching allocation is bounded by the value at total share one. -/
 theorem capacityWelfare_le_max {delta A x1 x2 : ℝ}
-    (hdelta : 0 < delta) (hA : 0 < A) (hAd : delta < A)
-    (hx1 : Feasible x1) (hx2 : Feasible x2) :
+    (hdelta : 0 < delta) (hA : 0 < A) (hAd : delta < A) :
     capacityWelfare delta A x1 x2 ≤ delta + A := by
   by_cases hs : x1 + x2 ≤ 1
   · rw [capacityWelfare_low hs]
@@ -109,10 +117,9 @@ theorem capacityWelfare_le_max {delta A x1 x2 : ℝ}
       mul_nonneg hcoef (sub_nonneg.mpr hs')
     nlinarith
 
-/-- Under `A>delta`, a feasible profile reaches the coordinated maximum iff its total upstream share is one. -/
+/-- Under `A>delta`, the maximum is attained exactly at total upstream share one. -/
 theorem capacityWelfare_eq_max_iff {delta A x1 x2 : ℝ}
-    (hdelta : 0 < delta) (hA : 0 < A) (hAd : delta < A)
-    (hx1 : Feasible x1) (hx2 : Feasible x2) :
+    (hdelta : 0 < delta) (hA : 0 < A) (hAd : delta < A) :
     capacityWelfare delta A x1 x2 = delta + A ↔ x1 + x2 = 1 := by
   constructor
   · intro heq
@@ -148,17 +155,20 @@ theorem capacityPlanner_exact {delta A x1 x2 : ℝ}
     refine ⟨hx1, hx2, ?_⟩
     have h10 : capacityWelfare delta A 1 0 = delta + A := by
       have hs : (1 : ℝ) + 0 = 1 := by norm_num
-      exact (capacityWelfare_eq_max_iff hdelta hA hAd feasible_one feasible_zero).2 hs
+      exact (capacityWelfare_eq_max_iff hdelta hA hAd).2 hs
     have hle := hopt 1 0 feasible_one feasible_zero
-    have hub := capacityWelfare_le_max hdelta hA hAd hx1 hx2
+    have hub := capacityWelfare_le_max (delta := delta) (A := A) (x1 := x1) (x2 := x2)
+      hdelta hA hAd
     have heq : capacityWelfare delta A x1 x2 = delta + A := by
       linarith
-    exact (capacityWelfare_eq_max_iff hdelta hA hAd hx1 hx2).1 heq
+    exact (capacityWelfare_eq_max_iff hdelta hA hAd).1 heq
   · rintro ⟨hx1, hx2, hs⟩
     refine ⟨hx1, hx2, ?_⟩
-    intro y1 y2 hy1 hy2
-    have hle := capacityWelfare_le_max hdelta hA hAd hy1 hy2
-    have heq := (capacityWelfare_eq_max_iff hdelta hA hAd hx1 hx2).2 hs
+    intro y1 y2 _hy1 _hy2
+    have hle := capacityWelfare_le_max (delta := delta) (A := A) (x1 := y1) (x2 := y2)
+      hdelta hA hAd
+    have heq := (capacityWelfare_eq_max_iff (delta := delta) (A := A)
+      (x1 := x1) (x2 := x2) hdelta hA hAd).2 hs
     linarith
 
 end IPCRVC
