@@ -36,10 +36,10 @@ theorem capacityLocalPayoff_high {delta A lambda xi xj : ℝ}
 
 /-- If `lambda*A < delta`, every feasible own action below one is strictly worse than one. -/
 theorem capacityLocalPayoff_lt_one {delta A lambda xi xj : ℝ}
-    (hdelta : 0 < delta) (hA : 0 < A)
-    (hlambda : 0 < lambda) (hlambda1 : lambda < 1)
+    (_hdelta : 0 < delta) (hA : 0 < A)
+    (_hlambda : 0 < lambda) (hlambda1 : lambda < 1)
     (hinc : lambda * A < delta)
-    (hxi : Feasible xi) (hxj : Feasible xj) (hxi1 : xi < 1) :
+    (_hxi : Feasible xi) (hxj : Feasible xj) (hxi1 : xi < 1) :
     capacityLocalPayoff delta A lambda xi xj <
       capacityLocalPayoff delta A lambda 1 xj := by
   have honepiece : 1 - xj ≤ (1 : ℝ) := by linarith [hxj.1]
@@ -160,7 +160,7 @@ theorem local_threshold_implies_incidence {delta A lambda : ℝ}
     (hlambda : 0 < lambda) (hN : A < delta / lambda) :
     lambda * A < delta := by
   have hmul : A * lambda < delta := (lt_div_iff₀ hlambda).1 hN
-  nlinarith
+  simpa [mul_comm] using hmul
 
 /-- Full specific-technology robustness wedge certified in the manuscript. -/
 theorem capacity_matching_wedge {delta A lambda : ℝ}
