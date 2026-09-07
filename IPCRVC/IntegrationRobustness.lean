@@ -115,7 +115,6 @@ theorem endogenousCounterH_eq {tau : ℝ} (htau : 0 ≤ tau) :
     have hpos : 0 < 1 + tau := by linarith
     exact ne_of_gt hpos
   field_simp [hne]
-  ring
 
 /-- For positive integration, the endogenous capture fraction is strictly between zero and one. -/
 theorem endogenousCounterLambda_incomplete {tau : ℝ} (htau : 0 < tau) :
