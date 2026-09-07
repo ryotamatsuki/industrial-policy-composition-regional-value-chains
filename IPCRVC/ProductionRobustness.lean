@@ -138,4 +138,6 @@ theorem ces_threshold_ordering {delta omega rho : ℝ}
     (switching_threshold_ordering (delta := delta) (lambda := 1 - omega)
       hdelta hdown hdown1)
 
+end
+
 end IPCRVC
