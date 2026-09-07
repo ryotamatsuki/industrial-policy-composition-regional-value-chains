@@ -19,6 +19,7 @@ paper: outputs
 	cd paper && bibtex build/main >/dev/null
 	cd paper && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build main.tex >/dev/null
 	cd paper && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build main.tex >/dev/null
+	! grep -Eq "Citation .* undefined|Reference .* undefined|There were undefined references|There were undefined citations" paper/build/main.log
 
 clean:
 	rm -rf paper/build .pytest_cache */__pycache__ */*/__pycache__
