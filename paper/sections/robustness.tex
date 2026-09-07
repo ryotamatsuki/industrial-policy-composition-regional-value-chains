@@ -36,17 +36,17 @@ and $G^P<G^N$ whenever $0<\lambda<1$.
 
 The baseline is a special case with $G=A$ and $\lambda=1-\alpha$ for a region switching from $U$ to $D$ while the other remains at $U$. Proposition \ref{prop:switching-lemma} is a sufficient-condition theorem for a finite binary configuration switch; it is not a claim about arbitrary continuous portfolio games.
 
-Now let $G=G(\tau)$ and keep $\lambda\in(0,1)$ constant. Suppose $G$ is strictly increasing and there exist $\tau^P$ and $\tau^N$ such that
+Now let $G=G(\tau)$ and keep $\lambda\in(0,1)$ constant. Under the frozen integration assumptions, $G$ is continuous and strictly increasing and both $\Delta$ and $\Delta/\lambda$ lie in its range. Hence there are unique $\tau^P$ and $\tau^N$ satisfying
 \begin{equation}
 G(\tau^P)=\Delta,
 \qquad
 G(\tau^N)=\frac{\Delta}{\lambda}.
 \end{equation}
-Because $\Delta<\Delta/\lambda$, strict monotonicity gives
+The ordering step itself uses only strict monotonicity: because $\Delta<\Delta/\lambda$,
 \[
-\tau^P<\tau^N,
+\tau^P<\tau^N.
 \]
-and also makes each crossing unique. Continuity, together with suitable endpoint or range conditions, is one way to guarantee existence of these crossings; it is not needed for their ordering once they exist. If the second crossing does not exist, decentralized reallocation need not occur at any finite level of integration.
+Continuity and the range conditions guarantee that the crossings exist; once they do, strict monotonicity guarantees both uniqueness and ordering. If the second crossing does not exist, decentralized reallocation need not occur at any finite level of integration.
 
 The same caution applies when the capture share is endogenous. If $\lambda=\lambda(\tau)$, define $H(\tau)=\lambda(\tau)G(\tau)$. With $G(\tau)=1+\tau$, $\lambda(\tau)=(1+\tau)^{-2}$, and $\Delta=1$,
 \[
