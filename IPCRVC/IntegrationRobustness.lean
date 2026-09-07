@@ -164,4 +164,6 @@ theorem endogenous_capture_counterexample {tau : ℝ} (htau : 0 < tau) :
   · exact endogenousCounter_planner_switches htau
   · exact endogenousCounter_no_local_switch tau (le_of_lt htau)
 
+end
+
 end IPCRVC
