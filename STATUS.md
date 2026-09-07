@@ -13,6 +13,7 @@
 - Stage 11: `GO TO JOURNAL POSITIONING`
 - Stage 12: `PRIMARY JOURNAL SELECTED — GO TO INTEGRATION`
 - Stage 13: `INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA`
+- Lean formalization: `HEADLINE PRIORITY DUPLICATION WEDGE — KERNEL BUILD PASS`
 - Primary journal: **Journal of Regional Science**
 - Default fallback: **Regional Science and Urban Economics**
 - Next canonical stage: **Stage 14 — Submission QA**
@@ -38,6 +39,34 @@ Stage 11 hostile-referee revisions were integrated at:
 Stage 12 journal positioning was integrated at:
 
 `9e321c52cb8280d597a4f9a166345cb5ce01e2c3`
+
+Stage 13 JRS integration was integrated at:
+
+`ff9f47f88100682fbf1c1606263666994c5322f2`
+
+## Lean formal verification layer
+
+The independent formalization is documented in `docs/LEAN_FORMALIZATION.md` and implemented in `IPCRVC/Baseline.lean`.
+
+Pinned environment:
+
+- Lean `v4.33.1`;
+- mathlib `v4.33.1`;
+- resolved dependency graph in `lake-manifest.json`.
+
+The current Lean-certified scope includes:
+
+- the exact frozen local payoff and affine decomposition;
+- global best-response implications on the full strategy interval `[0,1]`;
+- uniqueness of `(1,1)` for `A<A^N`;
+- the aggregate welfare identity;
+- global coordinated optimality of `(1,0)` and `(0,1)` for `A>Delta`;
+- `A^P<A^N`;
+- the headline continuous-strategy Priority Duplication Wedge `Delta<A<Delta/(1-alpha)`, including strict welfare improvement from coordinated reallocation.
+
+The exact Nash set at the threshold, the exact high-`A` Nash set, and the restricted robustness extensions are not yet labeled Lean-certified unless and until they receive separate declarations and a passing CI build.
+
+Lean is an additional verification layer only. It does not alter `IPCRVC-THEORY-FREEZE-2026-09-07-v1` or replace the novelty, welfare-interpretation, and journal-fit audits.
 
 ## Stage 13 JRS integration
 
@@ -73,16 +102,22 @@ Submission QA must resolve only package/account/live-system matters:
 
 Stage 14 may repair package defects but may not enlarge the theory or contribution.
 
-## Reproducibility gate
+## Reproducibility gates
 
-Run:
+Python/LaTeX/JRS package gate:
 
 ```bash
 python -m pip install -r requirements.txt
 make all
 ```
 
-The gate covers exact symbolic verification, permanent regression/counterexample tests, deterministic outputs, the anonymous JRS supporting-information tests, bibliography-aware LaTeX build, and unresolved-citation/reference checks.
+Lean formalization gate:
+
+```bash
+lake build --wfail
+```
+
+The gates cover exact symbolic verification, permanent regression/counterexample tests, deterministic outputs, the anonymous JRS supporting-information tests, bibliography-aware LaTeX build, unresolved-citation/reference checks, and the machine-checked Lean headline theorem layer.
 
 ## Change control
 
