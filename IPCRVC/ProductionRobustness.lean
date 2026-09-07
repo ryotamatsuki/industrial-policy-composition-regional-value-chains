@@ -82,7 +82,7 @@ theorem crs_radial_homogeneous_eventually (p : RestrictedCRSAtUnit) :
   have hnonneg : 0 ≤ 1 + s := by linarith
   have hhom := p.homogeneous_one (1 + s) hnonneg crsUnit crsUnit_mem_nonnegative
   have hvec : crsUnit + s • crsUnit = (1 + s) • crsUnit := by
-    ext <;> norm_num [crsUnit] <;> ring
+    ext <;> norm_num [crsUnit]
   rw [hvec]
   simpa [smul_eq_mul] using hhom
 
