@@ -8,6 +8,7 @@ on:
       - 'figures/**'
       - 'tables/**'
       - 'scripts/generate_outputs.py'
+      - 'submission/jrs/**'
       - 'Makefile'
       - '.github/workflows/manuscript.yml'
 

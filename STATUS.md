@@ -12,9 +12,10 @@
 - Stage 10: `FULL DRAFT READY FOR REFEREE GATE`
 - Stage 11: `GO TO JOURNAL POSITIONING`
 - Stage 12: `PRIMARY JOURNAL SELECTED — GO TO INTEGRATION`
+- Stage 13: `INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA`
 - Primary journal: **Journal of Regional Science**
 - Default fallback: **Regional Science and Urban Economics**
-- Next canonical stage: **Stage 13 — Full Paper Integration**
+- Next canonical stage: **Stage 14 — Submission QA**
 
 ## Canonical theory artifact
 
@@ -34,20 +35,43 @@ Stage 11 hostile-referee revisions were integrated at:
 
 `72e0ae5946aaabe99160c09bfb98126b648d1590`
 
-## Stage 12 journal positioning
+Stage 12 journal positioning was integrated at:
 
-The full positioning record is `docs/STAGE12_JOURNAL_POSITIONING.md`.
+`9e321c52cb8280d597a4f9a166345cb5ce01e2c3`
 
-Canonical submission ladder:
+## Stage 13 JRS integration
 
-1. **Journal of Regional Science** — primary target.
-2. **Regional Science and Urban Economics** — first automatic fallback when rejection concerns contribution magnitude/fit rather than correctness.
-3. **Journal of Economic Geography, Economics section** — alternative interdisciplinary route after presentation-only economic-geography integration.
-4. **The Annals of Regional Science** — safety net.
+The complete integration record is `docs/STAGE13_REPORT.md`.
 
-`Journal of Urban Economics` is retained only as a stretch benchmark, not as the default first submission. `Journal of Public Economics` is excluded from the current ladder because Stage 11's surviving contribution is too close to classic public-economics spillover/composition mechanisms for the likely contribution threshold.
+Stage 13 performs presentation-only integration for JRS:
 
-The selection of JRS follows the certified paper rather than journal prestige. Stage 13 may change presentation, journal-specific metadata, file structure, disclosure statements, and exposition emphasis, but may not add a mechanism or enlarge theorem scope.
+- JRS-facing abstract below 250 words;
+- exactly seven keywords plus JEL metadata;
+- authorless blinded main manuscript;
+- separate title-page template with running title and author-specific declaration fields;
+- mandatory data-availability statement adapted to a theory/code paper;
+- detailed Wiley-consistent AI-use disclosure;
+- explicit figure/table signposting;
+- anonymous reviewer-facing reproducibility supplement;
+- JRS cover-letter and metadata drafts;
+- double-blind anonymization checklist;
+- anonymous supplement execution added to `make all` / manuscript CI.
+
+No model, payoff, strategy, threshold, theorem, quantifier, benchmark, or certified novelty claim is changed. `IPCRVC-THEORY-FREEZE-2026-09-07-v1` remains authoritative.
+
+## Stage 14 operational handoff
+
+Submission QA must resolve only package/account/live-system matters:
+
+- author name(s), affiliation(s), email(s), and ORCID(s);
+- funding, conflict-of-interest, and acknowledgment declarations;
+- exclusive-submission and preprint-status confirmation;
+- author confirmation of the AI disclosure and responsibility for the final manuscript;
+- final PDF metadata/anonymity inspection;
+- decision whether to make the public development repository private during double-blind review;
+- live Wiley/JRS submission-system fields and file-upload requirements.
+
+Stage 14 may repair package defects but may not enlarge the theory or contribution.
 
 ## Reproducibility gate
 
@@ -58,7 +82,7 @@ python -m pip install -r requirements.txt
 make all
 ```
 
-The manuscript remains subject to exact symbolic verification, permanent regression/counterexample tests, deterministic output generation, bibliography-aware LaTeX build, and unresolved-citation/reference guard.
+The gate covers exact symbolic verification, permanent regression/counterexample tests, deterministic outputs, the anonymous JRS supporting-information tests, bibliography-aware LaTeX build, and unresolved-citation/reference checks.
 
 ## Change control
 
