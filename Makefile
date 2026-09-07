@@ -16,8 +16,10 @@ outputs:
 paper: outputs
 	mkdir -p paper/build
 	cd paper && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build main.tex >/dev/null
+	cd paper && bibtex build/main >/dev/null
+	cd paper && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build main.tex >/dev/null
 	cd paper && pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build main.tex >/dev/null
 
 clean:
 	rm -rf paper/build .pytest_cache */__pycache__ */*/__pycache__
-	rm -f tables/thresholds.tex figures/phase_regions.svg results/generated_manifest.json
+	rm -f tables/thresholds.tex figures/phase_regions.tex figures/phase_regions.svg results/generated_manifest.json
