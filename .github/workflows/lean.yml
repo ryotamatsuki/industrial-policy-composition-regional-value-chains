@@ -1,0 +1,32 @@
+name: lean-verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'IPCRVC/**'
+      - 'IPCRVC.lean'
+      - 'lean-toolchain'
+      - 'lakefile.toml'
+      - 'lake-manifest.json'
+      - '.github/workflows/lean.yml'
+  pull_request:
+    paths:
+      - 'IPCRVC/**'
+      - 'IPCRVC.lean'
+      - 'lean-toolchain'
+      - 'lakefile.toml'
+      - 'lake-manifest.json'
+      - '.github/workflows/lean.yml'
+      - 'docs/LEAN_FORMALIZATION.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          build-args: '--wfail'
+          use-mathlib-cache: true
+          leanchecker: true
