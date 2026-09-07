@@ -65,7 +65,7 @@ def IsPlannerOpt (p : Params) (x1 x2 : ℝ) : Prop :=
   ∀ y1 y2, Feasible y1 → Feasible y2 → welfare p y1 y2 ≤ welfare p x1 x2
 
 /-- Decentralized threshold `A^N`. -/
-def AN (p : Params) : ℝ := p.delta / (1 - p.alpha)
+noncomputable def AN (p : Params) : ℝ := p.delta / (1 - p.alpha)
 
 /-- Coordinated threshold `A^P`. -/
 def AP (p : Params) : ℝ := p.delta
@@ -88,7 +88,7 @@ theorem payoff_le_one_of_slope_pos (p : Params) {x y : ℝ}
     payoff p y x ≤ payoff p 1 x := by
   rw [payoff_affine p y x, payoff_affine p 1 x]
   have hmul : y * slope p x ≤ (1 : ℝ) * slope p x :=
-    (mul_le_mul_right hs).2 hy.2
+    mul_le_mul_of_nonneg_right hy.2 (le_of_lt hs)
   linarith
 
 /-- Under a strictly positive slope, any global best response must equal `1`. -/
@@ -98,9 +98,12 @@ theorem eq_one_of_best_of_slope_pos (p : Params) {xi xj : ℝ}
     (hs : 0 < slope p xj) : xi = 1 := by
   have h := hbest 1 feasible_one
   rw [payoff_affine p 1 xj, payoff_affine p xi xj] at h
-  have hmul : (1 : ℝ) * slope p xj ≤ xi * slope p xj := by
+  have h1le : (1 : ℝ) ≤ xi := by
+    by_contra hnot
+    have hlt : xi < 1 := lt_of_not_ge hnot
+    have hstrict : xi * slope p xj < (1 : ℝ) * slope p xj :=
+      mul_lt_mul_of_pos_right hlt hs
     linarith
-  have h1le : (1 : ℝ) ≤ xi := (mul_le_mul_right hs).1 hmul
   exact le_antisymm hxi.2 h1le
 
 /-- `1-α` is positive under the frozen parameter restrictions. -/
@@ -165,8 +168,10 @@ theorem welfare_le_10_of_delta_lt_comp (p : Params) (hreg : p.delta < p.comp)
   · have hcoef : 0 ≤ p.delta + p.comp := le_of_lt (add_pos p.delta_pos p.comp_pos)
     have hgap : 0 ≤ (p.delta + p.comp) * (1 - (x1 + x2)) :=
       mul_nonneg hcoef (sub_nonneg.mpr hs)
-    have hprod : 0 ≤ 2 * p.comp * x1 * x2 := by
-      positivity
+    have htwoA : 0 ≤ 2 * p.comp := by
+      nlinarith [p.comp_pos]
+    have hxprod : 0 ≤ x1 * x2 := mul_nonneg hx1.1 hx2.1
+    have hprod : 0 ≤ (2 * p.comp) * (x1 * x2) := mul_nonneg htwoA hxprod
     nlinarith
   · have hs' : 1 ≤ x1 + x2 := le_of_not_ge hs
     have hrect : 0 ≤ (1 - x1) * (1 - x2) :=
@@ -175,7 +180,8 @@ theorem welfare_le_10_of_delta_lt_comp (p : Params) (hreg : p.delta < p.comp)
     have had : 0 ≤ p.comp - p.delta := le_of_lt (sub_pos.mpr hreg)
     have h1 : 0 ≤ (p.comp - p.delta) * (x1 + x2 - 1) :=
       mul_nonneg had ht
-    have hc : 0 ≤ 2 * p.comp := by positivity
+    have hc : 0 ≤ 2 * p.comp := by
+      nlinarith [p.comp_pos]
     have h2 : 0 ≤ (2 * p.comp) * ((1 - x1) * (1 - x2)) :=
       mul_nonneg hc hrect
     nlinarith
@@ -209,8 +215,8 @@ theorem threshold_ordering (p : Params) : AP p < AN p := by
   have hprod : 0 < p.delta * p.alpha := mul_pos p.delta_pos p.alpha_pos
   have hmul : p.delta * (1 - p.alpha) < p.delta := by
     nlinarith
-  apply (lt_div_iff₀ hden).2
-  simpa [AP, AN] using hmul
+  unfold AP AN
+  exact (lt_div_iff₀ hden).2 hmul
 
 /--
 The headline Priority Duplication Wedge, formalized directly on the continuous strategy set.
