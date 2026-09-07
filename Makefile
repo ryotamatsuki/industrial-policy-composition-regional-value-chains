@@ -16,6 +16,7 @@ outputs:
 jrs-supplement:
 	cd submission/jrs/supporting_information && $(PYTHON) verify_symbolic.py
 	cd submission/jrs/supporting_information && $(PYTHON) -m pytest -q
+	cd submission/jrs/supporting_information && $(PYTHON) generate_outputs.py
 
 paper: outputs
 	mkdir -p paper/build
@@ -27,4 +28,5 @@ paper: outputs
 
 clean:
 	rm -rf paper/build .pytest_cache */__pycache__ */*/__pycache__ submission/jrs/supporting_information/.pytest_cache submission/jrs/supporting_information/*/__pycache__
+	rm -rf submission/jrs/supporting_information/figures submission/jrs/supporting_information/tables submission/jrs/supporting_information/results
 	rm -f tables/thresholds.tex figures/phase_regions.tex figures/phase_regions.svg results/generated_manifest.json
