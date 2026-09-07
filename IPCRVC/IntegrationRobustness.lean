@@ -21,6 +21,8 @@ local switching threshold.
 
 namespace IPCRVC
 
+noncomputable section
+
 /-- A planner crossing for the integration-value function. -/
 def IsPlannerCrossing (G : ℝ → ℝ) (delta tau : ℝ) : Prop :=
   G tau = delta
