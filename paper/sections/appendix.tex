@@ -16,37 +16,28 @@ Now let $A>A^N$, so $q\in(0,1)$, and consider any equilibrium. If $x_2<q$, then 
 
 \subsection{Proof of Proposition \ref{prop:planner}}
 
-Ignoring the constant $2b_D$, write
+Ignoring the constant $2b_D$, let
 \[
 \widetilde W(x_1,x_2)
 =(\Delta+A)(x_1+x_2)-2Ax_1x_2.
 \]
-For $A<\Delta$,
+Because $\widetilde W$ is affine in each coordinate,
+\begin{align*}
+\widetilde W(x_1,x_2)
+={}&(1-x_1)(1-x_2)\widetilde W(0,0)
++x_1(1-x_2)\widetilde W(1,0)\\
+&+(1-x_1)x_2\widetilde W(0,1)
++x_1x_2\widetilde W(1,1).
+\end{align*}
+For feasible $(x_1,x_2)$, these four weights are nonnegative and sum to one. The corner values are
 \[
-\widetilde W(1,1)-\widetilde W(x_1,x_2)
-=(\Delta-A)(2-x_1-x_2)
-+2A(1-x_1)(1-x_2)\geq0.
+\widetilde W(0,0)=0,
+\qquad
+\widetilde W(1,0)=\widetilde W(0,1)=\Delta+A,
+\qquad
+\widetilde W(1,1)=2\Delta.
 \]
-Both terms are nonnegative on $[0,1]^2$. Equality in the first term requires $x_1+x_2=2$, which under feasibility implies $(x_1,x_2)=(1,1)$. Hence $(1,1)$ is the unique optimum.
-
-At $A=\Delta$,
-\[
-\widetilde W(1,0)-\widetilde W(x_1,x_2)
-=2A(1-x_1)(1-x_2)\geq0.
-\]
-Equality holds if and only if $x_1=1$ or $x_2=1$, giving the stated boundary optimum set.
-
-Finally suppose $A>\Delta$ and let $s=x_1+x_2$. If $s\leq1$,
-\[
-\widetilde W(1,0)-\widetilde W(x_1,x_2)
-=(\Delta+A)(1-s)+2Ax_1x_2\geq0.
-\]
-If $s\geq1$,
-\[
-\widetilde W(1,0)-\widetilde W(x_1,x_2)
-=(A-\Delta)(s-1)+2A(1-x_1)(1-x_2)\geq0.
-\]
-In either branch equality requires $s=1$ and the relevant product to be zero, which yields only $(1,0)$ and $(0,1)$. These two profiles have the same welfare by symmetry, so they are the exact optima.
+If $A<\Delta$, $2\Delta$ is the unique largest corner value, so equality with the maximum requires $x_1x_2=1$, hence $(x_1,x_2)=(1,1)$. If $A=\Delta$, the three corners $(1,0)$, $(0,1)$, and $(1,1)$ tie at the maximum; equality therefore holds exactly when $(1-x_1)(1-x_2)=0$, i.e. $x_1=1$ or $x_2=1$. If $A>\Delta$, only $(1,0)$ and $(0,1)$ attain the largest corner value. Equality then requires both $(1-x_1)(1-x_2)=0$ and $x_1x_2=0$, which yields exactly $(1,0)$ and $(0,1)$.
 
 \subsection{Proof of Proposition \ref{prop:threshold-ordering}}
 
