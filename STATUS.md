@@ -10,7 +10,8 @@
 - Stage 8: `THEORY FROZEN`
 - Stage 9: `REPRODUCIBILITY BASELINE READY`
 - Stage 10: `FULL DRAFT READY FOR REFEREE GATE`
-- Next canonical stage: **Stage 11 — Referee-Grade Adversarial Gate**
+- Stage 11: `GO TO JOURNAL POSITIONING`
+- Next canonical stage: **Stage 12 — Journal Positioning**
 
 ## Canonical theory artifact
 
@@ -22,24 +23,40 @@ Stage 9 baseline was integrated at:
 
 `7665a22b00e031596e39cca47fb5f1b9508d84bf`
 
-Stage 10 began from that SHA and was constructed on `stage10-paper-construction` via PR #2.
+Stage 10 full draft was integrated at:
 
-## Stage 10 manuscript gate
+`a911a83f6c900876552657f1e7dd5b32edaa801b`
 
-The complete draft contains substantive Abstract, Introduction, Related Literature, Model, Decentralized Equilibrium, Coordinated Benchmark and Welfare, Mechanism and Robustness, Institutional Interpretation, Conclusion, and Appendix proofs.
+Stage 11 began from that SHA on `stage11-referee-gate`.
 
-Automated gates on the Stage 10 branch pass:
+## Stage 11 hostile referee gate
 
-- exact symbolic verification;
-- 8 permanent regression/counterexample tests;
-- deterministic figure/table generation;
-- BibTeX-aware full LaTeX build;
-- final-log guard against unresolved citations/references;
-- GitHub `verification` CI;
-- GitHub `manuscript-build` CI.
+The full audit is recorded in `docs/STAGE11_REPORT.md`.
 
-The required exposition map is `docs/FIGURE_TABLE_ARCHITECTURE.md`; the full construction record is `docs/STAGE10_REPORT.md`.
+Key conclusions:
+
+- no fatal mathematical/global-equilibrium attack;
+- no Stage-4A or Stage-7.5A certification regression;
+- no benchmark-definition failure;
+- no unresolved solver or continuation failure;
+- restricted CRS and alternative-matching scope survives independent attack;
+- classic fiscal-federalism/local-public-good spillover prior art materially narrows the novelty claim;
+- public-expenditure-composition prior art is now explicitly distinguished;
+- fixed policy capacity is retained as an essential maintained environment rather than presented as an innocuous normalization;
+- jurisdictional incidence/ownership assumptions and welfare-accounting scope are now explicit;
+- the remaining major uncertainty is journal ceiling, which is assigned to Stage 12 rather than addressed by prestige-driven theory expansion.
+
+## Reproducibility gate
+
+Run:
+
+```bash
+python -m pip install -r requirements.txt
+make all
+```
+
+The Stage 11 manuscript remains subject to the same symbolic verification, permanent regression tests, deterministic output generation, bibliography-aware LaTeX build, and unresolved-citation/reference guard.
 
 ## Change control
 
-Any post-freeze theoretical change must identify affected equations, propositions, quantifiers, benchmark definitions, verification artifacts, literature claims, and workflow stages to re-run. Stage 11 attacks the existing completed manuscript; it may not silently extend the frozen model.
+Stage 11 made literature and exposition repairs only. `THEORY_FREEZE.md` is unchanged. Any future substantive change to players, timing, strategies, payoffs, benchmark, matching, production, theorem scope, or policy-budget endogeneity requires formal theory-change control and reopening of the affected earlier stages.
