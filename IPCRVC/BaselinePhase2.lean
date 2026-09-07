@@ -19,7 +19,6 @@ theorem comp_mul_q (p : Params) :
     p.comp * q p = p.comp * p.alpha + p.delta := by
   unfold q
   field_simp [ne_of_gt p.comp_pos]
-  <;> ring
 
 /-- The threshold action is strictly positive. -/
 theorem q_pos (p : Params) : 0 < q p := by
@@ -47,13 +46,15 @@ theorem slope_pos_iff_lt_q (p : Params) (x : ℝ) :
   have hq := comp_mul_q p
   constructor
   · intro hs
-    have hmul : p.comp * x < p.comp * q p := by
-      unfold slope at hs
-      nlinarith
-    exact (mul_lt_mul_left p.comp_pos).1 hmul
+    by_contra hnot
+    have hxq : q p ≤ x := le_of_not_gt hnot
+    have hnonneg : 0 ≤ p.comp * (x - q p) :=
+      mul_nonneg (le_of_lt p.comp_pos) (sub_nonneg.mpr hxq)
+    unfold slope at hs
+    nlinarith
   · intro hx
-    have hmul : p.comp * x < p.comp * q p :=
-      (mul_lt_mul_left p.comp_pos).2 hx
+    have hpos : 0 < p.comp * (q p - x) :=
+      mul_pos p.comp_pos (sub_pos.mpr hx)
     unfold slope
     nlinarith
 
@@ -63,26 +64,34 @@ theorem slope_neg_iff_q_lt (p : Params) (x : ℝ) :
   have hq := comp_mul_q p
   constructor
   · intro hs
-    have hmul : p.comp * q p < p.comp * x := by
-      unfold slope at hs
-      nlinarith
-    exact (mul_lt_mul_left p.comp_pos).1 hmul
+    by_contra hnot
+    have hxq : x ≤ q p := le_of_not_gt hnot
+    have hnonneg : 0 ≤ p.comp * (q p - x) :=
+      mul_nonneg (le_of_lt p.comp_pos) (sub_nonneg.mpr hxq)
+    unfold slope at hs
+    nlinarith
   · intro hx
-    have hmul : p.comp * q p < p.comp * x :=
-      (mul_lt_mul_left p.comp_pos).2 hx
+    have hpos : 0 < p.comp * (x - q p) :=
+      mul_pos p.comp_pos (sub_pos.mpr hx)
     unfold slope
     nlinarith
 
 /-- The affine payoff slope vanishes exactly at the threshold action `q`. -/
 theorem slope_eq_zero_iff_eq_q (p : Params) (x : ℝ) :
     slope p x = 0 ↔ x = q p := by
-  have hq := comp_mul_q p
-  constructor <;> intro h
-  · unfold slope at h
-    nlinarith [p.comp_pos]
-  · subst x
+  constructor
+  · intro hs
+    rcases lt_trichotomy x (q p) with hlt | heq | hgt
+    · have hpos : 0 < slope p x := (slope_pos_iff_lt_q p x).2 hlt
+      linarith
+    · exact heq
+    · have hneg : slope p x < 0 := (slope_neg_iff_q_lt p x).2 hgt
+      linarith
+  · intro hx
+    subst x
+    have hq := comp_mul_q p
     unfold slope
-    nlinarith [p.comp_pos]
+    nlinarith
 
 /-- If the affine slope is negative, zero globally weakly dominates every feasible own share. -/
 theorem payoff_le_zero_of_slope_neg (p : Params) {x y : ℝ}
