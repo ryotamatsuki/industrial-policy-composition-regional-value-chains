@@ -13,7 +13,8 @@
 - Stage 11: `GO TO JOURNAL POSITIONING`
 - Stage 12: `PRIMARY JOURNAL SELECTED — GO TO INTEGRATION`
 - Stage 13: `INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA`
-- Lean formalization: `HEADLINE PRIORITY DUPLICATION WEDGE — KERNEL BUILD PASS`
+- Lean formalization: `BASELINE EQUILIBRIUM + HEADLINE WEDGE + SELECTED ROBUSTNESS — KERNEL BUILD PASS`
+- Lean-informed proof exposition: `COMPLETE — NO THEORY CHANGE`
 - Primary journal: **Journal of Regional Science**
 - Default fallback: **Regional Science and Urban Economics**
 - Next canonical stage: **Stage 14 — Submission QA**
@@ -44,9 +45,13 @@ Stage 13 JRS integration was integrated at:
 
 `ff9f47f88100682fbf1c1606263666994c5322f2`
 
+Lean-informed proof exposition was integrated at:
+
+`86af89ed9bda4eb821c4fa9773e19cc36ffa2430`
+
 ## Lean formal verification layer
 
-The independent formalization is documented in `docs/LEAN_FORMALIZATION.md` and implemented in `IPCRVC/Baseline.lean`.
+The independent formalization is documented in `docs/LEAN_FORMALIZATION.md` and implemented across the `IPCRVC/*.lean` modules.
 
 Pinned environment:
 
@@ -56,17 +61,36 @@ Pinned environment:
 
 The current Lean-certified scope includes:
 
-- the exact frozen local payoff and affine decomposition;
-- global best-response implications on the full strategy interval `[0,1]`;
-- uniqueness of `(1,1)` for `A<A^N`;
+- feasibility on the continuous strategy set `x_i ∈ [0,1]`;
+- the exact frozen local payoff and affine-in-own-strategy decomposition;
+- global best-response logic over the full continuous strategy interval;
+- the exact Nash set in every baseline regime:
+  - `A<A^N`: unique `(1,1)`;
+  - `A=A^N`: exactly the profiles with `x_1=1` or `x_2=1`;
+  - `A>A^N`: exactly `(1,0)`, `(0,1)`, and `(q,q)`, with `q=alpha+Delta/A`;
 - the aggregate welfare identity;
-- global coordinated optimality of `(1,0)` and `(0,1)` for `A>Delta`;
-- `A^P<A^N`;
-- the headline continuous-strategy Priority Duplication Wedge `Delta<A<Delta/(1-alpha)`, including strict welfare improvement from coordinated reallocation.
+- at `A=Delta`, the exact coordinated optimum set `x_1=1` or `x_2=1`;
+- for `A>Delta`, global coordinated optimality of `(1,0)` and `(0,1)`;
+- threshold ordering `A^P<A^N`;
+- the headline continuous-strategy Priority Duplication Wedge `Delta<A<Delta/(1-alpha)`, including uniqueness of decentralized duplication and strict welfare gain from coordinated reallocation;
+- the high-`A` symmetric-equilibrium welfare gap showing `(q,q)` is strictly welfare-inferior to a differentiated coordinated optimum;
+- the restricted binary incomplete-capture switching wedge `Delta<G<Delta/lambda`;
+- the alternative capacity-matching identity, the exact coordinated optimum set `x_1+x_2=1`, and the unique decentralized duplication result on the stated wedge;
+- the restricted differentiable concave CRS threshold result, including machine-derived Euler incidence at the unit match;
+- the explicit CES unit specialization `F(1,1)=1`, `F_u(1,1)=omega`, `F_d(1,1)=1-omega`, and its threshold ordering on the frozen admissible domain;
+- constant-capture integration crossing uniqueness and ordering when both crossings exist;
+- the endogenous-capture counterexample showing incomplete capture alone need not generate a finite decentralized switching threshold.
 
-The exact Nash set at the threshold, the exact high-`A` Nash set, and the restricted robustness extensions are not yet labeled Lean-certified unless and until they receive separate declarations and a passing CI build.
+The current formalization deliberately does **not** claim Lean certification of:
 
-Lean is an additional verification layer only. It does not alter `IPCRVC-THEORY-FREEZE-2026-09-07-v1` or replace the novelty, welfare-interpretation, and journal-fit audits.
+- a standalone theorem proving uniqueness of the baseline coordinated optimum `(1,1)` for `A<Delta`;
+- a standalone theorem proving exhaustion of the baseline high-`A` coordinated optimum set by only `(1,0)` and `(0,1)`;
+- global concavity of the explicit CES formula over its full economic domain;
+- arbitrary matching technologies, arbitrary continuous portfolio games, or arbitrary numbers of regions/activities.
+
+The manuscript analytically proves the full baseline planner characterization; the first two bullets above are formalization-coverage limits, not gaps in the frozen analytic theorem.
+
+Lean is an additional verification layer only. It does not alter `IPCRVC-THEORY-FREEZE-2026-09-07-v1` or replace the novelty, welfare-interpretation, incidence, and journal-fit audits.
 
 ## Stage 13 JRS integration
 
@@ -117,7 +141,7 @@ Lean formalization gate:
 lake build --wfail
 ```
 
-The gates cover exact symbolic verification, permanent regression/counterexample tests, deterministic outputs, the anonymous JRS supporting-information tests, bibliography-aware LaTeX build, unresolved-citation/reference checks, and the machine-checked Lean headline theorem layer.
+The gates cover exact symbolic verification, permanent regression/counterexample tests, deterministic outputs, the anonymous JRS supporting-information tests, bibliography-aware LaTeX build, unresolved-citation/reference checks, and the machine-checked baseline plus selected restricted robustness layer described above.
 
 ## Change control
 
