@@ -68,14 +68,15 @@ def citation_audit() -> tuple[set[str], set[str]]:
         for match in cite_re.finditer(text):
             cited.update(k.strip() for k in match.group(1).split(",") if k.strip())
     bib_text = (ROOT / "references" / "references.bib").read_text(encoding="utf-8")
-    bibkeys = set(re.findall(r"@\w+\{([^,]+),", bib_text))
+    bibkey_list = re.findall(r"@\w+\{([^,]+),", bib_text)
+    bibkeys = set(bibkey_list)
     missing = cited - bibkeys
     unused = bibkeys - cited
     if missing:
         raise RuntimeError(f"citation keys missing from bibliography: {sorted(missing)}")
     if unused:
         raise RuntimeError(f"uncited bibliography records remain: {sorted(unused)}")
-    if len(bibkeys) != len(re.findall(r"@\w+\{([^,]+),", bib_text)):
+    if len(bibkeys) != len(bibkey_list):
         raise RuntimeError("duplicate bibliography key detected")
     return cited, bibkeys
 
@@ -93,18 +94,22 @@ def build_latex(root: Path) -> Path:
     build.mkdir()
     run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "-output-directory=build", "main.tex"], cwd=paper)
     run(["bibtex", "build/main"], cwd=paper)
-    run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "-output-directory=build", "main.tex"], cwd=paper)
-    run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "-output-directory=build", "main.tex"], cwd=paper)
+    # Three post-BibTeX passes are deliberately used at Stage 14 so labels,
+    # citations, outlines, and floating-object cross-references reach a stable state.
+    for _ in range(3):
+        run(["pdflatex", "-interaction=nonstopmode", "-halt-on-error", "-output-directory=build", "main.tex"], cwd=paper)
     log = (build / "main.log").read_text(encoding="utf-8", errors="replace")
     bad = [
         r"Citation .* undefined",
         r"Reference .* undefined",
         r"There were undefined references",
         r"There were undefined citations",
+        r"Label\(s\) may have changed",
+        r"Rerun to get cross-references right",
     ]
     for pattern in bad:
         if re.search(pattern, log):
-            raise RuntimeError(f"LaTeX unresolved reference/citation: {pattern}")
+            raise RuntimeError(f"LaTeX unresolved/unstable reference state: {pattern}")
     pdf = build / "main.pdf"
     if not pdf.exists() or pdf.stat().st_size == 0:
         raise RuntimeError("compiled manuscript PDF missing")
@@ -130,8 +135,10 @@ def pdf_metadata_and_fonts(pdf: Path) -> tuple[str, str, int]:
     fonts = run(["pdffonts", str(pdf)], capture=True)
     rows = [ln.split() for ln in fonts.splitlines()[2:] if ln.strip()]
     for row in rows:
-        # pdffonts: name type encoding emb sub uni object ID
-        if len(row) >= 4 and row[3].lower() != "yes":
+        # pdffonts columns end with: emb sub uni object ID.  Font type may itself
+        # contain whitespace (e.g. "Type 1"), so parse from the right rather than
+        # assuming a fixed left-hand column index.
+        if len(row) >= 5 and row[-5].lower() != "yes":
             raise RuntimeError(f"non-embedded font in {pdf.name}: {' '.join(row)}")
     return info, fonts, pages
 
