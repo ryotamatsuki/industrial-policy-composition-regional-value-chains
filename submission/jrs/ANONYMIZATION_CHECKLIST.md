@@ -41,14 +41,19 @@ The actual generated archive is `JRS_Anonymous_Supporting_Information.zip`.
 - [x] Package builder re-runs the Python symbolic/regression/counterexample checks and deterministic-output generator in the staged SI.
 - [x] Package builder applies the same identifying-token/email scan to the complete generated SI tree.
 
-## PDF properties
+## PDF properties and final visual QA
 
-Stage-14 CI and visual QA require:
+Final technical QA head: `5f49eb7c9c672024312a1db42300a9daba7760e6`.
 
 - [x] PDF Author metadata blank (automated fatal check in package builder).
 - [x] Author-identifying text absent from PDF text layer (automated fatal check).
 - [x] Fonts embedded (automated fatal check).
-- [ ] final CI artifact page-by-page visual inspection recorded in `STAGE14_QA_REPORT.md` after the final branch head passes.
+- [x] Final CI artifact visually inspected page by page: **16/16 pages inspected**.
+- [x] No clipping, broken equations, missing glyphs, unreadable figure/table text, or accidental author identification found.
+- [x] Separate `Figure_1.pdf` visually inspected and readable at final artwork size.
+- [x] Hyperlink border boxes removed with `\hypersetup{hidelinks}` as a formatting-only Stage-14 repair.
+
+Final manuscript PDF SHA-256: `ed939cfcd3237127741664ca42ec0db873de9f79459fe7aef8e62ab4f87ceb1d`.
 
 ## Public development repository risk
 
