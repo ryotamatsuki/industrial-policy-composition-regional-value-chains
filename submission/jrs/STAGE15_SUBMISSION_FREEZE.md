@@ -6,21 +6,17 @@ Theory freeze: `IPCRVC-THEORY-FREEZE-2026-09-07-v1`
 
 ## 1. Current Stage-15 status
 
-`IN PROGRESS — AUTHOR CONFIRMATION / AUTHENTICATED PORTAL PREFLIGHT PENDING`
+`IN PROGRESS — AUTHOR METADATA RESOLVED / AUTHENTICATED PORTAL PREFLIGHT PENDING`
 
-The validated scientific manuscript is ready for submission freeze, but the immutable final freeze must not be declared until the author-specific declarations and the authenticated JRS Research Exchange preflight are completed.
+The validated scientific manuscript and the author-side submission metadata are ready. The immutable final submission freeze must not yet be declared because the authenticated JRS Research Exchange field/file-designation preflight and any portal-generated submission PDF remain outstanding.
 
 No substantive manuscript or theory change is authorized in Stage 15.
 
-## 2. Entry gate
+## 2. Entry gate and Astra repair closure
 
-Stage 14 closed with no theory drift. After Stage 14, an independent Astra final hostile-referee review supplied by the author returned:
+Stage 14 closed with no theory drift. After Stage 14, an independent Astra final hostile-referee review returned `MINOR NON-SUBSTANTIVE ISSUES ONLY — FIX WITHOUT REOPENING THEORY`.
 
-`MINOR NON-SUBSTANTIVE ISSUES ONLY — FIX WITHOUT REOPENING THEORY`
-
-The review found no material mathematical, scope/quantifier, novelty, or JRS-fit defect and authorized Stage 15 after five bounded repairs.
-
-The five repairs were implemented in PR #12 (`stage14r1/astra-minor-repair`) and merged to `main`:
+The five bounded repairs were implemented in PR #12 and merged to `main`:
 
 1. equilibrium exposition now states that differentiated equilibria first appear at `A=A^N`;
 2. the binary switching lemma distinguishes strict preference from indifference at equality;
@@ -28,13 +24,13 @@ The five repairs were implemented in PR #12 (`stage14r1/astra-minor-repair`) and
 4. the Cremer bibliography record uses `Helmuth`;
 5. the Lin Chen bibliography record uses BibTeX ordering `Lin, Chen`.
 
-The generated Figure 1 wording was changed only to remove the misleading implication that differentiated equilibria first emerge for strict `A>A^N`. A first post-repair rendering exposed a label-overflow defect; the label was reformatted without changing its meaning and the final rendered figure was visually rechecked.
+The generated Figure 1 wording was adjusted only to remove the misleading implication that differentiated equilibria first emerge for strict `A>A^N`. A first post-repair rendering exposed a label-overflow defect; the label was reformatted without changing meaning and the final rendered figure was visually rechecked.
 
 No payoff, strategy domain, threshold, Nash set, planner set, welfare result, proposition, proof, Lean theorem, or certified robustness quantifier changed.
 
-## 3. Candidate canonical submission state
+## 3. Validated scientific-content anchor
 
-Candidate canonical content commit:
+Scientific content candidate commit:
 
 `cf9d9d2a342d7fa06b469f9ae6521ed33eab1763`
 
@@ -42,19 +38,13 @@ Git tree:
 
 `56b975f897743754341bd7962e6d2179331befe1`
 
-The final post-Astra QA artifact was built by the pull-request workflow at synthetic merge commit:
+The final post-Astra QA artifact was built at synthetic merge commit `39653fbb032594d44de41391445b49cc53d3ae46`. That workflow commit, repaired branch head `96baf1d98e87ec2cec52b63e45b69f1a4bfb4619`, and merged `main @ cf9d9d2a...` resolve to the same Git tree. Thus the scientifically validated submission content merged to `main` is identical to the final post-Astra QA content.
 
-`39653fbb032594d44de41391445b49cc53d3ae46`
-
-That workflow commit, the repaired branch head `96baf1d98e87ec2cec52b63e45b69f1a4bfb4619`, and merged `main` commit `cf9d9d2a342d7fa06b469f9ae6521ed33eab1763` all resolve to the same Git tree `56b975f897743754341bd7962e6d2179331befe1`. Thus the validated submission content is byte-for-byte the content merged to `main`; only commit ancestry differs.
-
-This is a candidate submission content SHA, not yet the final Stage-15 freeze identifier. A final tag/freeze identifier must be recorded only after author and portal-only requirements are resolved.
+Stage-15 administrative files are being added on `stage15-submission-freeze`; they do not alter the blinded scientific manuscript.
 
 ## 4. Final post-Astra verification evidence
 
-Final repaired branch head:
-
-`96baf1d98e87ec2cec52b63e45b69f1a4bfb4619`
+Final repaired branch head: `96baf1d98e87ec2cec52b63e45b69f1a4bfb4619`.
 
 GitHub Actions:
 
@@ -66,15 +56,15 @@ GitHub Actions:
 - fresh reproducibility gate (`make all`): PASS;
 - JRS package construction and clean-extraction rebuild: PASS.
 
-Lean sources/toolchain were not modified by the Astra repairs. The Stage-14 fresh kernel build therefore remains the operative formal-verification evidence; no new Lean claim was introduced.
+Lean sources/toolchain were not modified by the Astra repairs. The Stage-14 fresh kernel build remains the operative formal-verification evidence; no new Lean claim was introduced.
 
-Final visual QA after the repair:
+Final post-Astra visual QA:
 
 - separate `Figure_1.pdf`: PASS, no label overflow/clipping;
 - manuscript page containing Figure 1: PASS;
-- LaTeX package QA reports no box warnings.
+- LaTeX package QA: no box warnings.
 
-## 5. Candidate artifact provenance
+## 5. Reviewer-facing artifact provenance
 
 Post-Astra JRS QA artifact digest:
 
@@ -94,8 +84,6 @@ Post-Astra JRS QA artifact digest:
 - `tables/thresholds.tex`: `f7ae606af57ca54da0913a3248301ad0b39cb3b22027aa5173a8eb88aa4b7e0a`;
 - LaTeX box warnings: `NONE`.
 
-## 6. Candidate final artifact inventory
-
 Validated reviewer-facing artifacts:
 
 1. `JRS_Manuscript_for_Peer_Review.pdf`;
@@ -105,73 +93,112 @@ Validated reviewer-facing artifacts:
 5. `BUILD_PROVENANCE.txt`;
 6. `STAGE14_PACKAGE_BUILD.log`.
 
-Repository-side journal files additionally include:
+## 6. Author identity and declarations — RESOLVED
 
-- `metadata.md`;
-- `cover_letter.md`;
-- `title_page_TEMPLATE.tex`;
-- `JOURNAL_REQUIREMENTS_LEDGER.md`;
-- anonymization, source-package, AI-disclosure, and supporting-information documentation.
+At the author's instruction, Stage 15 reused the consistent author/declaration record from prior 2026 journal submissions rather than requesting the same information again.
 
-## 7. Journal Requirements Ledger status
+Final author-side defaults:
 
-All material public JRS/Wiley requirements checked at Stage 14 remain resolved. Remaining `UNVERIFIED` entries are either:
+- author: `Ryota Matsuki`;
+- order: sole author;
+- affiliation: `Independent Researcher`;
+- location: `Matsuyama, Ehime, Japan`;
+- postal code if required: `790-0853`;
+- email: `ryota.matsuki@gmail.com`;
+- ORCID: `0009-0005-2329-531X`;
+- corresponding author: `Ryota Matsuki`;
+- funding: `This research received no external funding.`;
+- competing interests: `The author declares no competing interests.`;
+- non-AI acknowledgments: `None.`;
+- exclusive submission: `The manuscript is original and is not under consideration elsewhere.`;
+- AI technology/access period: `OpenAI ChatGPT (GPT-5.6, accessed September 2026)`;
+- other materially used AI tools: none identified in the project/submission record.
 
-- authenticated-portal-only fields/designations; or
-- the optional post-acceptance OA APC amount, which is non-blocking for initial submission.
+If the live portal uses materially different attestation wording, the portal wording controls and must be reconciled before submission.
 
-The portal-only items must be reconciled against the actual authenticated JRS submission record before final submit.
+## 7. Title page and cover letter
 
-## 8. AUTHOR CONFIRMATION REQUIRED
+Final Stage-15 files:
 
-The following facts must be explicitly confirmed by the author and must not be inferred from profile/history:
+- `submission/jrs/title_page.tex`;
+- `submission/jrs/cover_letter.md`.
 
-- full author name(s) and order;
-- institutional affiliation(s);
-- email address(es);
-- ORCID(s);
-- corresponding-author designation;
-- present/postal address if required by the portal;
-- funding statement;
-- conflict-of-interest statement;
-- non-AI acknowledgments or confirmation of none;
-- exact ChatGPT model/version(s) and access period, plus any other materially used AI tools;
-- preprint/prior-public-dissemination status;
-- confirmation that this manuscript is not under consideration elsewhere;
-- CRediT roles if the authenticated portal requires them.
+The title page contains the resolved author/corresponding-author data, running title, acknowledgments, AI manuscript-preparation acknowledgment, funding statement, and conflict-of-interest statement.
 
-## 9. Repository anonymity decision
+Independent Stage-15 LaTeX rendering check of `title_page.tex`:
 
-The source repository is public. JRS permits preprints/public sharing but warns that public dissemination can compromise double-blind anonymity. The Stage-14 classification remains:
+- compilation: PASS;
+- pages: `1`;
+- overfull/underfull box defects: none detected;
+- visual inspection: PASS;
+- locally rendered title-page PDF SHA-256: `8281196e23096914859a510c6e884135d5b1322b3cbe7a227ef78bf79fd38da5`.
 
-`PRIVATE DURING REVIEW RECOMMENDED`
+The PDF hash above is QA evidence for the Stage-15 source at the time of inspection; the canonical upload derivative will be regenerated/frozen after the portal's accepted title-page format/designation is known.
 
-Repository visibility must not be changed without explicit author authorization.
+## 8. Public repository / prior dissemination decision — RESOLVED
 
-## 10. Authenticated portal preflight still required
+Repository visibility is **PUBLIC**.
 
-Before final submission:
+The author expressly selected on 2026-09-10:
+
+`KEEP PUBLIC DURING REVIEW`
+
+No repository-visibility change is authorized. The residual discoverability risk under JRS double-blind review is accepted. Reviewer-facing uploaded files remain fully anonymized.
+
+Prior-dissemination wording for portal reconciliation:
+
+- a public GitHub research repository containing project/manuscript materials exists and will remain public;
+- no separate formal preprint has been identified in the project record.
+
+If the portal asks broadly about prior public posting rather than specifically about preprints, answer in a manner that discloses the public GitHub repository rather than answering an unqualified `No`.
+
+## 9. CRediT default if requested
+
+If the JRS portal enables or requires CRediT, use the established single-author role set:
+
+- Conceptualization;
+- Methodology;
+- Formal analysis;
+- Software;
+- Validation;
+- Visualization;
+- Writing — original draft;
+- Writing — review & editing.
+
+Portal enablement remains to be checked.
+
+## 10. Journal Requirements Ledger status
+
+All material public JRS/Wiley requirements checked at Stage 14 remain resolved. Remaining `UNVERIFIED` entries are either authenticated-portal-only fields/designations or the optional post-acceptance OA APC amount, which is non-blocking for initial submission.
+
+There is no remaining author-metadata blocker based on the existing submission record and the author's Stage-15 instruction.
+
+## 11. Authenticated portal preflight still required
+
+Before final freeze/submission:
 
 - open the actual JRS Research Exchange submission record;
-- reconcile article type and every required field;
-- confirm title/abstract/seven keywords and any JEL/category/editor fields;
-- confirm all author data and corresponding-author designation;
-- determine any CRediT, reviewer, cover-letter, graphical-abstract/highlight, or AI portal fields;
+- reconcile the exact article-type dropdown;
+- confirm title, abstract, seven keywords, and any JEL/category/editor fields;
+- confirm author identity, ORCID, email, affiliation, and corresponding-author designation against the portal;
+- determine CRediT, reviewer suggestion/exclusion, cover-letter designation, graphical abstract/highlights, and portal-specific AI fields;
+- reconcile the exact prior-publication/preprint/public-posting question with the public GitHub repository fact;
 - verify double-blind title-page handling;
-- upload/designate the manuscript, editable LaTeX source, Figure 1, anonymous SI, title page/author file, and cover letter as actually required;
-- resolve all warnings;
+- designate/upload manuscript, editable LaTeX source, Figure 1, anonymous SI, title page/author file, and cover letter as actually required;
+- resolve all portal warnings;
 - generate the portal submission PDF when offered/required;
 - inspect that PDF page by page before final submit.
 
-## 11. Freeze decision
+## 12. Freeze decision
 
 Current verdict:
 
-`NOT YET FROZEN — STAGE 15 IN PROGRESS`
+`NOT YET FROZEN — AUTHENTICATED PORTAL PREFLIGHT ONLY`
 
 Scientific/package blocker: `NONE`  
-Author-confirmation blocker: `YES`  
+Author-metadata/declaration blocker: `NONE`  
+Repository-visibility decision blocker: `NONE`  
 Authenticated-portal blocker: `YES`  
 Theory rollback required: `NO`
 
-The next permitted changes are limited to author-confirmed metadata/declarations, authenticated-portal reconciliation, non-substantive file designation/packaging changes required by the portal, final portal-PDF inspection, and recording the immutable freeze identifier. Any substantive manuscript change reopens the affected earlier stage.
+The next permitted changes are limited to authenticated-portal reconciliation, non-substantive file designation/packaging changes required by the portal, final portal-PDF inspection, and recording the immutable freeze identifier. Any substantive manuscript change reopens the affected earlier stage.
