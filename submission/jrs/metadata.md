@@ -1,6 +1,7 @@
 # JRS submission metadata
 
-Stage-14 live check date: **2026-09-10**.
+Stage-14 live check date: **2026-09-10**.  
+Stage-15 author-metadata carry-forward date: **2026-09-10**.
 
 ## Article type
 Research Article
@@ -36,32 +37,50 @@ Stage-14 plain-text token count: **162 words**, safely below the JRS maximum of 
 
 JRS's public Author Guidelines do not state a JEL-classification requirement. Keep these as optional economics metadata unless the authenticated portal requests them.
 
-## Corresponding-author fields — AUTHOR CONFIRMATION REQUIRED
-- Full name: `[AUTHOR TO CONFIRM]`
-- Affiliation where the work was conducted: `[AUTHOR TO CONFIRM]`
-- Present address, if different: `[AUTHOR TO CONFIRM IF APPLICABLE]`
-- Email: `[AUTHOR TO CONFIRM]`
-- ORCID: `[AUTHOR TO CONFIRM — JRS requires ORCID]`
-- Corresponding-author status/order: `[AUTHOR TO CONFIRM]`
-- Postal address: `[PORTAL PREFLIGHT — only if requested]`
+## Author and corresponding-author fields
+The following values are carried forward from the author's prior 2026 journal-submission title pages and cover letters and were reused for Stage 15 at the author's instruction.
 
-## Submission declarations — AUTHOR CONFIRMATION REQUIRED
-- Exclusive submission / not under consideration elsewhere: `[AUTHOR TO CONFIRM]`
-- Preprint/prior-public-dissemination status: `[AUTHOR TO CONFIRM]`
-- Funding: `[AUTHOR TO CONFIRM]`
-- Conflict of interest: `[AUTHOR TO CONFIRM]`
-- Acknowledgments: `[AUTHOR TO CONFIRM OR CONFIRM NONE]`
-- AI-use details: exact ChatGPT model/version(s), access date/year or period, and any other materially used AI tools: `[AUTHOR TO CONFIRM]`
+- Full name: `Ryota Matsuki`
+- Author order: sole author
+- Affiliation: `Independent Researcher`
+- Location: `Matsuyama, Ehime, Japan`
+- Postal code if requested: `790-0853`
+- Email: `ryota.matsuki@gmail.com`
+- ORCID: `0009-0005-2329-531X`
+- Corresponding author: `Ryota Matsuki`
+
+## Submission declarations
+These values follow the author's established submission declarations unless a live portal wording requires a more specific attestation.
+
+- Exclusive submission / not under consideration elsewhere: `YES — manuscript is original and is not under consideration elsewhere.`
+- Funding: `This research received no external funding.`
+- Conflict of interest: `The author declares no competing interests.`
+- Non-AI acknowledgments: `None.`
+- Repository visibility: `PUBLIC — author expressly elected to keep the GitHub repository public during review on 2026-09-10.`
+- Prior public dissemination: `A public GitHub research repository containing project/manuscript materials exists and will remain public. No separate formal preprint has been identified in the project record.`
+- AI-use details: `OpenAI ChatGPT (GPT-5.6, accessed September 2026)` was materially used for literature/source discovery, algebraic and code cross-checking, research-code/reproducibility support, and manuscript drafting/editing. AI output was not treated as proof or authoritative evidence; the author retains responsibility for the final manuscript.
+- Other materially used AI tools: `None identified in the project/submission record.`
 
 ## Data and code statements
 - Data Availability Statement: `Data sharing is not applicable to this article because no datasets were generated or analysed during the study.`
 - Code/reproducibility: anonymous supporting information contains symbolic verification, regression/counterexample tests, deterministic output generators, and the exact Lean source/toolchain files used for the documented formalization. A public reproducibility version will be cited upon acceptance.
 
 ## CRediT / author contribution
-JRS's public Author Guidelines do not state that CRediT is mandatory. Wiley enables CRediT for journals that mandate it. Exact portal requirement: `[PORTAL PREFLIGHT]`. If enabled/required, author roles must be supplied and approved by the author; do not infer them.
+JRS's public Author Guidelines do not state that CRediT is mandatory. If the authenticated portal enables or requires CRediT, use the author's established single-author role set, which also matches the work represented in this repository:
+
+- Conceptualization
+- Methodology
+- Formal analysis
+- Software
+- Validation
+- Visualization
+- Writing — original draft
+- Writing — review & editing
+
+Exact portal enablement remains a Stage-15 portal-preflight item.
 
 ## Portal-only fields not publicly verified as mandatory
-The following must not be invented before authenticated preflight: suggested/opposed reviewers, editor/section/category selection, graphical abstract/highlights, portal-specific AI question, mandatory cover-letter designation, and any additional prior-publication/exclusive-submission attestation wording.
+The following must be resolved from the authenticated submission record rather than invented: suggested/opposed reviewers, editor/section/category selection, graphical abstract/highlights, portal-specific AI question wording, mandatory cover-letter designation, and any additional prior-publication/exclusive-submission attestation wording.
 
 ## Suggested editorial framing
 Primary classification should emphasize regional policy / regional development / intergovernmental policy interaction rather than a generic public-finance spillover paper. Do not claim that interjurisdictional spillovers, fixed budgets, or composition choice are individually novel.

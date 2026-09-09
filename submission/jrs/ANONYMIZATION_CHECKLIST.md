@@ -1,6 +1,7 @@
 # JRS double-blind anonymization checklist
 
-Stage-14 live check date: **2026-09-10**.
+Stage-14 live check date: **2026-09-10**.  
+Stage-15 author/repository decision update: **2026-09-10**.
 
 JRS operates double-blind peer review and explicitly warns that public preprints can compromise anonymity. Public dissemination permissibility and double-blind anonymity are separate questions.
 
@@ -16,21 +17,24 @@ JRS operates double-blind peer review and explicitly warns that public preprints
 - [x] Stage-14 package builder rejects nonblank PDF `Author` metadata and scans extracted PDF text for author-identifying tokens.
 - [x] Unblinded title page and cover letter are excluded from the blinded source archive.
 
-## Separate title page — AUTHOR CONFIRMATION REQUIRED
+## Separate title page — RESOLVED IN STAGE 15
 
-Before Stage 15 freeze, complete:
+The finalized file is `submission/jrs/title_page.tex`.
 
-- [ ] full author name(s);
-- [ ] affiliation(s) where work was conducted;
-- [ ] present address if applicable;
-- [ ] email address(es);
-- [ ] ORCID(s) — JRS requires ORCID;
-- [ ] corresponding-author status;
+- [x] full author name: Ryota Matsuki;
+- [x] sole-author order;
+- [x] affiliation: Independent Researcher;
+- [x] location: Matsuyama, Ehime, Japan;
+- [x] email: ryota.matsuki@gmail.com;
+- [x] ORCID: 0009-0005-2329-531X;
+- [x] corresponding author: Ryota Matsuki;
 - [x] running title under 40 characters (`Industrial Policy Portfolios`, 28 characters);
-- [ ] non-AI acknowledgments or explicit confirmation that none apply;
-- [ ] funding declaration;
-- [ ] conflict-of-interest declaration;
-- [ ] exact ChatGPT model/version(s) and access period for the AI-assisted manuscript-preparation acknowledgment.
+- [x] non-AI acknowledgments: None;
+- [x] funding: This research received no external funding;
+- [x] conflict of interest: The author declares no competing interests;
+- [x] AI manuscript-preparation acknowledgment: OpenAI ChatGPT (GPT-5.6, accessed September 2026).
+
+The identity/declaration values were carried forward from the author's prior 2026 journal-submission title pages and cover letters at the author's instruction.
 
 ## Anonymous supporting information
 
@@ -41,38 +45,35 @@ The actual generated archive is `JRS_Anonymous_Supporting_Information.zip`.
 - [x] Package builder re-runs the Python symbolic/regression/counterexample checks and deterministic-output generator in the staged SI.
 - [x] Package builder applies the same identifying-token/email scan to the complete generated SI tree.
 
-## PDF properties and final visual QA
+## PDF properties and visual QA
 
-Final technical QA head: `5f49eb7c9c672024312a1db42300a9daba7760e6`.
+Stage-14 full PDF QA passed. After the independent Astra gate, the five bounded non-substantive repairs were rebuilt and the repaired Figure 1 and its manuscript page were visually rechecked.
 
-- [x] PDF Author metadata blank (automated fatal check in package builder).
-- [x] Author-identifying text absent from PDF text layer (automated fatal check).
-- [x] Fonts embedded (automated fatal check).
-- [x] Final CI artifact visually inspected page by page: **16/16 pages inspected**.
-- [x] No clipping, broken equations, missing glyphs, unreadable figure/table text, or accidental author identification found.
-- [x] Separate `Figure_1.pdf` visually inspected and readable at final artwork size.
-- [x] Hyperlink border boxes removed with `\hypersetup{hidelinks}` as a formatting-only Stage-14 repair.
+Post-Astra validated content head: `96baf1d98e87ec2cec52b63e45b69f1a4bfb4619`.  
+Merged candidate content: `main @ cf9d9d2a342d7fa06b469f9ae6521ed33eab1763`.  
+Both resolve to Git tree `56b975f897743754341bd7962e6d2179331befe1`.
 
-Final manuscript PDF SHA-256: `ed939cfcd3237127741664ca42ec0db873de9f79459fe7aef8e62ab4f87ceb1d`.
+- [x] PDF Author metadata blank.
+- [x] Author-identifying text absent from reviewer PDF text layer.
+- [x] Fonts embedded.
+- [x] Stage-14 full CI artifact visually inspected page by page: 16/16 pages.
+- [x] Post-Astra manuscript/package build passed.
+- [x] Post-Astra separate `Figure_1.pdf` visually inspected with no clipping/overflow.
+- [x] Post-Astra manuscript page containing Figure 1 visually inspected.
+- [x] LaTeX package QA reports no box warnings.
 
-## Public development repository risk
+Post-Astra peer-review manuscript PDF SHA-256: `cbef0f95c92f55faf0cdaccec51ccaf25d1d24141ac13be2401bfb4cba203ff6`.
 
-Current repository visibility was checked through the connected GitHub account on 2026-09-10: **PUBLIC**.
+## Public development repository decision
+
+Repository visibility: **PUBLIC**.
 
 The repository is author-owned and exposes the exact manuscript title. A reviewer can therefore search the title and infer authorship even when all uploaded review files are correctly blinded. JRS permits preprints/public sharing but expressly notes that such public posting may compromise anonymity.
 
-### Stage-14 classification
+### Stage-15 author decision
 
-**PRIVATE DURING REVIEW RECOMMENDED**
+**KEEP PUBLIC DURING REVIEW — EXPLICITLY SELECTED 2026-09-10.**
 
-This is not a theory defect and not a journal-eligibility conflict. It is an operational anonymity risk.
+The author has elected to keep the repository public. No visibility change is to be made. Submit only the anonymous reviewer-facing files and accept the residual discoverability risk.
 
-Do **not** change repository visibility without explicit author authorization.
-
-If the author elects strict double-blind mitigation, the manual action is:
-
-`GitHub repository -> Settings -> General -> Danger Zone -> Change repository visibility -> Make private`
-
-Keep it private for the peer-review period, then reassess public reproducibility release consistent with the article's final data/code statement.
-
-If the author elects to keep it public, submit only the anonymous review package and accept the residual discoverability risk explicitly. The classification remains `PRIVATE DURING REVIEW RECOMMENDED`, not `MATERIAL ANONYMITY CONFLICT`, because JRS expressly permits preprints while warning about anonymity compromise.
+The risk classification remains `PRIVATE DURING REVIEW RECOMMENDED`, not `MATERIAL ANONYMITY CONFLICT`, because JRS permits public sharing while warning that it may compromise anonymity. The author's explicit public-repository decision controls the operational action.

@@ -13,13 +13,14 @@
 - Stage 11: `GO TO JOURNAL POSITIONING`
 - Stage 12: `PRIMARY JOURNAL SELECTED — GO TO INTEGRATION`
 - Stage 13: `INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA`
-- Stage 14: `CONDITIONAL PASS — AUTHOR CONFIRMATION / AUTHENTICATED PORTAL PREFLIGHT ONLY`
+- Stage 14: `CONDITIONAL PASS — CLOSED AFTER BOUNDED ASTRA REPAIR / NO THEORY DRIFT`
+- Stage 15: `IN PROGRESS — AUTHOR METADATA RESOLVED / AUTHENTICATED PORTAL PREFLIGHT ONLY`
 - Lean formalization: `BASELINE EQUILIBRIUM + HEADLINE WEDGE + SELECTED ROBUSTNESS — FRESH KERNEL BUILD PASS`
 - Lean-informed proof exposition: `COMPLETE — NO THEORY CHANGE`
-- Stage-14 theory-drift verdict: `NO THEORY DRIFT`
+- Stage-14/post-Astra theory-drift verdict: `NO THEORY DRIFT`
 - Primary journal: **Journal of Regional Science**
 - Default fallback: **Regional Science and Urban Economics**
-- Next canonical stage: **Stage 15 — Submission Freeze / Authenticated Portal Preflight**
+- Next action: **Authenticated JRS Research Exchange preflight, portal PDF inspection, then immutable Stage-15 freeze**
 
 ## Canonical theory artifact
 
@@ -60,6 +61,23 @@ Stage-14 branch / PR:
 - branch: `stage14-submission-qa`
 - PR: `#10 — Stage 14 — Submission QA`
 - final technical QA head: `5f49eb7c9c672024312a1db42300a9daba7760e6`
+
+Post-Stage-14 independent Astra repair:
+
+- PR: `#12 — Astra limited repair — non-substantive pre-Stage-15 fixes`
+- final repaired head: `96baf1d98e87ec2cec52b63e45b69f1a4bfb4619`
+- merged candidate scientific content: `main @ cf9d9d2a342d7fa06b469f9ae6521ed33eab1763`
+- validated scientific Git tree: `56b975f897743754341bd7962e6d2179331befe1`
+- verification: PASS
+- manuscript/package rebuild: PASS
+- final Figure 1 visual QA: PASS
+- theory drift: NONE
+
+Stage 15 record:
+
+- branch: `stage15-submission-freeze`
+- PR: `#13 — Stage 15 — Submission Freeze`
+- record: `submission/jrs/STAGE15_SUBMISSION_FREEZE.md`
 
 ## Lean formal verification layer
 
@@ -124,7 +142,7 @@ Stage 13 performs presentation-only integration for JRS:
 
 No model, payoff, strategy, threshold, theorem, quantifier, benchmark, or certified novelty claim is changed. `IPCRVC-THEORY-FREEZE-2026-09-07-v1` remains authoritative.
 
-## Stage 14 Submission QA closure
+## Stage 14 and post-Astra QA closure
 
 Stage 14 re-opened current JRS/Wiley instructions on 2026-09-10 and completed fresh submission QA rather than relying on Stage-13 notes.
 
@@ -146,26 +164,61 @@ Completed gates include:
 - separate Figure 1 visual inspection;
 - live JRS/Wiley requirements ledger refresh.
 
-Final technical package provenance:
+The subsequent Astra gate identified five non-substantive exposition/bibliographic/domain clarifications. Those were repaired without reopening theory, and fresh verification/manuscript-package CI passed. The modified Figure 1 was separately re-rendered and visually inspected after an intermediate label-overflow issue was corrected.
 
-- manuscript PDF SHA-256: `ed939cfcd3237127741664ca42ec0db873de9f79459fe7aef8e62ab4f87ceb1d`;
-- blinded source ZIP SHA-256: `219137eec5ae32d9f305d920843622618b4d5c5c3120e376ba732d79f6bf415d`;
-- anonymous SI ZIP SHA-256: `8056107c61036a91a913993f522d149b2e636eecef8777c6ff9b686dc4bfe6bb`;
-- Figure 1 PDF SHA-256: `da758acbd332ac3e78ae2436f35c85105c63395eeb1bb3c24de978066af240a5`;
+Post-Astra reviewer-package provenance:
+
+- manuscript PDF SHA-256: `cbef0f95c92f55faf0cdaccec51ccaf25d1d24141ac13be2401bfb4cba203ff6`;
+- blinded source ZIP SHA-256: `535faec023f15d7a15477e58b568ab3a18f33522a15dc69b41bdfd317767eb32`;
+- anonymous SI ZIP SHA-256: `bc937656d60b40bdacd1a0418c03242f3bb4723edd756c3a8ac0c33f392f7da7`;
+- Figure 1 PDF SHA-256: `ece5797fbceaf40b22a68b0beb21eb89123137964a611e3b94adc3ff0718b3c7`;
 - PDF pages: `16`;
 - LaTeX box warnings: `NONE`.
 
-Stage-14 repairs were package/presentation only. No theory change occurred.
+No theory change occurred.
 
-Remaining items are expressly moved to Stage 15:
+## Stage 15 author-side resolution
 
-- author name/order, affiliation, email, ORCID, and corresponding-author confirmation;
-- funding, conflict-of-interest, and acknowledgments confirmation;
-- exact ChatGPT model/version(s) and access period for the disclosure;
-- preprint/prior-dissemination and exclusive-submission confirmation;
-- decision on temporary repository privacy during double-blind review;
-- authenticated JRS Research Exchange field/file-designation preflight;
-- final portal-generated PDF inspection and immutable submission freeze.
+At the author's instruction, established metadata/declarations from prior 2026 journal submissions were reused rather than requested again.
+
+Current author-side submission record:
+
+- sole author / corresponding author: Ryota Matsuki;
+- affiliation: Independent Researcher;
+- location: Matsuyama, Ehime, Japan;
+- email and ORCID recorded in `submission/jrs/metadata.md` and `title_page.tex`;
+- funding: no external funding;
+- competing interests: none;
+- non-AI acknowledgments: none;
+- exclusive submission: original and not under consideration elsewhere;
+- AI disclosure: OpenAI ChatGPT (GPT-5.6, accessed September 2026), with research-process and drafting/editing uses disclosed separately;
+- repository visibility: **PUBLIC DURING REVIEW**, explicitly selected by the author on 2026-09-10;
+- no repository-visibility change is authorized;
+- public GitHub project/material dissemination must be disclosed truthfully if the portal asks broadly about prior public posting.
+
+Final Stage-15 administrative files now include:
+
+- `submission/jrs/title_page.tex`;
+- `submission/jrs/cover_letter.md`;
+- populated `submission/jrs/metadata.md`;
+- finalized `submission/jrs/AI_USE_DISCLOSURE.md`;
+- updated `submission/jrs/ANONYMIZATION_CHECKLIST.md`;
+- `submission/jrs/STAGE15_SUBMISSION_FREEZE.md`.
+
+The title page was independently compiled and visually inspected: one page, no material layout defect.
+
+## Remaining Stage 15 gate
+
+Only authenticated JRS Research Exchange reconciliation remains material:
+
+- actual article-type/category/editor fields;
+- any CRediT or reviewer fields;
+- exact file designations and title-page handling;
+- portal-specific AI and prior-publication/public-posting wording;
+- upload warnings;
+- portal-generated PDF generation and page-by-page inspection.
+
+The package must not be declared `SUBMISSION FROZEN` or `SUBMITTED` until these portal-only checks are complete.
 
 ## Reproducibility gates
 
@@ -183,10 +236,8 @@ Lean formalization gate:
 lake build --wfail
 ```
 
-All of these gates passed fresh in Stage 14.
-
 ## Change control
 
 `IPCRVC-THEORY-FREEZE-2026-09-07-v1` remains authoritative. Any future substantive change to players, timing, strategies, payoffs, benchmark, matching, production, theorem scope, policy-budget endogeneity, or the certified novelty object requires formal theory-change control and reopening of the affected earlier stages.
 
-Stage 15 is restricted to author-confirmed metadata/declarations, authenticated portal reconciliation, file designation/upload, final generated-PDF inspection, provenance capture, and submission freeze. No substantive manuscript or theory change is permitted.
+Stage 15 is restricted to authenticated portal reconciliation, file designation/upload, final generated-PDF inspection, provenance capture, and submission freeze. No substantive manuscript or theory change is permitted.
