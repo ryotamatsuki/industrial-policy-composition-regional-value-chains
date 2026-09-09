@@ -21,9 +21,35 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
+      - name: Environment versions
+        run: |
+          python --version
+          python -m pip --version
       - run: python -m pip install -r requirements.txt
-      - name: Install TeX
+      - name: Install TeX and PDF inspection tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-fonts-recommended
-      - run: make all
+          sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-fonts-recommended poppler-utils
+          pdflatex --version | head -n 1
+          bibtex --version | head -n 1
+          pdfinfo -v 2>&1 | head -n 1
+      - name: Fresh reproducibility gate
+        run: make all
+      - name: Build and clean-extract actual JRS package
+        shell: bash
+        run: |
+          set -o pipefail
+          python submission/jrs/build_submission_package.py 2>&1 | tee submission/jrs/STAGE14_PACKAGE_BUILD.log
+      - name: Upload Stage 14 QA artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jrs-stage14-qa
+          path: |
+            submission/jrs/STAGE14_PACKAGE_BUILD.log
+            submission/jrs/build/JRS_Manuscript_for_Peer_Review.pdf
+            submission/jrs/build/JRS_Blinded_LaTeX_Source.zip
+            submission/jrs/build/JRS_Anonymous_Supporting_Information.zip
+            submission/jrs/build/Figure_1.pdf
+            submission/jrs/build/BUILD_PROVENANCE.txt
+          if-no-files-found: warn
