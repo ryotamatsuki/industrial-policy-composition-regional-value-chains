@@ -38,7 +38,7 @@ phase_tex = r'''% Auto-generated. Do not edit by hand.
 \begin{picture}(150,37)
 \put(0,18){\framebox(45,12){\shortstack{Both regimes duplicate\\$0<A<A^P$}}}
 \put(45,18){\framebox(55,12){\shortstack{Unique decentralized duplication\\coordinated reallocation\\$A^P<A<A^N$}}}
-\put(100,18){\framebox(50,12){\shortstack{Differentiated NE emerge\\symmetric NE also exists\\$A>A^N$}}}
+\put(100,18){\framebox(50,12){\shortstack{Differentiated NE persist\\symmetric NE also exists\\$A>A^N$}}}
 \put(0,12){\line(1,0){150}}
 \put(45,10){\line(0,1){4}}
 \put(100,10){\line(0,1){4}}
@@ -55,7 +55,7 @@ phase_tex = r'''% Auto-generated. Do not edit by hand.
 # Browser-readable companion matching the canonical deterministic output.
 svg = '''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220">
 <rect x="50" y="80" width="240" height="55" fill="#eeeeee" stroke="#333333"/><rect x="290" y="80" width="260" height="55" fill="#dddddd" stroke="#333333"/><rect x="550" y="80" width="300" height="55" fill="#cccccc" stroke="#333333"/>
-<text x="170" y="112" text-anchor="middle" font-size="18">Both regimes duplicate</text><text x="420" y="103" text-anchor="middle" font-size="16">Unique decentralized duplication;</text><text x="420" y="123" text-anchor="middle" font-size="16">coordinated reallocation</text><text x="700" y="103" text-anchor="middle" font-size="16">Differentiated NE emerge;</text><text x="700" y="123" text-anchor="middle" font-size="16">symmetric NE also exists</text>
+<text x="170" y="112" text-anchor="middle" font-size="18">Both regimes duplicate</text><text x="420" y="103" text-anchor="middle" font-size="16">Unique decentralized duplication;</text><text x="420" y="123" text-anchor="middle" font-size="16">coordinated reallocation</text><text x="700" y="95" text-anchor="middle" font-size="16">Differentiated NE persist;</text><text x="700" y="114" text-anchor="middle" font-size="16">symmetric NE also exists</text><text x="700" y="132" text-anchor="middle" font-size="15">for A &gt; A^N</text>
 <line x1="50" y1="155" x2="850" y2="155" stroke="#111111" stroke-width="2"/><line x1="290" y1="145" x2="290" y2="165" stroke="#111111"/><line x1="550" y1="145" x2="550" y2="165" stroke="#111111"/>
 <text x="290" y="190" text-anchor="middle" font-size="16">A^P = Delta</text><text x="550" y="190" text-anchor="middle" font-size="16">A^N = Delta/(1-alpha)</text></svg>\n'''
 (FIGURES / 'phase_regions.svg').write_text(svg, encoding='utf-8')
