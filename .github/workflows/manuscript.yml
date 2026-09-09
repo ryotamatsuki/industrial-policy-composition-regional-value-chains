@@ -36,15 +36,20 @@ jobs:
       - name: Fresh reproducibility gate
         run: make all
       - name: Build and clean-extract actual JRS package
-        run: python submission/jrs/build_submission_package.py
+        shell: bash
+        run: |
+          set -o pipefail
+          python submission/jrs/build_submission_package.py 2>&1 | tee submission/jrs/STAGE14_PACKAGE_BUILD.log
       - name: Upload Stage 14 QA artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: jrs-stage14-qa
           path: |
+            submission/jrs/STAGE14_PACKAGE_BUILD.log
             submission/jrs/build/JRS_Manuscript_for_Peer_Review.pdf
             submission/jrs/build/JRS_Blinded_LaTeX_Source.zip
             submission/jrs/build/JRS_Anonymous_Supporting_Information.zip
             submission/jrs/build/Figure_1.pdf
             submission/jrs/build/BUILD_PROVENANCE.txt
-          if-no-files-found: error
+          if-no-files-found: warn
