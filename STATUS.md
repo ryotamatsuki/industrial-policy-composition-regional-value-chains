@@ -13,11 +13,13 @@
 - Stage 11: `GO TO JOURNAL POSITIONING`
 - Stage 12: `PRIMARY JOURNAL SELECTED — GO TO INTEGRATION`
 - Stage 13: `INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA`
-- Lean formalization: `BASELINE EQUILIBRIUM + HEADLINE WEDGE + SELECTED ROBUSTNESS — KERNEL BUILD PASS`
+- Stage 14: `CONDITIONAL PASS — AUTHOR CONFIRMATION / AUTHENTICATED PORTAL PREFLIGHT ONLY`
+- Lean formalization: `BASELINE EQUILIBRIUM + HEADLINE WEDGE + SELECTED ROBUSTNESS — FRESH KERNEL BUILD PASS`
 - Lean-informed proof exposition: `COMPLETE — NO THEORY CHANGE`
+- Stage-14 theory-drift verdict: `NO THEORY DRIFT`
 - Primary journal: **Journal of Regional Science**
 - Default fallback: **Regional Science and Urban Economics**
-- Next canonical stage: **Stage 14 — Submission QA**
+- Next canonical stage: **Stage 15 — Submission Freeze / Authenticated Portal Preflight**
 
 ## Canonical theory artifact
 
@@ -48,6 +50,16 @@ Stage 13 JRS integration was integrated at:
 Lean-informed proof exposition was integrated at:
 
 `86af89ed9bda4eb821c4fa9773e19cc36ffa2430`
+
+Stage 14 Submission QA is recorded in:
+
+`submission/jrs/STAGE14_QA_REPORT.md`
+
+Stage-14 branch / PR:
+
+- branch: `stage14-submission-qa`
+- PR: `#10 — Stage 14 — Submission QA`
+- final technical QA head: `5f49eb7c9c672024312a1db42300a9daba7760e6`
 
 ## Lean formal verification layer
 
@@ -112,19 +124,48 @@ Stage 13 performs presentation-only integration for JRS:
 
 No model, payoff, strategy, threshold, theorem, quantifier, benchmark, or certified novelty claim is changed. `IPCRVC-THEORY-FREEZE-2026-09-07-v1` remains authoritative.
 
-## Stage 14 operational handoff
+## Stage 14 Submission QA closure
 
-Submission QA must resolve only package/account/live-system matters:
+Stage 14 re-opened current JRS/Wiley instructions on 2026-09-10 and completed fresh submission QA rather than relying on Stage-13 notes.
 
-- author name(s), affiliation(s), email(s), and ORCID(s);
-- funding, conflict-of-interest, and acknowledgment declarations;
-- exclusive-submission and preprint-status confirmation;
-- author confirmation of the AI disclosure and responsibility for the final manuscript;
-- final PDF metadata/anonymity inspection;
-- decision whether to make the public development repository private during double-blind review;
-- live Wiley/JRS submission-system fields and file-upload requirements.
+Completed gates include:
 
-Stage 14 may repair package defects but may not enlarge the theory or contribution.
+- fresh Python dependency install;
+- `make all`;
+- symbolic verification;
+- regression and negative/counterexample tests;
+- deterministic figure/table regeneration;
+- anonymous supporting-information execution;
+- bibliography integrity checks;
+- LaTeX/BibTeX and stable cross-reference checks;
+- actual blinded source ZIP construction;
+- clean extraction and recompilation of the exact upload layout;
+- PDF metadata/anonymity/font checks;
+- fresh `lake build --wfail`;
+- every-page visual inspection of the 16-page final review PDF;
+- separate Figure 1 visual inspection;
+- live JRS/Wiley requirements ledger refresh.
+
+Final technical package provenance:
+
+- manuscript PDF SHA-256: `ed939cfcd3237127741664ca42ec0db873de9f79459fe7aef8e62ab4f87ceb1d`;
+- blinded source ZIP SHA-256: `219137eec5ae32d9f305d920843622618b4d5c5c3120e376ba732d79f6bf415d`;
+- anonymous SI ZIP SHA-256: `8056107c61036a91a913993f522d149b2e636eecef8777c6ff9b686dc4bfe6bb`;
+- Figure 1 PDF SHA-256: `da758acbd332ac3e78ae2436f35c85105c63395eeb1bb3c24de978066af240a5`;
+- PDF pages: `16`;
+- LaTeX box warnings: `NONE`.
+
+Stage-14 repairs were package/presentation only. No theory change occurred.
+
+Remaining items are expressly moved to Stage 15:
+
+- author name/order, affiliation, email, ORCID, and corresponding-author confirmation;
+- funding, conflict-of-interest, and acknowledgments confirmation;
+- exact ChatGPT model/version(s) and access period for the disclosure;
+- preprint/prior-dissemination and exclusive-submission confirmation;
+- decision on temporary repository privacy during double-blind review;
+- authenticated JRS Research Exchange field/file-designation preflight;
+- final portal-generated PDF inspection and immutable submission freeze.
 
 ## Reproducibility gates
 
@@ -133,6 +174,7 @@ Python/LaTeX/JRS package gate:
 ```bash
 python -m pip install -r requirements.txt
 make all
+python submission/jrs/build_submission_package.py
 ```
 
 Lean formalization gate:
@@ -141,8 +183,10 @@ Lean formalization gate:
 lake build --wfail
 ```
 
-The gates cover exact symbolic verification, permanent regression/counterexample tests, deterministic outputs, the anonymous JRS supporting-information tests, bibliography-aware LaTeX build, unresolved-citation/reference checks, and the machine-checked baseline plus selected restricted robustness layer described above.
+All of these gates passed fresh in Stage 14.
 
 ## Change control
 
 `IPCRVC-THEORY-FREEZE-2026-09-07-v1` remains authoritative. Any future substantive change to players, timing, strategies, payoffs, benchmark, matching, production, theorem scope, policy-budget endogeneity, or the certified novelty object requires formal theory-change control and reopening of the affected earlier stages.
+
+Stage 15 is restricted to author-confirmed metadata/declarations, authenticated portal reconciliation, file designation/upload, final generated-PDF inspection, provenance capture, and submission freeze. No substantive manuscript or theory change is permitted.
