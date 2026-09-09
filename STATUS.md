@@ -19,7 +19,8 @@
 - Stage-14 theory-drift verdict: `NO THEORY DRIFT`
 - Primary journal: **Journal of Regional Science**
 - Default fallback: **Regional Science and Urban Economics**
-- Next canonical stage: **Stage 15 — Submission Freeze / Authenticated Portal Preflight**
+- Current canonical stage: **Stage 15 — Submission Freeze / Authenticated Portal Preflight (IN PROGRESS)**
+- Stage 15 verdict: **FREEZE BLOCKED — AUTHOR FACTS / AUTHENTICATED PORTAL RECONCILIATION PENDING**
 
 ## Canonical theory artifact
 
@@ -190,3 +191,7 @@ All of these gates passed fresh in Stage 14.
 `IPCRVC-THEORY-FREEZE-2026-09-07-v1` remains authoritative. Any future substantive change to players, timing, strategies, payoffs, benchmark, matching, production, theorem scope, policy-budget endogeneity, or the certified novelty object requires formal theory-change control and reopening of the affected earlier stages.
 
 Stage 15 is restricted to author-confirmed metadata/declarations, authenticated portal reconciliation, file designation/upload, final generated-PDF inspection, provenance capture, and submission freeze. No substantive manuscript or theory change is permitted.
+
+## Stage 15 initiation
+
+See `submission/jrs/STAGE15_PREFLIGHT.md` for source provenance, Astra minor corrections, rerun QA and candidate-package hashes. Complete `submission/jrs/AUTHOR_CONFIRMATION.md` before freezing. No final submission freeze or journal submission has occurred. Theory freeze remains unchanged.
