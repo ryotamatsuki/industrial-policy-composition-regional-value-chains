@@ -1,39 +1,73 @@
 # JRS double-blind anonymization checklist
 
-JRS operates double-blind peer review. The journal also notes that public preprints can compromise anonymity. This project has a public development repository, so the submission package must avoid linking reviewers to author-identifying repository metadata.
+Stage-14 live check date: **2026-09-10**.
 
-## Blinded manuscript
+JRS operates double-blind peer review and explicitly warns that public preprints can compromise anonymity. Public dissemination permissibility and double-blind anonymity are separate questions.
 
-- [x] `paper/main.tex` contains no author name or affiliation.
-- [x] Acknowledgments are not in the blinded manuscript.
-- [x] The public GitHub repository URL is not included in the blinded manuscript.
-- [x] Data availability is worded around anonymous supporting information rather than a public author-owned URL.
-- [x] AI disclosure contains no author-identifying affiliation or personal metadata.
-- [ ] Final PDF metadata must be checked for author names before upload.
-- [ ] TeX/PDF file properties and comments must be checked for identifying metadata.
-- [ ] Any self-citations, if added later, must be written in the third person like ordinary citations.
+## Blinded manuscript / source suite
 
-## Separate title page
+- [x] `paper/main.tex` contains an explicitly empty `\author{}` field.
+- [x] No author name, affiliation, email, ORCID, non-AI acknowledgment, or funding/COI identity appears in the blinded source.
+- [x] No author-owned public GitHub URL appears in the blinded manuscript.
+- [x] Data/code statements point to anonymous supporting information rather than an author-owned repository.
+- [x] AI research-process disclosure contains no author-identifying metadata.
+- [x] Figures/tables are deterministic generated objects with no author metadata.
+- [x] Stage-14 package builder uses an allow-list and rejects repository-owner tokens and email addresses in reviewer-facing text files.
+- [x] Stage-14 package builder rejects nonblank PDF `Author` metadata and scans extracted PDF text for author-identifying tokens.
+- [x] Unblinded title page and cover letter are excluded from the blinded source archive.
 
-- [ ] Full author name(s).
-- [ ] Affiliation(s).
-- [ ] Email address(es).
-- [ ] ORCID(s) — required by JRS.
-- [ ] Running title under 40 characters.
-- [ ] Acknowledgments.
-- [ ] Funding statement.
-- [ ] Conflict-of-interest statement.
-- [ ] Any other author-specific ethics/integrity declaration required by the live submission system.
+## Separate title page — AUTHOR CONFIRMATION REQUIRED
 
-## Reproducibility materials
+Before Stage 15 freeze, complete:
 
-For peer review, upload the files in `supporting_information/` directly as supporting files. Do not give reviewers the public GitHub URL during double-blind review.
+- [ ] full author name(s);
+- [ ] affiliation(s) where work was conducted;
+- [ ] present address if applicable;
+- [ ] email address(es);
+- [ ] ORCID(s) — JRS requires ORCID;
+- [ ] corresponding-author status;
+- [x] running title under 40 characters (`Industrial Policy Portfolios`, 28 characters);
+- [ ] non-AI acknowledgments or explicit confirmation that none apply;
+- [ ] funding declaration;
+- [ ] conflict-of-interest declaration;
+- [ ] exact ChatGPT model/version(s) and access period for the AI-assisted manuscript-preparation acknowledgment.
 
-### Public-repository risk
+## Anonymous supporting information
 
-Even if the blinded files contain no author name, a reviewer who searches the exact paper title may discover the public repository and infer authorship. Before Stage 14 submission, choose one of the following operational mitigations:
+The actual generated archive is `JRS_Anonymous_Supporting_Information.zip`.
 
-1. **Preferred for strict anonymity:** temporarily make the development repository private during peer review, if feasible; or
-2. keep the repository public but accept the anonymity risk explicitly, consistent with JRS's warning that public preprints can compromise double-blind anonymity.
+- [x] Static SI files contain no author name/affiliation/public author-owned repository URL.
+- [x] Package builder copies exact Lean source/toolchain into an anonymous `lean/` folder without repository-owner metadata.
+- [x] Package builder re-runs the Python symbolic/regression/counterexample checks and deterministic-output generator in the staged SI.
+- [x] Package builder applies the same identifying-token/email scan to the complete generated SI tree.
 
-This is an anonymity/operations issue, not a theory or manuscript-content defect.
+## PDF properties
+
+Stage-14 CI and visual QA require:
+
+- [x] PDF Author metadata blank (automated fatal check in package builder).
+- [x] Author-identifying text absent from PDF text layer (automated fatal check).
+- [x] Fonts embedded (automated fatal check).
+- [ ] final CI artifact page-by-page visual inspection recorded in `STAGE14_QA_REPORT.md` after the final branch head passes.
+
+## Public development repository risk
+
+Current repository visibility was checked through the connected GitHub account on 2026-09-10: **PUBLIC**.
+
+The repository is author-owned and exposes the exact manuscript title. A reviewer can therefore search the title and infer authorship even when all uploaded review files are correctly blinded. JRS permits preprints/public sharing but expressly notes that such public posting may compromise anonymity.
+
+### Stage-14 classification
+
+**PRIVATE DURING REVIEW RECOMMENDED**
+
+This is not a theory defect and not a journal-eligibility conflict. It is an operational anonymity risk.
+
+Do **not** change repository visibility without explicit author authorization.
+
+If the author elects strict double-blind mitigation, the manual action is:
+
+`GitHub repository -> Settings -> General -> Danger Zone -> Change repository visibility -> Make private`
+
+Keep it private for the peer-review period, then reassess public reproducibility release consistent with the article's final data/code statement.
+
+If the author elects to keep it public, submit only the anonymous review package and accept the residual discoverability risk explicitly. The classification remains `PRIVATE DURING REVIEW RECOMMENDED`, not `MATERIAL ANONYMITY CONFLICT`, because JRS expressly permits preprints while warning about anonymity compromise.
