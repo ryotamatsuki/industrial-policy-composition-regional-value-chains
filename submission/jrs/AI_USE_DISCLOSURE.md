@@ -1,7 +1,8 @@
 # AI-use disclosure for JRS submission
 
 Stage 14 live policy check date: **2026-09-10**.  
-Stage 15 metadata finalization date: **2026-09-10**.
+Stage 15 metadata finalization date: **2026-09-10**.  
+Authenticated portal AI-policy reconciliation: **2026-09-24**.
 
 ## Current Wiley requirement
 
@@ -30,21 +31,26 @@ This reflects the ChatGPT model family and period materially used during the Sep
 
 To preserve JRS double-blind handling while following Wiley's location logic:
 
-1. the blinded manuscript contains the research-process disclosure for literature discovery and algebra/code cross-checking; and
-2. the separate title page places drafting/editing assistance in the Acknowledgments block.
+1. the blinded manuscript contains a dedicated `Methods and verification` section disclosing research-process AI use for literature discovery/source navigation, organization of analytical work, algebra/code cross-checking, and reproducibility-script support; and
+2. the separate title page places manuscript drafting/editing assistance in the Acknowledgments block.
 
 No AI-generated or AI-edited figure is used, so no figure-caption disclosure is applicable.
 
 ## Blinded-manuscript wording
 
-> **AI-assisted research tools.** OpenAI ChatGPT was used for literature discovery and algebraic and code cross-checking. AI-generated outputs were not treated as evidence: cited sources were checked against source materials, and mathematical claims were checked against the frozen theory record, symbolic verification, regression tests, and Lean formalization where applicable. The AI assistance did not determine the paper's key arguments or conclusions, and the author retains full responsibility for the final content.
+> **AI-assisted research tools.** OpenAI ChatGPT (GPT-5.6, accessed September 2026) was used to assist literature discovery and source navigation, organization of analytical work, algebraic and code cross-checking, and preparation and review of reproducibility scripts. AI-generated output was not treated as evidence or as a substitute for proof. Literature claims and citations were checked against source materials, while mathematical claims were checked against the frozen theory record, symbolic verification, regression and counterexample tests, and Lean formalization where applicable. The AI assistance did not determine the research question, model, key arguments, or conclusions. All AI-assisted output used in the research process was reviewed by the author, who retains full responsibility for the accuracy and integrity of the final work. No AI-generated or AI-edited visual content appears in the manuscript.
 
 ## Separate-title-page acknowledgment
 
-> **AI-assisted manuscript preparation.** OpenAI ChatGPT (GPT-5.6, accessed September 2026) was used for manuscript drafting and editing support. All AI-assisted text and suggestions were reviewed and revised by the author, who retains full responsibility for the final content. Research-process AI use is disclosed separately in the blinded manuscript.
+> **AI-assisted manuscript preparation.** OpenAI ChatGPT (GPT-5.6, accessed September 2026) was used for manuscript drafting and editing support, including wording, organization, and exposition across multiple sections of the manuscript. All AI-assisted text and suggestions were reviewed, revised, and approved by the author, who retains full responsibility for the accuracy and integrity of the final work. Research-process AI use is disclosed separately in the blinded manuscript's Methods and verification section. No AI-generated or AI-edited visual content appears in the manuscript.
 
 ## Consistency with established submission practice
 
 The disclosure follows the author's prior 2026 journal-submission practice: ChatGPT use is described as covering literature/source discovery or checking, analysis organization, algebra/code verification support, reproducibility-script preparation/review, and manuscript drafting/editing; human review and final responsibility remain explicit.
 
 If the authenticated Wiley portal asks a separate AI-use question, answer it consistently with both disclosures. Do not characterize the use as spelling/grammar only.
+
+
+## Authenticated portal reconciliation — 2026-09-24
+
+The live JRS Research Exchange Article Type screen requires authors to confirm Wiley's AIGC policy and states that AIGC use in developing a manuscript must be described transparently and in detail in the Methods section. To remove any placement ambiguity, the research-process disclosure was moved from the manuscript Declarations section into a dedicated `Methods and verification` section. Manuscript drafting/editing assistance remains disclosed in the separate title-page Acknowledgments. This is a disclosure-placement/compliance change only; it does not change the model, results, proofs, or claims.
