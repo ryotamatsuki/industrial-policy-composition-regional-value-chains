@@ -8,7 +8,7 @@ Theory freeze: `IPCRVC-THEORY-FREEZE-2026-09-07-v1`
 
 `IN PROGRESS — AUTHOR METADATA RESOLVED / AUTHENTICATED PORTAL PREFLIGHT PENDING`
 
-The validated scientific manuscript and the author-side submission metadata are ready. During authenticated portal preflight on 2026-09-24, the live Wiley AIGC attestation prompted a compliance-only manuscript update: research-process AI disclosure was moved from Declarations to a dedicated `Methods and verification` section, while drafting/editing disclosure remains in the title-page Acknowledgments. The immutable final submission freeze must not yet be declared until this revised package completes fresh build/QA and the remaining Research Exchange field/file-designation and portal-generated-PDF checks are complete.
+The validated scientific manuscript and the author-side submission metadata are ready. During authenticated portal preflight on 2026-09-24, the live Wiley AIGC attestation prompted a compliance-only manuscript update: research-process AI disclosure was moved from Declarations to a dedicated `Methods and verification` subsection within the Model section, while drafting/editing disclosure remains in the title-page Acknowledgments. The immutable final submission freeze must not yet be declared until this revised package completes fresh build/QA and the remaining Research Exchange field/file-designation and portal-generated-PDF checks are complete.
 
 No substantive manuscript or theory change is authorized in Stage 15. The 2026-09-24 AI-disclosure placement repair is expressly classified as a non-substantive portal-compliance edit; it changes no model, theorem, proof, result, quantifier, citation claim, figure, table, or executable verification logic.
 
@@ -209,7 +209,7 @@ The next permitted changes are limited to authenticated-portal reconciliation, n
 The live JRS Research Exchange Article Type screen requires confirmation of Wiley's AIGC policy and specifically directs transparent and detailed disclosure of AIGC use in the Methods section. The repository was therefore reconciled as follows:
 
 - added `paper/sections/methods_verification.tex` and included it immediately after the model section;
-- moved research-process AI disclosure out of `paper/sections/declarations.tex` into the new `Methods and verification` section;
+- moved research-process AI disclosure out of `paper/sections/declarations.tex` into the new `Methods and verification` subsection;
 - expanded the research-process statement to identify the tool/version/access period, purposes, verification procedures, lack of control over key arguments/conclusions, human review, and absence of AI-generated/edited visual content;
 - retained manuscript drafting/editing disclosure in `submission/jrs/title_page.tex` under Acknowledgments and removed the internally inconsistent standalone `None.` line;
 - updated `submission/jrs/AI_USE_DISCLOSURE.md` to mirror the live submission wording and the final disclosure placement.
