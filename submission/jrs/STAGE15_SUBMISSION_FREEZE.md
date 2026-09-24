@@ -8,7 +8,7 @@ Theory freeze: `IPCRVC-THEORY-FREEZE-2026-09-07-v1`
 
 `IN PROGRESS — AUTHOR METADATA RESOLVED / AUTHENTICATED PORTAL PREFLIGHT PENDING`
 
-The validated scientific manuscript and the author-side submission metadata are ready. During authenticated portal preflight on 2026-09-24, the live Wiley AIGC attestation prompted a compliance-only manuscript update: research-process AI disclosure was moved from Declarations to a dedicated `Methods and verification` subsection within the Model section, while drafting/editing disclosure remains in the title-page Acknowledgments. The immutable final submission freeze must not yet be declared until this revised package completes fresh build/QA and the remaining Research Exchange field/file-designation and portal-generated-PDF checks are complete.
+The validated scientific manuscript and the author-side submission metadata are ready. During authenticated portal preflight on 2026-09-24, the live Wiley AIGC attestation prompted a compliance-only manuscript update: research-process AI disclosure was moved from Declarations to a dedicated `Methods and verification` subsection within the Model section, while drafting/editing disclosure remains in the title-page Acknowledgments. Fresh verification and manuscript/package QA on the revised content have now passed. The immutable final submission freeze must not yet be declared only because the remaining Research Exchange field/file-designation checks and portal-generated-PDF inspection are still outstanding.
 
 No substantive manuscript or theory change is authorized in Stage 15. The 2026-09-24 AI-disclosure placement repair is expressly classified as a non-substantive portal-compliance edit; it changes no model, theorem, proof, result, quantifier, citation claim, figure, table, or executable verification logic.
 
@@ -196,6 +196,7 @@ Current verdict:
 `NOT YET FROZEN — AUTHENTICATED PORTAL PREFLIGHT ONLY`
 
 Scientific/package blocker: `NONE`  
+Post-AI-policy fresh QA blocker: `NONE`  
 Author-metadata/declaration blocker: `NONE`  
 Repository-visibility decision blocker: `NONE`  
 Authenticated-portal blocker: `YES`  
@@ -216,4 +217,28 @@ The live JRS Research Exchange Article Type screen requires confirmation of Wile
 
 Classification: `NON-SUBSTANTIVE PORTAL-COMPLIANCE REPAIR — NO THEORY DRIFT`.
 
-The pre-reconciliation reviewer-package hashes in Sections 4–5 remain valid historical QA evidence for the pre-edit package but are not the final upload provenance. Fresh manuscript/package QA is required on the revised Stage-15 head before freeze.
+The pre-reconciliation reviewer-package hashes in Sections 4–5 remain valid historical QA evidence for the pre-edit package but are superseded for upload by the post-reconciliation package below.
+
+Post-reconciliation content head: `b43e123ac406a53f12b0229705f254928085424e`.  
+Git tree: `cd5cca9b97c3bc93cce943c7f5e3ac5954f52539`.  
+CI synthetic merge: `7dadf0f0ee7b8914801e465c93456cf2dea4525d`, resolving to the same Git tree.
+
+Fresh GitHub Actions:
+- verification run #91 (`35952257972`): **SUCCESS**;
+- manuscript-build run #45 (`35952257901`): **SUCCESS**;
+- Fresh reproducibility gate: **SUCCESS**;
+- Build and clean-extract actual JRS package: **SUCCESS**.
+
+Post-reconciliation package:
+- PDF pages: `16`;
+- cited bibliography records: `15`;
+- bibliography records: `15`;
+- blinded source ZIP SHA-256: `f387debe697feca767482dea7ab1a8fa1f604f1eb3e1f244d4e8025ab273ebe6`;
+- anonymous SI ZIP SHA-256: `06616608acfca42c8fdb247f99ad262e4c7f9e7891e9d75aef8d633a6b7f1311`;
+- peer-review manuscript PDF SHA-256: `74f6ea9e7f8392accce35c1a81efd80150bd49e8d6cfffc689a1c3852d81affd`;
+- Figure 1 PDF SHA-256: `62d2a4d4f60c25434cae6bec0ac64aeeda5ee91ddc2302d1eb95e28e244c0f8f`;
+- LaTeX box warnings: `NONE`;
+- PDF Author metadata: blank;
+- manuscript remains `16` pages and retains the original top-level section numbering because the Wiley disclosure is a Model subsection.
+
+The remaining blocker is authenticated-portal reconciliation/final portal-PDF inspection only.

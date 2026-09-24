@@ -14,13 +14,13 @@
 - Stage 12: `PRIMARY JOURNAL SELECTED — GO TO INTEGRATION`
 - Stage 13: `INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA`
 - Stage 14: `CONDITIONAL PASS — CLOSED AFTER BOUNDED ASTRA REPAIR / NO THEORY DRIFT`
-- Stage 15: `IN PROGRESS — AUTHOR METADATA RESOLVED / AUTHENTICATED PORTAL PREFLIGHT ONLY`
+- Stage 15: `IN PROGRESS — LIVE AI POLICY RECONCILED / FINAL PORTAL FIELDS + GENERATED PDF ONLY`
 - Lean formalization: `BASELINE EQUILIBRIUM + HEADLINE WEDGE + SELECTED ROBUSTNESS — FRESH KERNEL BUILD PASS`
 - Lean-informed proof exposition: `COMPLETE — NO THEORY CHANGE`
 - Stage-14/post-Astra theory-drift verdict: `NO THEORY DRIFT`
 - Primary journal: **Journal of Regional Science**
 - Default fallback: **Regional Science and Urban Economics**
-- Next action: **Authenticated JRS Research Exchange preflight, portal PDF inspection, then immutable Stage-15 freeze**
+- Next action: **Complete remaining JRS Research Exchange fields/file designations, inspect portal-generated PDF, then immutable Stage-15 freeze**
 
 ## Canonical theory artifact
 
@@ -206,6 +206,17 @@ Final Stage-15 administrative files now include:
 - `submission/jrs/STAGE15_SUBMISSION_FREEZE.md`.
 
 The title page was independently compiled and visually inspected: one page, no material layout defect.
+
+## Stage 15 live portal reconciliation — 2026-09-24
+
+The live Research Exchange AIGC attestation was reconciled against Wiley's current AI policy. Research-process AI use is now disclosed in a `Methods and verification` subsection within the Model section; manuscript drafting/editing support remains disclosed in the title-page Acknowledgments. The change is compliance/presentation only and does not alter theory or results.
+
+Fresh post-reconciliation CI passed:
+- verification run #91: SUCCESS;
+- manuscript-build run #45: SUCCESS;
+- final peer-review manuscript remains 16 pages;
+- LaTeX box warnings: NONE;
+- peer-review manuscript PDF SHA-256: `74f6ea9e7f8392accce35c1a81efd80150bd49e8d6cfffc689a1c3852d81affd`.
 
 ## Remaining Stage 15 gate
 
