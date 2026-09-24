@@ -14,13 +14,17 @@
 - Stage 12: `PRIMARY JOURNAL SELECTED — GO TO INTEGRATION`
 - Stage 13: `INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA`
 - Stage 14: `CONDITIONAL PASS — CLOSED AFTER BOUNDED ASTRA REPAIR / NO THEORY DRIFT`
-- Stage 15: `IN PROGRESS — LIVE AI POLICY RECONCILED / FINAL PORTAL FIELDS + GENERATED PDF ONLY`
+- Stage 15: `CLOSED — SUBMITTED TO JOURNAL OF REGIONAL SCIENCE`
 - Lean formalization: `BASELINE EQUILIBRIUM + HEADLINE WEDGE + SELECTED ROBUSTNESS — FRESH KERNEL BUILD PASS`
 - Lean-informed proof exposition: `COMPLETE — NO THEORY CHANGE`
 - Stage-14/post-Astra theory-drift verdict: `NO THEORY DRIFT`
 - Primary journal: **Journal of Regional Science**
 - Default fallback: **Regional Science and Urban Economics**
-- Next action: **Complete remaining JRS Research Exchange fields/file designations, inspect portal-generated PDF, then immutable Stage-15 freeze**
+- Submission status: **SUBMITTED / RECEIVED BY JRS**
+- JRS manuscript ID: **1758654**
+- Research Exchange submission UUID: **876d0cef-e8c6-45e5-a19d-80c9b578f288**
+- Submission date: **2026-09-24**
+- Next action: **Monitor the next journal-confirmed editorial status; do not infer UNDER REVIEW without journal or authenticated-tracker evidence**
 
 ## Canonical theory artifact
 
@@ -218,18 +222,21 @@ Fresh post-reconciliation CI passed:
 - LaTeX box warnings: NONE;
 - peer-review manuscript PDF SHA-256: `74f6ea9e7f8392accce35c1a81efd80150bd49e8d6cfffc689a1c3852d81affd`.
 
-## Remaining Stage 15 gate
+## Stage 15 submission closeout — 2026-09-24
 
-Only authenticated JRS Research Exchange reconciliation remains material:
+Authenticated Research Exchange preflight was completed. The portal-generated reviewer PDF was inspected page by page and passed anonymity, equation, figure, table, bibliography, appendix, and AI-disclosure checks.
 
-- actual article-type/category/editor fields;
-- any CRediT or reviewer fields;
-- exact file designations and title-page handling;
-- portal-specific AI and prior-publication/public-posting wording;
-- upload warnings;
-- portal-generated PDF generation and page-by-page inspection.
+Final portal record:
+- JRS manuscript ID: `1758654`;
+- Research Exchange submission UUID: `876d0cef-e8c6-45e5-a19d-80c9b578f288`;
+- portal reviewer PDF: 18 pages total (2 Wiley/ReX pages + 16 manuscript pages);
+- portal reviewer PDF SHA-256: `4a7299754c1baee587e9c5c15988bf8d78a4654804ebcf52ebff99c428ea8be3`;
+- reviewer manuscript anonymization: PASS;
+- reviewer-visible files: anonymized main manuscript and anonymous Supplementary Material for Review.
 
-The package must not be declared `SUBMISSION FROZEN` or `SUBMITTED` until these portal-only checks are complete.
+Wiley Research Exchange confirmed successful submission and delivery to the JRS Editorial Office. JRS separately confirmed receipt and assigned manuscript ID `1758654`.
+
+Current journal state is recorded conservatively as `SUBMITTED / RECEIVED`. No editor assignment or external-review transition is inferred.
 
 ## Reproducibility gates
 
