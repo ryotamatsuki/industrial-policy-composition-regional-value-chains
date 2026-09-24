@@ -1,14 +1,15 @@
 # Stage 15 — Submission Freeze Record
 
-Date: 2026-09-10  
+Date opened: 2026-09-10  
+Submission closeout: 2026-09-24  
 Target journal: Journal of Regional Science (JRS)  
 Theory freeze: `IPCRVC-THEORY-FREEZE-2026-09-07-v1`
 
 ## 1. Current Stage-15 status
 
-`IN PROGRESS — AUTHOR METADATA RESOLVED / AUTHENTICATED PORTAL PREFLIGHT PENDING`
+`CLOSED — SUBMITTED / JOURNAL RECEIPT CONFIRMED`
 
-The validated scientific manuscript and the author-side submission metadata are ready. During authenticated portal preflight on 2026-09-24, the live Wiley AIGC attestation prompted a compliance-only manuscript update: research-process AI disclosure was moved from Declarations to a dedicated `Methods and verification` subsection within the Model section, while drafting/editing disclosure remains in the title-page Acknowledgments. Fresh verification and manuscript/package QA on the revised content have now passed. The immutable final submission freeze must not yet be declared only because the remaining Research Exchange field/file-designation checks and portal-generated-PDF inspection are still outstanding.
+The validated scientific manuscript and author-side metadata completed authenticated portal preflight on 2026-09-24. The live Wiley AIGC attestation prompted only the recorded compliance-only disclosure-placement update. Fresh verification and manuscript/package QA passed, the final Research Exchange reviewer PDF was generated and inspected, and the manuscript was then submitted. JRS subsequently confirmed receipt and assigned manuscript ID `1758654`.
 
 No substantive manuscript or theory change is authorized in Stage 15. The 2026-09-24 AI-disclosure placement repair is expressly classified as a non-substantive portal-compliance edit; it changes no model, theorem, proof, result, quantifier, citation claim, figure, table, or executable verification logic.
 
@@ -193,13 +194,13 @@ Before final freeze/submission:
 
 Current verdict:
 
-`NOT YET FROZEN — AUTHENTICATED PORTAL PREFLIGHT ONLY`
+`SUBMITTED / JOURNAL RECEIPT CONFIRMED`
 
 Scientific/package blocker: `NONE`  
 Post-AI-policy fresh QA blocker: `NONE`  
 Author-metadata/declaration blocker: `NONE`  
 Repository-visibility decision blocker: `NONE`  
-Authenticated-portal blocker: `YES`  
+Authenticated-portal blocker: `NONE`  
 Theory rollback required: `NO`
 
 The next permitted changes are limited to authenticated-portal reconciliation, non-substantive file designation/packaging changes required by the portal, final portal-PDF inspection, and recording the immutable freeze identifier. Any substantive manuscript change reopens the affected earlier stage.
@@ -242,3 +243,37 @@ Post-reconciliation package:
 - manuscript remains `16` pages and retains the original top-level section numbering because the Wiley disclosure is a Model subsection.
 
 The remaining blocker is authenticated-portal reconciliation/final portal-PDF inspection only.
+
+
+## 14. Final submission and receipt — 2026-09-24
+
+The authenticated JRS Research Exchange workflow was completed and the manuscript was submitted.
+
+Final portal record:
+- journal: `Journal of Regional Science`;
+- article type: `Research Article`;
+- manuscript title: `Industrial Policy Composition and Regional Value Chains`;
+- Research Exchange submission UUID: `876d0cef-e8c6-45e5-a19d-80c9b578f288`;
+- JRS manuscript ID: `1758654`;
+- submission date: `2026-09-24`.
+
+Final reviewer PDF QA:
+- portal-generated PDF pages: `18`;
+- composition: 2 Wiley/ReX cover/file-list pages + 16 anonymized manuscript pages;
+- SHA-256: `4a7299754c1baee587e9c5c15988bf8d78a4654804ebcf52ebff99c428ea8be3`;
+- anonymization: PASS;
+- title/abstract/keywords/JEL: PASS;
+- equations, propositions, Figure 1, Table 1, Appendix, References: PASS;
+- Methods and verification AI disclosure: PASS;
+- reviewer-visible files: anonymized main manuscript plus anonymous Supplementary Material for Review.
+
+Authoritative receipt evidence:
+1. Research Exchange email: manuscript successfully submitted and being delivered to the JRS Editorial Office.
+2. Journal of Regional Science editorial email: submission confirmed; unique manuscript ID `1758654`.
+
+Final journal state recorded at closeout:
+`SUBMITTED / RECEIVED`
+
+No editor assignment, external-review transition, or decision is inferred at this stage.
+
+Stage 15 is closed.
