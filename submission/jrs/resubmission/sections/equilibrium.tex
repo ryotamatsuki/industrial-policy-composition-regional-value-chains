@@ -1,0 +1,66 @@
+\section{Decentralized Equilibrium}
+\label{sec:equilibrium}
+
+Because \eqref{eq:local-payoff} is affine in $x_i$, it can be written as
+\begin{equation}
+W_i(x_i,x_j)
+=W_i(0,x_j)
++x_i\left[\Delta+\alpha A-Ax_j\right].
+\label{eq:payoff-affine}
+\end{equation}
+Hence the sign of the coefficient on $x_i$ determines the \emph{global} best response on the full feasible interval $x_i\in[0,1]$; no local first-order-condition argument is needed. In particular,
+\begin{equation}
+W_i(1,x_j)-W_i(0,x_j)
+=\Delta+\alpha A-Ax_j.
+\label{eq:payoff-difference}
+\end{equation}
+Define
+\begin{equation}
+q\equiv \alpha+\frac{\Delta}{A}
+\label{eq:q}
+\end{equation}
+and the decentralized threshold
+\begin{equation}
+A^N\equiv \frac{\Delta}{1-\alpha}.
+\label{eq:AN}
+\end{equation}
+The global best-response correspondence is therefore
+\begin{equation}
+BR_i(x_j)=
+\begin{cases}
+1, & x_j<q,\\
+[0,1], & x_j=q,\\
+0, & x_j>q.
+\end{cases}
+\label{eq:best-response}
+\end{equation}
+The coefficient in \eqref{eq:payoff-affine} falls one-for-one with the rival's allocation to $U$:
+\begin{equation}
+\frac{\partial}{\partial x_j}
+\left[\Delta+\alpha A-Ax_j\right]=-A<0.
+\label{eq:strategic-substitutes}
+\end{equation}
+Thus policy portfolios are strategic substitutes in the baseline game. Cross-regional complementarity creates an incentive to move toward $D$ when the other region concentrates on $U$, but this force must overcome the direct local premium $\Delta$.
+
+\begin{proposition}[Exact decentralized equilibrium set]
+\label{prop:nash-set}
+For $\Delta>0$, $A>0$, and $0<\alpha<1$, the Nash equilibria are characterized as follows.
+\begin{enumerate}
+\item If $0<A<A^N$, the unique equilibrium is $(x_1,x_2)=(1,1)$.
+\item If $A=A^N$, the equilibrium set is
+\[
+\{(x_1,x_2)\in[0,1]^2:x_1=1\ \text{or}\ x_2=1\}.
+\]
+\item If $A>A^N$, the exact equilibrium set is
+\[
+\{(1,0),(0,1),(q,q)\},
+\]
+where $q$ is given by \eqref{eq:q} and satisfies $q\in(0,1)$.
+\end{enumerate}
+\end{proposition}
+
+The low-$A$ region is especially important. Even though $D$ is technologically complementary to the rival region's $U$ activity, each government strictly prefers to allocate all policy capacity to its own high-return activity. Differentiated equilibria first appear at the boundary $A=A^N$. Once $A$ exceeds $A^N$, the differentiated equilibria persist and a symmetric interior equilibrium also emerges; high complementarity therefore does not eliminate equilibrium multiplicity or guarantee that every decentralized equilibrium is efficient.
+
+Figure \ref{fig:phase-regions} summarizes the baseline regime structure together with the coordinated threshold derived in Section \ref{sec:welfare}. Its middle interval is the paper's central configuration contrast: decentralized policy remains uniquely duplicated after coordinated reallocation has become optimal.
+
+\input{../figures/phase_regions}
