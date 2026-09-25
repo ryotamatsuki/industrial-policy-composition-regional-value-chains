@@ -177,7 +177,7 @@ def make_source_stage() -> tuple[Path, int]:
         copy_file(src, SOURCE_STAGE / "paper" / "sections" / src.name)
     copy_file(ROOT / "references" / "references.bib", SOURCE_STAGE / "paper" / "references.bib")
     main_path = SOURCE_STAGE / "paper" / "main.tex"
-    main_text = main_path.read_text(encoding="utf-8").replace(r"\\bibliography{../references/references}", r"\\bibliography{references}")
+    main_text = main_path.read_text(encoding="utf-8").replace(r"\bibliography{../references/references}", r"\bibliography{references}")
     main_path.write_text(main_text, encoding="utf-8")
     for src in GENERATED:
         copy_file(src, SOURCE_STAGE / src.relative_to(ROOT))
