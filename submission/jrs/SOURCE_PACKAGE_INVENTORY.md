@@ -11,7 +11,7 @@ Contents:
 - `paper/main.tex` — blinded manuscript source with empty `\author{}`;
 - `paper/main.pdf` — PDF compiled from the packaged sources;
 - `paper/sections/*.tex` — all manuscript sections including declarations and analytical appendix;
-- `references/references.bib` — only bibliography records actually cited by the manuscript;
+- `paper/references.bib` — only bibliography records actually cited by the manuscript, colocated with `main.tex` so the publisher portal does not need to resolve a parent-directory BibTeX path;
 - `figures/phase_regions.tex` — deterministic manuscript figure source;
 - `figures/phase_regions.svg` — deterministic vector companion;
 - `tables/thresholds.tex` — deterministic table source.
@@ -27,7 +27,7 @@ The archive intentionally excludes:
 - Lean build caches and Python caches;
 - secrets/private correspondence.
 
-The CI gate extracts this exact zip into a fresh temporary directory and recompiles it with `pdflatex -> bibtex -> pdflatex -> pdflatex`. Undefined citations/references, nonblank PDF Author metadata, author-identifying tokens, non-embedded PDF fonts, archive-size violations, and build failures are fatal.
+The CI gate extracts this exact zip into a fresh temporary directory and recompiles it with `pdflatex -> bibtex -> pdflatex -> pdflatex`. The packaged `paper/main.tex` uses `\\bibliography{references}`; no parent-directory bibliography reference remains in the reviewer-facing source. Undefined citations/references, nonblank PDF Author metadata, author-identifying tokens, non-embedded PDF fonts, archive-size violations, and build failures are fatal.
 
 ## 2. Peer-review PDF
 
