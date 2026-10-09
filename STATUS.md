@@ -26,6 +26,17 @@
 - Submission date: **2026-09-24**
 - Next action (post-JRS revision): **Stage 1 source/mathematical audit under the 2026-10-10 Stage-0 GO TO AUDIT; no new instrument selected, no active JRS revision invitation**
 
+## Post-JRS revision — Stage 2 (2026-10-10)
+
+- Revision lane: `STAGE 2 COMPLETED — GO TO MECHANISM SEARCH`, qualified hypothesis-level GO (no certified theorem novelty).
+- [Stage 2 literature / novelty kill-gate](revision/post-jrs/STAGE2_NOVELTY_KILL_GATE.md).
+- [Symbolic absorption diagnostics](revision/post-jrs/verify_stage2_absorption_diagnostics.py).
+- Standalone claims K01–K06 killed: simple compensation implementation, ordinary matching grants, basic cooperation, generic network inefficiency, fiscal liquidity restriction, and planner allocation treated as an implementation.
+- Stage 3 survivors: **H02 × H06 interaction** (conditional cofinancing + endogenous partner match + fixed-capacity regional portfolio) and conditional H03 governance/participation alternative.
+- H01 transfer retained as **comparator only**; H07 heterogeneity/fiscal constraints allowed only as a justified subordinate restriction, **not independently novel**.
+- Limits: full papers/proof appendices for several strongest parent models inaccessible in this pass; exact future-game originality **UNRESOLVED** and must be re-killed after solving the candidate at Stage 6.
+- Baseline, original JRS submission, Theory Freeze, paper TeX, formal proofs and preferred next journal unchanged.
+
 ## Post-JRS revision — Stage 1 (2026-10-10)
 
 - Revision lane: `STAGE 1 COMPLETED — GO TO NOVELTY GATE`.
