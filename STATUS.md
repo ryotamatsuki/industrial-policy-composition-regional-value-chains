@@ -26,6 +26,16 @@
 - Submission date: **2026-09-24**
 - Next action (post-JRS revision): **Stage 1 source/mathematical audit under the 2026-10-10 Stage-0 GO TO AUDIT; no new instrument selected, no active JRS revision invitation**
 
+## Post-JRS revision — Stage 1 (2026-10-10)
+
+- Revision lane: `STAGE 1 COMPLETED — GO TO NOVELTY GATE`.
+- Report: [Stage 1 source and mathematical audit](revision/post-jrs/STAGE1_SOURCE_MATH_AUDIT.md).
+- Reproducible source: [SymPy baseline verification](revision/post-jrs/verify_stage1_baseline.py).
+- Original core payoff/equilibrium/welfare identities independently checked; no new theorem or implementation certified.
+- OECD and EU I3 institutional mapping inspected; I3 consortium grants are not equivalent to a bilateral government transfer.
+- Stage 2 frontier: H01/H02/H03/H06/H07; H04/H05/H08 deferred.
+- Original freeze, manuscript, formal sources and JRS submission remain unchanged.
+
 ## Post-JRS substantive revision — Stage 0 (2026-10-10)
 
 - Revision-lane status: `STAGE 0 COMPLETED — GO TO AUDIT`. This is separate from the closed historical JRS submission.
