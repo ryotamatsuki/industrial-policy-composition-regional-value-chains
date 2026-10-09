@@ -24,7 +24,18 @@
 - JRS manuscript ID: **1758654**
 - Research Exchange submission UUID: **876d0cef-e8c6-45e5-a19d-80c9b578f288**
 - Submission date: **2026-09-24**
-- Next action: **Independent policy-internalization/novelty/journal-fit audit before choosing a next destination; no active JRS revision invitation**
+- Next action (post-JRS revision): **Stage 1 source/mathematical audit under the 2026-10-10 Stage-0 GO TO AUDIT; no new instrument selected, no active JRS revision invitation**
+
+## Post-JRS substantive revision — Stage 0 (2026-10-10)
+
+- Revision-lane status: `STAGE 0 COMPLETED — GO TO AUDIT`. This is separate from the closed historical JRS submission.
+- Authorized workflow: `research-paper-workflow main@0642846709f006bab9e387c80bd83cdf4db52460` (v2.9 candidate, unreleased).
+- Stage-0 report: [revision/post-jrs/STAGE0_IDEA_INTAKE.md](revision/post-jrs/STAGE0_IDEA_INTAKE.md).
+- Candidate/disposition register: [revision/post-jrs/STAGE0_CANDIDATE_REGISTER.md](revision/post-jrs/STAGE0_CANDIDATE_REGISTER.md).
+- AI/source provenance: [revision/post-jrs/STAGE0_AI_PROVENANCE.md](revision/post-jrs/STAGE0_AI_PROVENANCE.md).
+- Stage-0 outcome: multiple alternative mechanism hypotheses; **none** yet passes novelty, institutional feasibility, or a new mathematical certificate. Proceed only to Stage 1 audit.
+- Preservation: original theory freeze, Lean certificates, TeX source and 2026-09-24/27 JRS submission records unchanged; historical Stage 0–15 verdicts not rewritten.
+- Target journal: **not selected** for the revised paper. Previously discussed RSUE/ITPF are not Stage-0 research-design constraints.
 
 ## Journal editorial decision — 2026-10-10
 
