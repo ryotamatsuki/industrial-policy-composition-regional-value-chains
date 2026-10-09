@@ -14,17 +14,28 @@
 - Stage 12: `PRIMARY JOURNAL SELECTED — GO TO INTEGRATION`
 - Stage 13: `INTEGRATED MANUSCRIPT READY FOR SUBMISSION QA`
 - Stage 14: `CONDITIONAL PASS — CLOSED AFTER BOUNDED ASTRA REPAIR / NO THEORY DRIFT`
-- Stage 15: `CLOSED — SUBMITTED TO JOURNAL OF REGIONAL SCIENCE`
+- Stage 15: `CLOSED — SUBMITTED TO JOURNAL OF REGIONAL SCIENCE` (historical milestone; subsequent JRS desk rejection recorded on 2026-10-10)
 - Lean formalization: `BASELINE EQUILIBRIUM + HEADLINE WEDGE + SELECTED ROBUSTNESS — FRESH KERNEL BUILD PASS`
 - Lean-informed proof exposition: `COMPLETE — NO THEORY CHANGE`
 - Stage-14/post-Astra theory-drift verdict: `NO THEORY DRIFT`
-- Primary journal: **Journal of Regional Science**
-- Default fallback: **Regional Science and Urban Economics**
-- Submission status: **SUBMITTED / RECEIVED BY JRS**
+- Original target journal: **Journal of Regional Science** (editorial desk rejection on 2026-10-10; historical submission only)
+- Previously identified fallback candidate: **Regional Science and Urban Economics** (not selected for resubmission; journal fit must be reassessed against editor feedback)
+- Latest JRS decision: **DESK REJECTED / NOT SENT TO REVIEWERS** (2026-10-10 JST; decision recorded below; past submitted state retained in Stage 15 history)
 - JRS manuscript ID: **1758654**
 - Research Exchange submission UUID: **876d0cef-e8c6-45e5-a19d-80c9b578f288**
 - Submission date: **2026-09-24**
-- Next action: **Monitor the next journal-confirmed editorial status; do not infer UNDER REVIEW without journal or authenticated-tracker evidence**
+- Next action: **Independent policy-internalization/novelty/journal-fit audit before choosing a next destination; no active JRS revision invitation**
+
+## Journal editorial decision — 2026-10-10
+
+**JRS manuscript 1758654 was desk rejected without external review.** Dr. Florian Mayneris wrote that the paper treats an important industrial-policy question but does so rather abstractly, isolates an uninternalized decentralized externality, and does not address practically what should or could internalize it. The editor characterized the outcome as an editorial selection rather than an assessment of the work's quality, noting high selectivity.
+
+- Decision received: **2026-10-10 05:06 JST**;
+- Status: **DESK REJECT / JRS CLOSED**; **no R&R or resubmission invitation**;
+- Deadline: **none stated**; no immediate journal action;
+- Detailed decision/provenance: [`submission/jrs/EDITORIAL_DECISION_2026-10-10.md`](submission/jrs/EDITORIAL_DECISION_2026-10-10.md);
+- Next research gate: assess whether a substantive and novel, practically interpretable policy-internalization instrument is feasible, independently verifiable, and a better fit for the next journal. No instrument or target journal has yet been selected;
+- Historical submission freeze remains untouched. Theory model, proofs, Lean formalization, and paper source are unchanged.
 
 ## Canonical theory artifact
 
