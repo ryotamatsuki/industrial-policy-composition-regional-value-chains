@@ -24,7 +24,17 @@
 - JRS manuscript ID: **1758654**
 - Research Exchange submission UUID: **876d0cef-e8c6-45e5-a19d-80c9b578f288**
 - Submission date: **2026-09-24**
-- Next action (post-JRS revision): **Stage 1 source/mathematical audit under the 2026-10-10 Stage-0 GO TO AUDIT; no new instrument selected, no active JRS revision invitation**
+- Next action (post-JRS revision): **Stage 4 one-candidate minimal-model and adversarial mathematics check; no certified new theorem, no JRS revision invitation or next journal selected**
+
+## Post-JRS revision — Stage 3 (2026-10-10)
+
+- Revision lane: `STAGE 3 COMPLETED — GO TO MINIMAL MODEL` (**one bounded, unproved Stage-4 experiment**; not theorem/novelty certification).
+- [Mechanism selection and minimal full-game skeleton](revision/post-jrs/STAGE3_MECHANISM_SEARCH.md); [nine-candidate register](revision/post-jrs/STAGE3_CANDIDATE_REGISTER.md); [exact-rational continuous-deviation screening](revision/post-jrs/verify_stage3_screening.py).
+- Stage-3 source threat escalated: **Poirier (2024); Hsieh, König & Liu (2025); Song & Vannetelbosch (2007); David & Keely (2003)** already connect endogenous private networks to industrial/R&D policy, grants and/or supra-regional consortia. Simple `policy + network + grants` is not novel.
+- **Single preferred Stage-4 candidate:** A1, three regional fixed-capacity portfolio strategies, one private consortium selecting one of two cross-region projects, link-contingent grants with complete fiscal accounting. Screening only; none of its full Nash correspondence, optimal grants or novel implementation theorems established.
+- H03 joint-governance without transfers fails voluntary downstream participation in the frozen duplication wedge; H01 simple transfers remain a comparator; H07 liquidity only a non-novel optional restriction.
+- One reproducible witness: without grant `x=(1,0,1)`, U1-D2 active, national welfare `4.1`; with targeted `s13=0.2`, `x=(1,1,0)`, U1-D3 active, national welfare `3.6`. Unilateral continuous deviations checked for **these profiles**, not full Nash sets; this is familiar subsidy-diversion risk, **not proven novelty**.
+- Next authorized Stage: Stage 4 minimal model, with hard STOP if only known subsidy/matching/composition results survive. Historic Theory Freeze, Lean, TeX, JRS submission, target-journal decision remain unchanged.
 
 ## Post-JRS revision — Stage 2 (2026-10-10)
 
