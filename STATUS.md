@@ -26,6 +26,17 @@
 - Submission date: **2026-09-24**
 - Next action (post-JRS revision): **Stage 1 narrow F01 diagnostic-theory source/editorial audit following Stage-0 reframe; no adopted new theorem, journal target, manuscript rewrite or JRS invitation.**
 
+## Post-JRS H01 voluntary bilateral contracting pilot (2026-10-10)
+
+- User-authorized **separate bounded challenge** to extend the original two-region model, **not** Stage 4 GO or approval of a journal manuscript. Previously rejected A1 remains NO-GO, F01 Stage-0 editorial audit not invalidated.
+- [Full role-contingent-contract report](revision/post-jrs/H01_VOLUNTARY_CONTRACT_CHALLENGE.md).
+- [Reproducible SymPy and finite-menu SPNE script](revision/post-jrs/verify_h01_voluntary_contract.py).
+- **Technical PASS with limits:** Within `Delta<A<Delta/(1-alpha)`, a credible payer-to-recipient contract `T=t*x1*(1-x2)` with `Delta-(1-alpha)A<t<alpha*A` yields unique policy Nash (1,0), both governments strictly better than original duplicated outcome (1,1). Fiscal cash source, policy contractibility and legal enforceability NOT verified.
+- **Voluntary formation verified in precisely restricted game:** one designated proposer, receiver veto, exclusive binding deal and finite 0.05-grid proposal menu; example Delta=1,A=1.5,alpha=0.5 yields accepted `t=0.30`, net regional payoffs `(1.45,1.05)` versus `(1,1)`. The continuum strict-IR offer game has a boundary/nonattainment concern.
+- **Critical prior-art absorption:** with both parties **unrestricted simultaneous strategy-contingent offers** (a different protocol), Jackson–Wilkie (2005) **Theorem 2** implies no *pure supported* overall outcome in strict duplication wedge: each solo payoff supremum >= `b_D+A` while max combined surplus is `2b_D+Delta+A<2b_D+2A`. Continuous-action theorem-applicability proof/details and unrestricted mixed equilibria not independently certified. Published 2013 corrigendum overturns **Theorem 5**, NOT Theorem 2.
+- **Economic reading:** contract rights, veto and exclusivity are relevant; this is a **model-specific application of known transfer game theory**, not an independently new full theory mechanism or a manuscript-ready claim.
+- Next: bounded editor/institution and closest-theorem audit before any integration; leave historical Theory Freeze, JRS original, Lean and original manuscript unchanged; next journal unselected.
+
 ## Post-JRS revision — Stage 0 publication/research reframe (2026-10-10)
 
 - Revision lane: `STAGE 0 REFRAME — GO TO AUDIT` **for F01 narrow diagnostic theory source/editorial audit only**. This is a new Stage-0 decision after two failed model-extension searches, not reversal of A1 NO-GO and not approval of journal submission.
