@@ -1,0 +1,71 @@
+# Frontier Search Reset: OPEN PROBLEMS FIRST, not preselected model extensions
+**Audit date**: 2026-10-10 JST. User instruction: discover problems not sufficiently attempted, accepting small but real original progress; do not precommit to M-ACCESS, T-DYN, JRS original model or policy design. Earlier manuscript-stage Draft PR #34/#35 conditional suggestions are **NOT** frontier certification. **No theorem proved.** This is a current-source, not exhaustive, novelty audit.
+
+## 0. Admission logic and evidence
+
+- Start from newest *original* publication declaring a **specific missing study**, **author-stated conjecture**, or an **exact theorem boundary**. Search follow-up literature through 2026-10-10. Reject proven solved problems and pure label changes. One author identifying a lacuna does **not** certify world-wide originality or publication value.
+- Distinguish (1) verified author-stated open problem, (2) strong source-specific research gap at method × unit, (3) proposed falsifiable untested delta, (4) already solved.
+- Distinguish academic merit / current project fit / novelty certainty / journal family; no arbitrary demand for an applied subsidy remedy as a condition for mathematical economics.
+- At Stage0, a coherent **one-test research program**, not a complete proved new theorem, qualifies for a modest evidence-gated probe. Novelty certificate requires exact source-to-new-result mapping later.
+
+## 1. Candidate F1 (most DIRECT industrial policy) — **Subnational policy-space and actual innovation support portfolios**
+
+**First-hand frontier signal:**
+2026 *Regional Studies* research article, "Towards an evolutionary perspective on institutions in economic geography", DOI https://doi.org/10.1080/00343404.2026.2694594 , open full publisher text/search excerpt: authors say, *to their knowledge*, no quantitative cross-region study implementing **Policy Space** (policy-policy co-occurrence / institutional-policy relatedness) at SUBNATIONAL scale. This is their scope-qualified claim, **NOT incontrovertible evidence of zero similar studies**. The paper is largely a conceptual agenda for evolutionary institutional analysis.
+
+**Strongest pre-existing parent METHOD (not new):**
+Mealy, Ganslmeier & Hallegatte (2025), World Bank WPS 11094, *Climate Policies are Path-Dependent: Implications for Policy Sequencing and Feasibility*, https://ideas.repec.org/p/wbk/wbrwps/11094.html : cross-COUNTRY climate policy co-occurrence network and feasibility frontier predictive of future adoption. Direct method transplant alone = not a sufficient economic research contribution.
+
+**Strongest close subnational phenomenon rivals:**
+Pylak, Deegan & Broekel (2025), *Smart specialisation or smart following?*, https://doi.org/10.1080/00343404.2024.2429626 — EU REGIONAL policy-priority similarity/imitation; measured stated S3 domains, not co-occurrence POLICY INSTRUMENT repertoire and paid outlays.
+Okamuro/Nishimura Japanese city R&D support studies (2020, HIAS-E-157/158/159 in 2026) — actual city policy availability and hard-soft complementarities, but 2026 HIAS differences between city-level available menus and firm actual use. Not yet compared to full subnational policy SPACE matrix; policy adoption dynamics cannot be called entirely unstudied.
+
+**Smallest defensible incremental novelty**, a two-part test:
+(1) construct a cross-PREFECTURE × policy-category × YEAR set of actual innovation/industrial-policy **instruments** (grant, matching fund, sector-targeted, procurement/first-user, incubation, technology testing, advisory, joint R&D), with provenance and uncertainty, to estimate conditional policy-relatedness graph; **no fake completeness**;
+(2) test whether 1-year-ahead municipal/prefectural *new instrument adoption* is associated with *relatedness to OWN earlier policy portfolio*, controlling for overall innovation budget, region fixed effects, national reform dates, and *neighbor innovation-priority imitation*. A secondary harder extension: discriminate cooccurrence of advertised menus vs actual disbursement and one firm's uptake. If merely same results as World Bank country-policy space with 'Japan prefecture' relabel, **STOP for journal-level novelty**; a genuinely different economic effect of neighboring imitation vs administrative-capability path dependence could earn a substantial **incremental empirical contribution**.
+
+**Data entry points grounded in OFFICIAL sources (not yet downloaded/coverage-tested):**
+1. Japan Cabinet Office **Survey of Science & Technology Related Budgets of Prefectures and Government-Designated Cities** https://www8.cao.go.jp/cstp/budget/todoufuken.html , surveys 47 prefectures+20 cities, reports 2023–25 directly listed. Survey totals do not by themselves expose longitudinal complete grant-level micro records.
+2. Digital Agency **J-Grants PUBLIC subsidies list and detail API** https://developers.digital.go.jp/documents/jgrants/api/ — grant id/name, target geography, dates, amount ceiling, purpose; DOES NOT automatically provide universal archived annual grants and paid-out budgets or complete Japanese subnational schemes. Data coverage and past versions require feasibility audit. March 2026 API field updates https://developers.digital.go.jp/news/z_fk91eu47ko/ .
+3. National Governors' Association **Advanced Policy Bank** https://www.nga.gr.jp/bank/ — examples of innovation policies, self-selected and NOT representative census.
+4. 2025 World Bank climate method reusable only with copyright/data suitability checks.
+**Main immediate risk**: cross-year, all-prefecture complete treatment data and usable innovation policy taxonomy; technical cost of semantic classification and denominator choice; if unavailable, DO NOT promise a valid panel. Causal interpretation NOT automatic (path dependency could be stable administrative capacity rather than adoption causality). No web API calls/actual data auditing performed in this document.
+
+**Fit** DIRECT local industrial policy; **economic merit** high conditional on identifying capacity-constrained POLICY choice vs imitation, not just an application map; **novelty maturity** author-explicit apparently-untried COMPARATIVE UNIT × METHOD, not first-in-world guaranteed; **article scale** likely a focused empirical regional-economics note if data exist, not a math-only article; **gate** finite public-data coverage + adversarial title full-text audit; no automatic prioritization over pure theory.
+
+## 2. Candidate F2 (HIGHEST verified true THEOREM OPENNESS) — Limited sharing network public-goods **Price of Stability**
+
+**Original peer-reviewed parent** Deligkas, Gutin, Jones, Neary & Yeo (2026), AAAI Proceedings 40(20):16821–16828, https://doi.org/10.1609/aaai.v40i20.38726, full original arXiv HTML https://arxiv.org/html/2511.11475v1 . Their Theorem 8: for general sharing cap k≥1, **worst-case pure Price of Stability across qualifying digraph games** satisfies k ≤ PoS_k ≤ k+1/(k+1); their **Conjecture 1** proposes exact sharp value k, with **Theorem 9 proving k=1 case**. Full original HTML §5 and Conjecture 1 verified; paper §6 explicitly says only remaining open case is the conjecture. IMPORTANT: shorthand conjecture sentence "If a digraph admits a pure strategy Nash equilibrium, then the price of stability is equal to k" must NOT be interpreted as EVERY INDIVIDUAL GRAPH having ratio exactly k (false for many simple well-coordinated graphs); this is an **extremal, across-instances tight bound** claim, as their Theorem 8 defines PoS_k and their examples approach k.
+
+**One potentially publishable SMALL theoretical advance:** sharpen upper bound or verify extremal cap **k=2 on a nontrivial family** of directed graphs already satisfying known pure-existence conditions (e.g. DAGs, bipartite graphs or bounded structure). Their Theorem 5 provides existence conditions, Theorem 9 k=1. **No new proof or counterexample produced now**; first run exhaustive n≤5 finite graph enumeration and LP/matching formulations, then one robust analytic lemma. Any pointwise PoS(D) bound must be formulated with rigorous denominator/real cost normalization from original model, not naive counting of buyers; an interim numerical bound is not a proof. Search of original exact conjecture/title + followups through Oct 10 2026 found no explicit published resolution, but this is **not global proof** there was none.
+
+**Negative control:** Papadimitriou & Peng (2023) *Public Goods Games in Directed Networks*, GEB, https://doi.org/10.1016/j.geb.2023.02.002 explicitly left **undirected arbitrary utility-pattern dichotomy** as open; Gilboa (2024) ICALP **SOLVED** the finite best-response-pattern classification: https://doi.org/10.4230/LIPIcs.ICALP.2024.73 . Therefore THAT old problem is NOT eligible. Another 2026 AAAI edge-binary network public-goods game https://doi.org/10.1609/aaai.v40i20.38749 is a distinct closely related source to check.
+
+**Fit** OUTSIDE or DISTANT from local industrial policy; **economic/game-theory contribution potential** meaningful if genuinely proven, without any JRS policy remedy; **novelty maturity** peer-reviewed AUTHOR OPEN CONJECTURE, best evidence so far; **possible journal family** theoretical/algorithmic game theory, JME/JET only contingent on economic interpretation/scale. **Route as independent mathematical-economic research**, do not force regional subsidy language onto graph agents.
+
+## 3. Candidate F3 (DIRECT theoretical industry economics, but technically heavier) — Optimal dynamic industrial instrument paths under firm entry/exit delays
+
+Original 2026 *European Economic Review* published open article, "Dynamic effects of industrial policies amidst geoeconomic tensions", https://doi.org/10.1016/j.euroecorev.2026.105296 . Original authors compare dynamic transitional consequences of tariffs, incumbent production subsidies and startup-entry subsidies and **explicitly leave comprehensive OPTIMAL DYNAMIC POLICY** for future work within their calibrated heterogeneous firm 2-country model. The paper's analysis concentrates on SMALL policy shocks from an intervention-free starting state and specific country calibration. A paper simply asserting political myopia shifts rankings is already absorbed by their result. Also competing ABT (2026) dynamic technology adoption and extensive optimal dynamic taxation literature.
+
+**Smallest plausible DELTA** (UNPROVED): for a narrowly analytically tractable firm-entry lag and two local instruments, derive a *sharp* switch in marginal policy ranking as policy horizon changes, or robust necessary/sufficient condition for a time-varying instrument to strictly dominate a constant-rate instrument **that parent simulation does not already establish**. But full optimal-control GE very demanding, may be standard Hamiltonian condition, not significant novelty; source/paper overlap still high. **Rank below F1/F2** pending hard direct source-correlation audit.
+
+## 4. Actual STOP/REJECT decisions
+
+- **OLD F-A M-ACCESS**: takeup friction, stacking, shared dossier, multi-funder common agency, strategic information-sharing already have parent theorem references including Kleven & Kopczuk 2011, Bernheim–Whinston 1986, Lima et al Economic Theory 2026. Prior Draft PR #35's `CONDITIONAL GO` is NOT an original open-problem finding; treat it as DEFERRED rather than proposed winner.
+- **OLD F-B T-DYN**: ABT 2026 Prop6/16, BT 2024 Props1/2 and dynamic IO GE already occupy 'technology adoption + multi-sector network + grants'. `ζ≤1`, spectral contraction, IFT and "more regions" alone not original.
+- **2012 Gregor & Šťastná** final full theorem missing: any old intergovernmental simple compensation / budget-balanced commitment claims SOURCE BLOCKED, not research gap proved.
+- **Gilboa/Nisan (2022) open classification**: explicitly SOLVED by ICALP 2024 Gilboa; do not cite as unresolved despite earlier 2023 GEB's stated gap.
+- **Merely drawing a local grant map or applying a preexisting cross-country policy-space formula at prefecture level** without economically significant conditional test is at best a data note, not automatically a novel peer-reviewed economics paper.
+- "Nobody on Earth has attempted" is a universal negative and is NOT provable via bounded web search. Supported claims must be restricted: **author explicit conjecture remains without located solution** (F2) versus **paper authors report no subnational application to their knowledge** (F1).
+
+## 5. Five concrete tests, in correct order
+
+1. F1 parallel title/full text defensive search **2024–October 2026 subnational policy-space policy co-occurrence**; check if new papers have already performed essentially same municipal/country analysis, not only exact words.
+2. F1 OFFICIAL data feasibility **47 prefectures × at least two or three years**: verify exact scientific policy budget line items, J-Grants schemes count, retention/coverage, overlap, missing years; register full/partial vs menu-only and nonrandom coverage. If only incomplete snapshots, return *data-blocked* not novel empirical article GO.
+3. F2 check any later arXiv follow-up proving or disproving Deligkas et al. 2026 Conjecture 1; read corrected published proofs/supplement, then run small-graph enumeration and target one subclass (such as k=2 DAG), never guarantee success or a novelty certificate.
+4. Do not select an applied-theory journal merely because applied-policy topic fits; assess rigorous mathematical result as a general-theory route independently.
+5. Only once F1 and F2 source/data/mini-proof finite tests finish can **Stage0 candidate paper** be labeled research GO. Preserve JRS prior model as independent benchmark/frozen source. Do not draft a JRS resubmission.
+
+## Bottom line
+
+**Previously the true frontier had NOT been found. This audit now identifies two genuinely GROUNDED entry points with DIFFERENT strength of novelty evidence: F1 = explicit 2026 author-identified subnational empirical-method gap; F2 = explicit 2026 peer-reviewed open game-theory conjecture.** No novel empirical estimate, lemma, proof, data panel or publication-worthiness has yet been delivered. **GO TO ONE LIMITED F1 DATA-AND-PRIOR-ART AUDIT and independent F2 SMALL-GRAPH TEST; not GO to manuscript writing.**
