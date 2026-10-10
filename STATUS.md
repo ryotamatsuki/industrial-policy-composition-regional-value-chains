@@ -24,7 +24,18 @@
 - JRS manuscript ID: **1758654**
 - Research Exchange submission UUID: **876d0cef-e8c6-45e5-a19d-80c9b578f288**
 - Submission date: **2026-09-24**
-- Next action (post-JRS revision): **A1 Stage-4 NO-GO; choose a distinct Stage-3 mechanism or a Stage-0 reframe. No new theorem, revised manuscript, journal target, or JRS invitation approved.**
+- Next action (post-JRS revision): **Following Stage-3 re-entry NO-GO, return to Stage 0 for research-question / publication-format reframe. No new theorem, journal target or JRS invitation approved.**
+
+## Post-JRS revision — Stage 3 re-entry after A1 NO-GO (2026-10-10)
+
+- New canonical verdict: `STAGE 3 RE-ENTRY — NO-GO` (bounded search of H04 asymmetric information, H05 sequential/irreversible commitment, H08 private firms). No Stage-4 or Stage-5 authorization follows.
+- Report and source ledger: [STAGE3_REENTRY_AFTER_A1_NO_GO.md](revision/post-jrs/STAGE3_REENTRY_AFTER_A1_NO_GO.md).
+- Symbolic baseline sequential timing test: [verify_stage3_reentry_timing.py](revision/post-jrs/verify_stage3_reentry_timing.py).
+- Ten distinct/merged candidate variants classified against original fiscal contracting, federal experimentation, specific-investment hold-up, and local-firm subsidy competition. None yet has a credible full-game-only publication contribution.
+- Exact limited result: in the frozen strict wedge `Delta<A<Delta/(1-alpha)`, changing portfolio choice to a leader-follower game while keeping payoffs unchanged still yields `(1,1)` uniquely, with social gain `A-Delta` available by coordinated specialization. This does not rule out irreversible-investment/renegotiation games.
+- Residual R01 (information), R04 (sunk investment), and R07 (private complements) deferred; not authorized for Stage 4 without a new mechanism-level finding and relevant Stage-2 prior-art audit.
+- **Next recommended workflow action: Stage 0 research-question/publication-format reframe**, not Stage 4A or automatic feature accumulation. Possible diagnostic short theory note versus source-grounded implementation/empirical project. No journal chosen.
+- Historic 2026-09 Theory Freeze, Lean proof, A1 Stage-4 negative result, old manuscript and original JRS submission unchanged.
 
 ## Post-JRS revision — Stage 4 (2026-10-10)
 
