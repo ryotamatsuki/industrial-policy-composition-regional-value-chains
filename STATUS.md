@@ -26,6 +26,17 @@
 - Submission date: **2026-09-24**
 - Next action (post-JRS revision): **Stage 1 narrow F01 diagnostic-theory source/editorial audit following Stage-0 reframe; no adopted new theorem, journal target, manuscript rewrite or JRS invitation.**
 
+## Post-JRS interregional-contract and adjacent-field frontier audit (2026-10-10)
+
+- [Frontier literature review and research-candidate register](revision/post-jrs/FRONTIER_RESEARCH_2026-10-10.md), 25 source records and 10 candidate ideas structurally merged into 8, with source-depth/negative controls and bounded next tests.
+- **No new theorem or journal novelty PASS**: unrestricted transfers, bilateral grant timing, complementarity, coalition consent, industrial policy information brokerage and shock resilience each have extensive prior art.
+- Critical newly surfaced parents: **Albertone–Lebdioui (2026) Oxford TIDE WP96** on an interregional industrial policy *information broker*; **Suga–Yanase–Tawada (2026)** on endogenous policy-induced comparative advantage (with IO linkage extension); **Pylak–Deegan–Broekel (2025)** on cross-regional policy-priority mimicry; **Strîmbu (2026)** on partial contract verifiability; **Xue (2026)** on budget-balanced public-project mechanism.
+- **Preferred empirical feasibility question E1**: can EU I3/partnership participation **causally** shift jurisdictions' **own-financed executed portfolio shares** away from imitation and toward different but IO-complementary policy sectors? Exact available data joins, applicants/controls, timing, NUTS2 sector years, causal design **NOT VERIFIED**.
+- **Preferred theoretical falsification question E2**: can real **verifiable, budget-limited and legally feasible** mutual commitment implement differentiated fixed-capacity priorities in a model not absorbed by prior mechanism design? Unproved; first source model-level absorption and institutional rights audit needed.
+- Strict negative control: in original unique-duplication wedge, a costless **nonbinding** information broker with unchanged full-information payoffs cannot change strictly dominant U choices; this does not refute a richer repeated-information or binding-agreement model.
+- **Next**: one bounded E1 dataset-feasibility check and/or E2 legal-verifiability + prior-theorem hostile audit, requiring a separate explicit stage mandate before modeling. Keep F01 reframe and H01 mathematical pilot as distinct historical lanes.
+- Original frozen model, Lean code, JRS submission and A1 negative reports unchanged.
+
 ## Post-JRS H01 voluntary bilateral contracting pilot (2026-10-10)
 
 - User-authorized **separate bounded challenge** to extend the original two-region model, **not** Stage 4 GO or approval of a journal manuscript. Previously rejected A1 remains NO-GO, F01 Stage-0 editorial audit not invalidated.
