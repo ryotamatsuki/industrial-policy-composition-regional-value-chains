@@ -26,6 +26,17 @@
 - Submission date: **2026-09-24**
 - Next action (post-JRS revision): **Stage 1 narrow F01 diagnostic-theory source/editorial audit following Stage-0 reframe; no adopted new theorem, journal target, manuscript rewrite or JRS invitation.**
 
+## Post-JRS H01 contract-theory frontier re-kill (2026-10-10)
+
+- **Frontier-first audit verdict:** `H01 NEW GENERAL CONTRACT THEORY — NO-GO`; `H01 MODEL-SPECIFIC POLICY COMPANION — CONDITIONAL`. The research-source verification does not authorize a new Stage 4, new TeX, Lean proof or journal target.
+- [15-source academic/institutional frontier audit and corrective parent theorem map](revision/post-jrs/H01_FRONTIER_AUDIT_2026-10-10.md).
+- Critical additional closest economic theory: **Hindriks & Myles (2003)** on horizontal regional transfer precommitment versus simultaneous choice; **Gregor & Šťastná (2012)** on 2-district *complementary public inputs* and voluntary contributions; **Gregor (2015)** on *complementary task division with monetary gifts*; **Di Liddo (2017)** on bargaining/equalization agreements.
+- 2025–26 frontier: **Geffner–Oesterheld–Conitzer (2025)** capped unanimous multiround commitments (preprint); **Heitzig (2025)** mutually conditional public-goods contributions (peer-reviewed); **Kavner (IJCAI 2026)** consensus/veto voluntary welfare-maximizing transfer contracts (peer-reviewed proceedings); **Liu–Farina–Ozdaglar (EC 2026 per author record)** internal transfers plus binding mediator and agent-normal versus full augmented-game NE.
+- **IMPORTANT correction to the prior H01 pilot:** Jackson–Wilkie 2005 Theorem 2 applies to its finite game; extending a “no pure supported outcome” claim to **arbitrary unbounded and discontinuous side-payment functions over x_i in [0,1]** is `UNRESOLVED` without defining a contract space with off-path equilibrium existence. Original working-paper continuous-action appendix explicitly states this issue; 2013 erratum overturns Theorem 5, not Theorem 2. [The pilot now links an explicit corrigendum](revision/post-jrs/H01_VOLUNTARY_CONTRACT_CHALLENGE.md).
+- G1 strict compensation interval and G2 **specific** one-proposer, exclusive finite-menu agreement example remain mathematically correct but elementary/generic and not novel theory. Institution and fiscal appropriation/monitoring/legal enforceability for real horizontal local government transfers remain unverified.
+- Hard source acquisition required before another H01 model: full **Gregor & Šťastná 2012** theorem equations, **Liu et al. 2026** full paper, **Gregor 2015** and real horizontal cooperation agreement cash/budget law. If no model-level independent claim survives, retain compensation only as attributed implementation illustration and continue F01 editorial audit.
+- Original Theory Freeze, Lean, JRS submitted files, old rejected A1 and Stage-0 F01 decision remain unchanged.
+
 ## Post-JRS H01 voluntary bilateral contracting pilot (2026-10-10)
 
 - User-authorized **separate bounded challenge** to extend the original two-region model, **not** Stage 4 GO or approval of a journal manuscript. Previously rejected A1 remains NO-GO, F01 Stage-0 editorial audit not invalidated.
