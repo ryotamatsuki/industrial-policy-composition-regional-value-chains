@@ -24,7 +24,17 @@
 - JRS manuscript ID: **1758654**
 - Research Exchange submission UUID: **876d0cef-e8c6-45e5-a19d-80c9b578f288**
 - Submission date: **2026-09-24**
-- Next action (post-JRS revision): **Stage 4 one-candidate minimal-model and adversarial mathematics check; no certified new theorem, no JRS revision invitation or next journal selected**
+- Next action (post-JRS revision): **A1 Stage-4 NO-GO; choose a distinct Stage-3 mechanism or a Stage-0 reframe. No new theorem, revised manuscript, journal target, or JRS invitation approved.**
+
+## Post-JRS revision — Stage 4 (2026-10-10)
+
+- Revision lane: `STAGE 4 COMPLETED — NO-GO FOR A1` (bounded 3-region portfolio/project/grant research path terminated). **No Stage 4A or Stage 5 authorization.**
+- Report and conditional proof: [Stage 4 A1 no-go](revision/post-jrs/STAGE4_A1_NO_GO.md).
+- Exact-rational independent screening/regression: [Stage 4 verification code](revision/post-jrs/verify_stage4_a1_no_go.py).
+- On the specified Stage-3 parameter slice and `s12,s13>=0,s12+s13<=1/5`, the full continuous regional game has exactly one pure Nash equilibrium: `(1,0,1),e12` iff `s13-s12<=1/10`, otherwise `(1,1,0),e13`. This is **not a general-parameter theorem** or Lean-certified.
+- The constrained social optimum is `(1,0,1),e12`, welfare `41/10`, implemented already at zero grant. A targeted grant can redirect the project to welfare `18/5`, but **the same welfare difference occurs with all regional portfolios fixed**. Hence no unique portfolio-link strategic contribution survives Stage-4 nested benchmark tests.
+- Model A1 is **NO-GO as a full-paper extension**, not a falsification of the original September 2026 Theory Freeze or a finding about real regional industrial policy.
+- Next workflow action: return to Stage 3 only for a demonstrably distinct mechanism with new prior-art check, or Stage 0 for research-question/journal-ladder reframe. Do not extend A1 to extra agents/types/dynamics just to obtain a positive result.
 
 ## Post-JRS revision — Stage 3 (2026-10-10)
 
