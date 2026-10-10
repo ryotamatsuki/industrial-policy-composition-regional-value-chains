@@ -24,7 +24,19 @@
 - JRS manuscript ID: **1758654**
 - Research Exchange submission UUID: **876d0cef-e8c6-45e5-a19d-80c9b578f288**
 - Submission date: **2026-09-24**
-- Next action (post-JRS revision): **Following Stage-3 re-entry NO-GO, return to Stage 0 for research-question / publication-format reframe. No new theorem, journal target or JRS invitation approved.**
+- Next action (post-JRS revision): **Stage 1 narrow F01 diagnostic-theory source/editorial audit following Stage-0 reframe; no adopted new theorem, journal target, manuscript rewrite or JRS invitation.**
+
+## Post-JRS revision — Stage 0 publication/research reframe (2026-10-10)
+
+- Revision lane: `STAGE 0 REFRAME — GO TO AUDIT` **for F01 narrow diagnostic theory source/editorial audit only**. This is a new Stage-0 decision after two failed model-extension searches, not reversal of A1 NO-GO and not approval of journal submission.
+- [Stage 0 reframe report](revision/post-jrs/STAGE0_REFRAME_AFTER_MECHANISM_NO_GO.md).
+- [Five-route candidate register, journal scope/fees and Stage-1 contract](revision/post-jrs/STAGE0_REFRAME_CANDIDATES.md).
+- Preferred route F01: retain the frozen two-region fixed-capacity complementary regional industrial-policy portfolio model; seek short (roughly <=10 printed-page) **diagnostic-only** exposition conditional on genuine theorem-level contribution.
+- Format-audit candidate: **Letters in Spatial and Resource Sciences**. Publisher official guidance: under 10 printed pages generally, hybrid subscription publishing with no APC; **journal target NOT SELECTED**, acceptance/unpublished-result originality unverified.
+- Other routes: F02 educational/open replication note as non-original fallback; F03 institutional source mapping; F04 empirical causal evaluation with unconfirmed data feasibility; F05 genuine documented contractual design as separate possible research.
+- Stage-1 limited scope: max six closest original parent theory papers plus three short-form journal comparator articles, full model/novelty challenge and journal editorial significance check. **No automatic new empirical work, policy mechanism, manuscript rewriting, new theory freeze or journal selection**.
+- Strong STOP: if the existing equilibrium/planner threshold is directly absorbed or not editorially substantial, F01 journal route fails despite mathematical correctness.
+- JRS rejection, original main paper/Lean freeze, A1 negative result and Stage-3 reentry NO-GO preserved as historical record.
 
 ## Post-JRS revision — Stage 3 re-entry after A1 NO-GO (2026-10-10)
 
