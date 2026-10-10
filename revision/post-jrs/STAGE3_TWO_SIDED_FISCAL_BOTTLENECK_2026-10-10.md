@@ -1,6 +1,8 @@
 # Stage 3 — Two-sided fiscal bottleneck and voluntary veto in regional industrial-policy specialization
 Date: 2026-10-10. Pure THEORY only. Research status: CONDITIONAL GO TO ONE BOUNDED STAGE-4 HOSTILE AUDIT. Neither journal paper, novelty, full published-parent extension, nor Stage-4A proof certification has been approved. Old JRS theory freeze, manuscript, Lean and earlier negative A1/H01 results remain unchanged.
 
+**2026-10-10 Stage-4 corrigendum:** The preceding Stage-3 description of the high-gamma veto's sensitivity to skewed regional tax shares was overly strong and is corrected under N4 below. The regional-coalition budget invariant and explicit counterexamples appear in `STAGE4_HOSTILE_THEORY_AUDIT_2026-10-10.md`. The U-shaped arithmetic itself remains valid only for the defined finite game and tax/contract class.
+
 ## 1. Closest theoretical parents — actual evidence and limits
 Suga, Tawada & Yanase (2025), Hokkaido University Discussion Paper 382: the restricted production possibilities frontier is Q2=Gamma(Q1,R), with Gamma_1<0, Gamma_11<0, Gamma_1R>0. Equation (1): the policy-unrestricted upper envelope Lambda(Q1)=max_R Gamma(Q1,R) has curvature Lambda''=Gamma_11-(Gamma_1R)^2/Gamma_RR. Proposition 1 proves that sufficiently strong positive Lambda'' near the symmetric autarky optimal policy rules out symmetric Nash; the condition is equivalent to Chatterjee (2017). Full source: https://eprints.lib.hokudai.ac.jp/dspace/bitstream/2115/95136/1/DPA382.pdf (physical pages 4, 8–10). This 2025 paper is not the same as the published 2026 Suga–Yanase–Tawada paper; do not conflate the equations. Publisher abstract of Suga et al. (2026) confirms an upstream IO entry-regulation model as an application but its full published theorem is not yet inspected: https://doi.org/10.1111/sjoe.70007 .
 Chatterjee (2017) already analyzes fixed education budget allocated across sectors, policies, comparative advantage and symmetry-breaking: https://doi.org/10.1016/j.jinteco.2017.08.009 .
@@ -64,7 +66,7 @@ N0 no grants: duplication unique on exact slice.
 N1 governments' portfolios frozen: only private firm entry incentive survives; minimum s declines with gamma, U shape absent.
 N2 private firm automatically enters: only regional D-role compensation survives; its minimum rises with gamma, U shape absent.
 N3 full two-sided choice and limited finance: U shape and voluntary-veto cutoff occur.
-N4 allowing taxation of developer profits, skewed tax shares, direct upstream rebates or external center finance can overturn veto.
+N4 CORRECTION (Stage 4): Skewing the LOCAL tax burden or making LOCAL-only upstream rebates CANNOT overturn the high-gamma coalition veto, because the sum of local payoffs is invariant to domestic redistribution and equals Delta+(1-gamma)*A-s. Reclaiming developer profit/royalties or introducing GENUINELY external funds can overturn it, by changing local total resources. Changing local tax shares can, however, change feasibility at low gamma. See STAGE4_HOSTILE_THEORY_AUDIT_2026-10-10.md.
 N5 original continuous x_i in [0,1]: NOT analyzed; finite binary game is a nontrivial structural departure.
 N6 actual trade prices, wages, GE firm entry/location/supplier choice: NOT analyzed.
 N7 binding voluntary sign-and-role-selection equilibrium: no unique role assignment theorem established.
