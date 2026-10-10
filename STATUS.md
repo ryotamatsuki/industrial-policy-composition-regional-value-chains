@@ -26,6 +26,15 @@
 - Submission date: **2026-09-24**
 - Next action (post-JRS revision): **Stage 1 narrow F01 diagnostic-theory source/editorial audit following Stage-0 reframe; no adopted new theorem, journal target, manuscript rewrite or JRS invitation.**
 
+## Post-JRS adjacent research-frontier discovery (2026-10-10)
+
+- Expanded **separate** scan beyond the already-recorded H01 contract-theory audit: [25-source frontier dossier and 10-hypothesis register](revision/post-jrs/FRONTIER_RESEARCH_2026-10-10.md).
+- **E1: preferred empirical feasibility test** — does joining cross-region innovation consortia causally change **regional own-funded actual industrial-policy portfolio** from neighbor/national imitation to technological U–D complementarity? Sources: Pylak et al. 2025 imitation, 2021 EU complementary interregional links, EU S3 priority records, EISMEA I3/2026 Observatory and Cohesion/Kohesio programme spending. **Data join, identification and true policy-share measurement NOT VERIFIED**.
+- **E2: theoretical hostile-test candidate** — what bounded, legally authorized **verifiable** outcome and fiscal instruments implement voluntary differentiation without replaying H01's known contracting results? Powerful new threats Strîmbu 2026 partial verifiability; Xue 2026 budget-balanced public-project mechanism. **No novel theorem proposed as proved**.
+- Critical adjacent closest theory: Oxford TIDE Albertone–Lebdioui 2026 information broker model; Suga–Yanase–Tawada 2026 endogenous comparative advantage/IO linkages; Ferrari–Pesaresi 2025 specialization/resilience preprint; Hardwick 2025 industrial policy resilience model.
+- Negative control: in frozen strict duplication wedge under unchanged complete-info payoffs, **nonbinding, costless information brokerage alone cannot overturn strictly dominant upstream portfolios**, not a novel theorem and not a refutation of repeated/dynamic information coordination.
+- This document is a source register and future feasibility plan, not a Stage 2–4 GO. **Prior H01 frontier corrected caution about continuous side-payment games remains binding**; original freeze and submission unchanged.
+
 ## Post-JRS H01 contract-theory frontier re-kill (2026-10-10)
 
 - **Frontier-first audit verdict:** `H01 NEW GENERAL CONTRACT THEORY — NO-GO`; `H01 MODEL-SPECIFIC POLICY COMPANION — CONDITIONAL`. The research-source verification does not authorize a new Stage 4, new TeX, Lean proof or journal target.
