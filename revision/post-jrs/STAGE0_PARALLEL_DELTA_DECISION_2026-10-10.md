@@ -1,0 +1,29 @@
+# Stage 0 — Parallel Delta Gate decision (2026-10-10)
+
+**Workflow basis:** source-first Pre-Stage F project draft PR #33 + independent scholarly-merit/fit rules in `research-paper-workflow` Draft PR #25 (**neither merged**). This is NOT an updated JRS paper, a corrected theorem proof, nor a novelty or submission authorization. Originals `paper/`, theory freeze and JRS editorial decision untouched.
+
+## Exact current dispositions
+
+| Route | Broad scholarly economic-theory significance | Local industrial-policy fit | Status of novelty/parent evidence | Article-family fit if actually proven | Stage 0 verdict |
+|---|---|---|---|---|---|
+| A00: regional patent gains versus neighbor losses, national additionality generally | ECONOMICALLY IMPORTANT but subject heavily studied | DIRECT | Already studied by Camêlo & Sollaci 2025 spatial growth, Wong et al. 2024/25 empirical and others | No independent paper claim | **NO-GO for this generic headline only** |
+| **A-H1**: fixed-budget **choice of innovation-policy instrument composition** with mobile inventors and distinct local vs national additionality; endogenous local-government equilibrium and nontrivial nonabsorbed sign/welfare boundary | HIGH conditional; novel result NOT proven | DIRECT | Main Kondo 2013, RIETI Forslid/Okubo 2024, Camêlo/Sollaci 2025 and Ossa 2015 theorem maps unresolved | JPET / JRS / RSUE / innovation economics, conditional | **CONDITIONAL GO to one bounded SOURCE-FIRST Stage 1 delta test** |
+| B-T1: directed networks break exact potential and thereby pure-NE existence in continuous own-linear public spending shares | Theory question, **but claim FALSE** in this original family | DIRECT/ADJACENT | **DIRECTLY ABSORBED** by Debreu–Fan–Glicksberg existence theorem; 3-cycle still has fractional pure NE | Not a publication thesis | **NO-GO specific claim** |
+| B-corner: odd directed graph with binary-only choices may lack corner equilibrium while continuous division has fractional equilibrium | Correct mathematical/example diagnostic, largely known | DIRECT | Classical finite-game mixed NE and graph anti-coordination already explain this | Educational example only as is | **NO-GO standalone theorem** |
+| **B-H1**: bona fide indivisible industrial projects yield new *source-unabsorbed* sharp graph and welfare boundary beyond coloring/polymatrix theory | POSSIBLE, unproved | DIRECT/ADJACENT, may ROUTE general theory independently | Strong original theorem overlap; no novel difference established | JME/Economic Theory/JET conditional | **DEFER / CONDITIONAL REFRAME, not yet Stage 1 model work** |
+
+**Decision distinction:** An unsuccessful **JRS applied implementation** route is not evidence of *general economic-theory worthlessness*. Likewise, a weak B generalization does not imply all possible generalizations are valueless. **Paper-level** decision remains no unchanged JRS resubmission; major rewrite NOT authorized. Non-novel specific claims stop individually.
+
+## Stage 0 new discoveries vs prior project
+
+1. A strongest overlooked parent: **Camêlo & Sollaci (2025)** *full 85pp original WP*, Proposition 2 and §5. National additionality vs geographic redistribution, nationwide welfare and spatial subsidy allocation ARE ALREADY MODELED; unlike earlier frontier assumption, they are not a fresh research question. Also Kondo (2013) and RIETI (2024) cover government R&D subsidy competition plus firms/industry mobility. A requires a **very tight** novel local instrument-composition equilibrium theorem, not a mere combination of known mechanisms.
+2. B fatal shortcut: no exact potential does **NOT** destroy pure Nash existence where all `x_i∈[0,1]` and payoffs affine in own variable. Debreu–Fan–Glicksberg guarantees pure Nash regardless of directed link matrix. Explicit 3-region directed cycle `α=1/4, Δ/A=1/5` has **no corner Nash**, yet `x_i=9/20` for every i is an interior **pure** Nash of the fractional portfolio game. Thus loss-of-potential/NE-failure B-T1 is **NO-GO**, not an 'unresolved theorem'.
+3. Stage1 must be **asymmetric**: A one narrow audit; B STOP original route and route a *distinct* indivisible-project hypothesis back through source screening. Do NOT force both to survive just because the user asked to assess both.
+
+## Next finite Stage 1 contract
+
+**A, source first, not full theory construction:** (i) direct **Kondo 2013** mathematical propositions and policy-stage timing from published version, (ii) **Forslid & Okubo 2024** full game equations and national vs local welfare comparison, (iii) Camêlo & Sollaci 2025 Prop.2/§5, (iv) Ossa competition benchmark. Fill a row-by-row nesting table (agents, controls, endogenous firm R&D/location, objective, fiscal budget, equilibrium, aggregate innovation, strongest theorem, conditional outcome). Then either locate a genuine one-assumption Delta proposition and test one symbolic counterexample OR return source-supported NO-GO. Publishability NOT certified.
+
+**B, evidence-gated source intake:** first read exact directed anti-coordination original propositions (Kun et al., Carosi/Monaco, Deligkas et al., Passacantando/Raciti). Define a single economically realistic **indivisible** instrument. If every equilibrium/welfare claim is the existing graph-game theorem applied to differently named vertices, STOP B. Only a real nonabsorbed theorem may enter a bounded Stage1 proof probe. If it instead becomes a general economic-theory project unrelated to local industry, label **ROUTE/SEPARATE**, never global NO-GO.
+
+**Stage 0 canonical overall: CONDITIONAL GO** for *A source/theorem audit only*; **B original headline NO-GO with independent routing**, source gaps explicitly remain. No new theorem declared, no paper or revision commissioned.
