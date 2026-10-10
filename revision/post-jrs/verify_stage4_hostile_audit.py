@@ -72,10 +72,17 @@ assert zero==(F(7,5),F(7,5),F(0))
 assert sum(half)==sum(zero)==F(14,5)
 assert pure_nash(F(0),theta=F(0),**params)==[(0,1),(1,0)]
 
-# In the opt-in unanimity game both reject is always a weak Nash;
-# a single unilateral accept after the other rejects leaves U/U unchanged.
-fallback=F(1)
-assert (fallback,fallback)==(fallback,fallback)
+# Unanimous signature game. Rejection by either player restores baseline.
+def consent(a, b):
+    return (F(6,5), F(6,5)) if (a and b) else (F(1), F(1))
+def consent_ne(a,b):
+    v=consent(a,b)
+    return (v[0]>=consent(not a,b)[0]
+            and v[1]>=consent(a,not b)[1])
+assert consent_ne(False,False)  # weak refusal/refusal equilibrium
+assert consent_ne(True,True)    # voluntary cooperative equilibrium
+assert not consent_ne(True,False)
+assert not consent_ne(False,True)
 print("PASS: S4-1 regional coalition invariant and local veto")
 print("PASS: S4-2 developer-funded fee changes region participation")
 print("PASS: S4-3 changing local tax incidence changes individual opt-in")
